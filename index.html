@@ -104,21 +104,22 @@
       align-items: center;
     }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-slate) 100%);
-      color: var(--brand-gold);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: 20px;
-      border: 1px solid var(--brand-gold);
+    
+    /* New Logo Image Style */
+    .brand-logo-img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5px solid var(--brand-gold);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
       flex-shrink: 0;
     }
+    .brand-logo-img.footer-logo {
+      width: 42px;
+      height: 42px;
+    }
+
     .brand-title {
       font-family: 'Cinzel', serif;
       font-size: 20px;
@@ -483,7 +484,8 @@
   <header class="nav-bar">
     <div class="nav-container">
       <a href="index.html" class="brand-logo-wrap">
-        <div class="brand-mark">M</div>
+        <!-- Circular Image Logo -->
+        <img src="Logo.jpg" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
           <div class="brand-sub">Stone & Slabs</div>
@@ -623,7 +625,8 @@
     <div class="footer-inner">
       <div class="footer-col">
         <div class="brand-logo-wrap" style="margin-bottom: 14px;">
-          <div class="brand-mark" style="width:36px; height:36px; font-size:16px;">M</div>
+          <!-- Circular Image Logo in Footer -->
+          <img src="Logo.jpg" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
           <div>
             <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
             <div class="brand-sub">Stone & Slabs</div>
