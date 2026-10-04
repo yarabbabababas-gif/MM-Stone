@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quartz, Porcelain & Thick Monuments | Per Piece | MalviganoMac</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-navy: #003366;
+      --brand-slate: #2b3a4a;
+      --brand-gold: #c5a059;
+      --brand-gold-light: #dfbe7d;
+      --card-border: #e2e8f0;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #fbfbfd; color: #1f2937; }
+    h1, h2, h3 { font-family: 'Cinzel', serif; }
+    a { text-decoration: none; color: inherit; }
 
+    .top-strip { background: var(--brand-slate); color: #cbd5e1; font-size: 13px; padding: 9px 24px; }
+    .top-strip-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .top-badge { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--brand-gold-light); background: rgba(197, 160, 89, 0.18); padding: 4px 12px; border-radius: 999px; }
+
+    .nav-bar { background: #ffffff; border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .brand-mark { width: 40px; height: 40px; background: var(--brand-navy); color: var(--brand-gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 800; font-size: 20px; }
+    .brand-title { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 800; color: var(--brand-navy); }
+    .nav-links { display: flex; gap: 20px; font-weight: 600; font-size: 14px; }
+
+    .catalog-header { max-width: 1240px; margin: 40px auto 20px auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+    .catalog-header h1 { font-size: 32px; color: var(--brand-navy); }
+    .policy-pill { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+
+    .grid-container { max-width: 1240px; margin: 0 auto 80px auto; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
+    .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+
+    .card { background: #ffffff; border: 1px solid var(--card-border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; }
+    .card-img { width: 100%; height: 210px; object-fit: cover; }
+    .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 18px; color: var(--brand-navy); font-weight: 800; margin-bottom: 4px; }
+    .dimen-tag { font-size: 11.5px; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 8px; font-weight: 700; color: var(--brand-slate); }
+    .price-box { font-size: 22px; font-weight: 800; color: #003366; margin: 8px 0; }
+    .price-unit { font-size: 13px; font-weight: 500; color: #64748b; }
+    
+    .card-ctrl { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+    .sqft-input { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; }
+    .btn-add { background: var(--brand-navy); color: #ffffff; padding: 10px 16px; border-radius: var(--radius-sm); border: none; font-weight: 700; cursor: pointer; }
+
+    .cart-box { background: #ffffff; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 90px; height: fit-content; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .cart-box h3 { font-size: 20px; color: var(--brand-navy); border-bottom: 1px solid var(--card-border); padding-bottom: 12px; margin-bottom: 16px; }
+    .cart-items { max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+    .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; }
+    .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 20px; }
+    .split-row { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
+    .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
+
+    .btn-checkout { width: 100%; background: #25d366; color: #ffffff; padding: 14px; border: none; border-radius: var(--radius-sm); font-weight: 800; font-size: 14px; cursor: pointer; }
+
+    @media (max-width: 980px) { .grid-container { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <div>
+        <a href="tel:+918123502007" style="color:#e2e8f0; margin-right:14px;">🇮🇳 +91 81235 02007</a>
+        <a href="tel:+17575059172" style="color:#e2e8f0;">🇺🇸 +1 (757) 505-9172</a>
+      </div>
+      <div><span class="top-badge">Hosur & Chennai Export Units (All over India)</span></div>
+    </div>
+  </div>
+
+  <header class="nav-bar">
+    <div class="nav-container">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
+        <div class="brand-mark">M</div>
+        <div class="brand-title">MalviganoMac</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="granite-marble.html">Granite & Marble (Per Sq.Ft)</a>
+        <a href="quartz-slabs.html" style="color:var(--brand-navy);">Quartz & Slabs (Per Piece)</a>
+        <a href="quote.html">Custom Booking</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="catalog-header">
+    <div>
+      <h1>Quartz, Porcelain & Heavy Slabs</h1>
+      <p style="color:#64748b; font-size:14px;">Unit calibrated cuts. Standard piece size: <strong>40cm × 40cm</strong> & custom dimensions.</p>
+    </div>
+    <div class="policy-pill">
+      🔒 Booking Policy: 70% Advance Confirmation | 30% Balance On Delivery
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="products-list">
+      <!-- Item 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Calacatta Quartz">
+        <div class="card-body">
+          <div class="card-title">Calacatta Gold Engineered Quartz</div>
+          <span class="dimen-tag">Size: 40cm × 40cm (20mm)</span>
+          <p style="font-size:12.5px; color:#64748b;">Non-porous, stain & scratch proof surface.</p>
+          <div class="price-box">₹450 <span class="price-unit">/ piece</span></div>
+          <div class="card-ctrl">
+            <input type="number" id="qty_p1" placeholder="Quantity (Pieces)" class="sqft-input" min="10" value="50">
+            <button class="btn-add" onclick="addPieceToCart('Calacatta Gold Quartz (40x40)', 450, 'qty_p1')">Add Pieces To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Porcelain Slabs">
+        <div class="card-body">
+          <div class="card-title">Sintered Porcelain Exterior Tile</div>
+          <span class="dimen-tag">Size: 40cm × 40cm (12mm)</span>
+          <p style="font-size:12.5px; color:#64748b;">Ultra high-pressure sintered tile, 100% heat & frost proof.</p>
+          <div class="price-box">₹320 <span class="price-unit">/ piece</span></div>
+          <div class="card-ctrl">
+            <input type="number" id="qty_p2" placeholder="Quantity (Pieces)" class="sqft-input" min="10" value="100">
+            <button class="btn-add" onclick="addPieceToCart('Porcelain Sintered Tile (40x40)', 320, 'qty_p2')">Add Pieces To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Thick Monument Slab">
+        <div class="card-body">
+          <div class="card-title">Thick Granite Monument Keystone</div>
+          <span class="dimen-tag">Size: 40cm × 40cm (100mm Thick)</span>
+          <p style="font-size:12.5px; color:#64748b;">Solid monumental stone cut with multi-wire saw.</p>
+          <div class="price-box">₹1,850 <span class="price-unit">/ piece</span></div>
+          <div class="card-ctrl">
+            <input type="number" id="qty_p3" placeholder="Quantity (Pieces)" class="sqft-input" min="5" value="10">
+            <button class="btn-add" onclick="addPieceToCart('Thick Monument Keystone 100mm', 1850, 'qty_p3')">Add Pieces To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Cart -->
+    <div class="cart-box">
+      <h3>Booking Order Summary</h3>
+      <div class="cart-items" id="cartItems">
+        <p style="font-size:13px; color:#94a3b8;">No pieces added yet. Select quantities to compute balance.</p>
+      </div>
+
+      <div class="split-bill">
+        <div class="split-row">
+          <span>Gross Total:</span>
+          <span id="grossTotal">₹0</span>
+        </div>
+        <div class="split-row adv">
+          <span>Advance Payable (70%):</span>
+          <span id="advTotal">₹0</span>
+        </div>
+        <div class="split-row" style="color:#64748b;">
+          <span>Balance On Delivery (30%):</span>
+          <span id="balTotal">₹0</span>
+        </div>
+      </div>
+
+      <button class="btn-checkout" onclick="checkoutPiecesBooking()">Place Booking via WhatsApp</button>
+      <p style="font-size:11.5px; color:#64748b; text-align:center; margin-top:10px;">ISPM-15 export wooden crating included for container loads.</p>
+    </div>
+  </div>
+
+  <script>
+    let pieceCart = [];
+
+    function addPieceToCart(title, rate, inputId) {
+      const pcs = parseInt(document.getElementById(inputId).value);
+      if(!pcs || pcs <= 0) { alert('Please enter valid quantity of pieces'); return; }
+      const total = pcs * rate;
+      pieceCart.push({ title, rate, pcs, total });
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItems');
+      if(pieceCart.length === 0) {
+        container.innerHTML = '<p style="font-size:13px; color:#94a3b8;">No pieces added yet.</p>';
+        return;
+      }
+      container.innerHTML = '';
+      let sum = 0;
+      pieceCart.forEach(item => {
+        sum += item.total;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<div><strong>${item.title}</strong><br>${item.pcs} pieces @ ₹${item.rate}</div><div><strong>₹${item.total.toLocaleString('en-IN')}</strong></div>`;
+        container.appendChild(div);
+      });
+
+      const adv = sum * 0.70;
+      const bal = sum * 0.30;
+      document.getElementById('grossTotal').innerText = `₹${sum.toLocaleString('en-IN')}`;
+      document.getElementById('advTotal').innerText = `₹${adv.toLocaleString('en-IN')}`;
+      document.getElementById('balTotal').innerText = `₹${bal.toLocaleString('en-IN')}`;
+    }
+
+    function checkoutPiecesBooking() {
+      if(pieceCart.length === 0) { alert('Please add items to cart first.'); return; }
+      let summary = "MalviganoMac Stone (Piece Order Booking):\n\n";
+      let sum = 0;
+      pieceCart.forEach(i => {
+        sum += i.total;
+        summary += `• ${i.title}: ${i.pcs} pieces @ ₹${i.rate}/pc = ₹${i.total.toLocaleString('en-IN')}\n`;
+      });
+      const adv = sum * 0.70;
+      const bal = sum * 0.30;
+      summary += `\nGross Total: ₹${sum.toLocaleString('en-IN')}\n`;
+      summary += `70% Advance Payable: ₹${adv.toLocaleString('en-IN')}\n`;
+      summary += `30% Balance On Delivery: ₹${bal.toLocaleString('en-IN')}\n\n`;
+      summary += `Please confirm stock batch and shipping timeline.`;
+
+      window.open(`https://wa.me/918123502007?text=${encodeURIComponent(summary)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
