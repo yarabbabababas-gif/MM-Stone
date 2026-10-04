@@ -12,13 +12,13 @@
 </body>
 </html>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Hosur & Chennai.">
-  <meta name="keywords" content="Granite slabs, Indian Marble, Hosur granite, Chennai natural stone, Engineered quartz, Monument slabs, Porcelain tiles">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,55 +29,39 @@
       --brand-navy-dark: #002244;
       --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
-      --brand-slate-light: #3a4c5f;
       --brand-gold: #c5a059;
       --brand-gold-light: #dfbe7d;
       --brand-accent: #b32d2d;
-      --brand-accent-hover: #8f2121;
       --text-main: #1f2937;
       --text-muted: #64748b;
       --bg-cream: #fbfbfd;
-      --bg-white: #ffffff;
       --card-border: #e2e8f0;
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 20px;
       --shadow-soft: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
       --shadow-hover: 0 20px 40px -10px rgba(0, 51, 102, 0.16);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition: all 0.25s ease-in-out;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       color: var(--text-main);
       background-color: var(--bg-cream);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
+    h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
+    a { text-decoration: none; color: inherit; }
 
-    h1, h2, h3, .font-serif {
-      font-family: 'Cinzel', Georgia, serif;
-      letter-spacing: -0.01em;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Top Strip */
+    /* --- TOP STRIP --- */
     .top-strip {
       background: var(--brand-slate);
       color: #cbd5e1;
       font-size: 13px;
-      padding: 9px 24px;
+      padding: 8px 16px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .top-strip-inner {
@@ -87,11 +71,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
     }
     .top-contacts {
       display: flex;
-      gap: 18px;
+      gap: 14px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -99,50 +83,44 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: var(--transition);
       color: #e2e8f0;
-    }
-    .top-contact-link:hover {
-      color: var(--brand-gold-light);
+      font-weight: 500;
     }
     .top-badge {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.05em;
       font-weight: 700;
       color: var(--brand-gold-light);
-      background: rgba(197, 160, 89, 0.15);
-      padding: 3px 10px;
+      background: rgba(197, 160, 89, 0.18);
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(197, 160, 89, 0.3);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      white-space: nowrap;
     }
 
-    /* Main Navigation */
+    /* --- NAVIGATION & MOBILE DRAWER --- */
     .nav-bar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
     }
     .nav-container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .brand-logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
     .brand-mark {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-slate) 100%);
       color: var(--brand-gold);
       border-radius: var(--radius-sm);
@@ -151,113 +129,102 @@
       justify-content: center;
       font-family: 'Cinzel', serif;
       font-weight: 900;
-      font-size: 22px;
+      font-size: 20px;
       border: 1px solid var(--brand-gold);
-      box-shadow: inset 0 0 10px rgba(197, 160, 89, 0.25);
+      flex-shrink: 0;
     }
     .brand-title {
       font-family: 'Cinzel', serif;
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--brand-navy);
       line-height: 1.1;
-      letter-spacing: 0.02em;
     }
     .brand-sub {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       color: var(--text-muted);
       font-weight: 600;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 20px;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--brand-slate);
     }
-    .nav-links a:hover {
-      color: var(--brand-navy);
-    }
+    .nav-links a:hover { color: var(--brand-navy); }
     .btn-nav-quote {
       background: var(--brand-navy);
       color: #ffffff !important;
-      padding: 10px 22px;
+      padding: 9px 18px;
       border-radius: var(--radius-sm);
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.04em;
       transition: var(--transition);
-      box-shadow: 0 4px 14px rgba(0, 51, 102, 0.25);
-    }
-    .btn-nav-quote:hover {
-      background: var(--brand-navy-dark);
-      transform: translateY(-1px);
     }
     .nav-hamburger {
       display: none;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
-      color: var(--brand-slate);
+      padding: 8px;
+      color: var(--brand-navy);
     }
 
     /* Mobile Drawer */
     .mobile-menu {
       display: none;
       flex-direction: column;
-      gap: 12px;
-      padding: 20px 24px;
+      gap: 6px;
+      padding: 16px 20px 24px 20px;
       background: #ffffff;
       border-top: 1px solid var(--card-border);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
     }
-    .mobile-menu.open {
-      display: flex;
-    }
+    .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      font-weight: 600;
       font-size: 15px;
-      padding: 6px 0;
+      font-weight: 700;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
       color: var(--brand-slate);
+      background: #f8fafc;
+    }
+    .mobile-menu a:active {
+      background: var(--brand-navy);
+      color: #ffffff;
     }
 
+    /* --- HERO BANNER (REACTIVE TO MOBILE SCREEN) --- */
     .hero-banner {
       position: relative;
-      min-height: 720px;
+      min-height: 580px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 16px;
       overflow: hidden;
-      background-color: #0f172a;
+      background-color: #0b1a2b;
     }
-    .slider-viewport {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      overflow: hidden;
-    }
+    .slider-viewport { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
     .slider-frame {
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center;
       opacity: 0;
-      transform: scale(1.06);
-      transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 9s ease-out;
+      transform: scale(1.04);
+      transition: opacity 1.8s ease-in-out, transform 8s ease-out;
     }
-    .slider-frame.active {
-      opacity: 1;
-      transform: scale(1);
-    }
+    .slider-frame.active { opacity: 1; transform: scale(1); }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.94) 85%);
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.72) 0%, rgba(248, 250, 252, 0.84) 80%);
       z-index: 2;
     }
     .hero-content {
@@ -265,500 +232,167 @@
       z-index: 3;
       max-width: 980px;
       margin: 0 auto;
-    }
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0, 51, 102, 0.08);
-      color: var(--brand-navy);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      padding: 7px 18px;
-      border-radius: 999px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(0, 51, 102, 0.16);
-    }
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--brand-accent);
-      border-radius: 50%;
-      animation: pulse 1.8s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.8; }
+      width: 100%;
     }
     .hero-title {
-      font-size: clamp(34px, 5.2vw, 56px);
+      font-size: clamp(28px, 6vw, 54px);
       font-weight: 900;
       color: var(--brand-navy);
       line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: 0.02em;
+      margin-bottom: 12px;
     }
-    .hero-tagline {
-      font-size: clamp(16px, 2vw, 20px);
-      color: var(--brand-slate);
-      font-weight: 400;
-      max-width: 720px;
-      margin: 0 auto 36px auto;
-    }
-    .stone-filter-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 34px;
-    }
-    .stone-pill-btn {
-      background: #ffffff;
-      color: #334155;
-      font-size: 13.5px;
+    .hero-tagline-blue {
+      font-size: clamp(17px, 3.5vw, 24px);
+      color: #002244;
       font-weight: 700;
-      padding: 9px 20px;
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .stone-pill-btn:hover, .stone-pill-btn.active {
-      background: var(--brand-navy);
-      color: #ffffff;
-      border-color: var(--brand-navy);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 51, 102, 0.2);
+      max-width: 680px;
+      margin: 0 auto 30px auto;
     }
     .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
     }
-    .btn-solid-primary {
+    .btn-hero-primary {
       background: var(--brand-navy);
       color: #ffffff;
-      padding: 14px 34px;
+      padding: 14px 30px;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       border-radius: var(--radius-sm);
       border: 2px solid var(--brand-navy);
-      box-shadow: 0 8px 24px rgba(0, 51, 102, 0.22);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    .btn-solid-primary:hover {
-      background: var(--brand-navy-dark);
-      border-color: var(--brand-navy-dark);
-      transform: translateY(-2px);
-    }
-    .btn-outline-primary {
-      background: transparent;
-      color: var(--brand-navy);
-      padding: 14px 34px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      border-radius: var(--radius-sm);
-      border: 2px solid var(--brand-navy);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    .btn-outline-primary:hover {
-      background: rgba(0, 51, 102, 0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 51, 102, 0.22);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    /* Section Components */
+    /* Category Cards */
+    .category-quick-nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .quick-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      text-align: left;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .quick-card h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      color: var(--brand-navy);
+      margin-bottom: 6px;
+    }
+    .quick-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .quick-card span {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-accent);
+      text-transform: uppercase;
+    }
+
+    /* --- CORPORATE PROFILE & METRICS --- */
     .section-wrap {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 85px 24px;
+      padding: 60px 20px;
     }
     .section-header-banner {
       background: linear-gradient(135deg, var(--brand-slate) 0%, var(--brand-navy-deep) 100%);
       color: #ffffff;
-      padding: 24px 32px;
+      padding: 22px 28px;
       border-radius: var(--radius-md);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 48px;
-      box-shadow: var(--shadow-soft);
+      margin-bottom: 36px;
       border-left: 6px solid var(--brand-gold);
     }
-    .section-header-left h2 {
-      font-size: clamp(24px, 3.2vw, 34px);
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
+    .section-header-left h2 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; }
     .section-header-left p {
       color: var(--brand-gold-light);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.1em;
       margin-top: 4px;
     }
-    .section-header-right {
-      max-width: 440px;
-      font-size: 13.5px;
-      color: #cbd5e1;
-      text-align: right;
-    }
+    .section-header-right { max-width: 440px; font-size: 13px; color: #cbd5e1; text-align: right; }
 
     .who-we-are-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
+      gap: 36px;
       align-items: center;
     }
-    .corporate-story {
-      font-size: 16px;
-      color: #475569;
-      line-height: 1.85;
-    }
-    .corporate-story p {
-      margin-bottom: 20px;
-    }
-    .company-highlight {
-      color: var(--brand-navy);
-      font-weight: 700;
-    }
-    .spec-highlight {
-      color: var(--brand-accent);
-      font-weight: 700;
-    }
-    .badge-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
+    .corporate-story { font-size: 15px; color: #475569; line-height: 1.8; }
+    .corporate-story p { margin-bottom: 16px; }
+    .badge-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
     .spec-tag {
       background: #f1f5f9;
       color: var(--brand-slate);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
-      padding: 10px 18px;
+      padding: 8px 14px;
       border-radius: var(--radius-sm);
       border-left: 3px solid var(--brand-accent);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
+
     .capability-metric-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 14px;
     }
     .metric-card {
       background: #ffffff;
-      padding: 24px;
+      padding: 20px;
       border-radius: var(--radius-md);
       border: 1px solid var(--card-border);
       box-shadow: var(--shadow-soft);
-      transition: var(--transition);
     }
-    .metric-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--brand-gold);
-    }
-    .metric-number {
-      font-family: 'Cinzel', serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--brand-navy);
-      line-height: 1;
-    }
-    .metric-label {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin: 8px 0 6px 0;
-    }
-    .metric-desc {
-      font-size: 12px;
-      color: #64748b;
-      line-height: 1.4;
-    }
+    .metric-number { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 900; color: var(--brand-navy); line-height: 1; }
+    .metric-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin: 6px 0; }
+    .metric-desc { font-size: 12px; color: #64748b; line-height: 1.35; }
 
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 32px;
-    }
-    .product-card {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: #cbd5e1;
-    }
-    .product-media {
-      position: relative;
-      height: 240px;
-      overflow: hidden;
-      background: #e2e8f0;
-    }
-    .product-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-    .product-card:hover .product-img {
-      transform: scale(1.08);
-    }
-    .card-category-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(0, 51, 102, 0.92);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 5px 12px;
-      border-radius: 999px;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .product-details {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .product-name {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--brand-navy);
-      margin-bottom: 8px;
-    }
-    .product-summary {
-      font-size: 13.5px;
-      color: #64748b;
-      margin-bottom: 18px;
-      line-height: 1.6;
-      flex-grow: 1;
-    }
-    .spec-table-list {
-      border-top: 1px dashed var(--card-border);
-      padding-top: 14px;
-      font-size: 12.5px;
-      color: #475569;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-    .spec-item {
-      display: flex;
-      justify-content: space-between;
-    }
-    .spec-item strong {
-      color: var(--brand-navy);
-    }
-    .btn-card-inquire {
-      width: 100%;
-      background: transparent;
-      border: 1.5px solid var(--brand-navy);
-      color: var(--brand-navy);
-      padding: 10px 16px;
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .btn-card-inquire:hover {
-      background: var(--brand-navy);
-      color: #ffffff;
-    }
-
-    .quote-section {
-      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      border-top: 1px solid var(--card-border);
-      border-bottom: 1px solid var(--card-border);
-    }
-    .quote-box {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      padding: 42px;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-hover);
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .full-width {
-      grid-column: 1 / -1;
-    }
-    .field-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--brand-slate);
-      margin-bottom: 6px;
-    }
-    .form-control {
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      color: var(--text-main);
-      background-color: #fdfdfd;
-      transition: var(--transition);
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--brand-navy);
-      box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.12);
-      background-color: #ffffff;
-    }
-    .quote-actions-bar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 14px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-    .btn-whatsapp-quote {
-      background: #25d366;
-      color: #ffffff;
-      padding: 14px 28px;
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-    }
-    .btn-whatsapp-quote:hover {
-      background: #1eb855;
-      transform: translateY(-2px);
-    }
-    .feedback-banner {
-      display: none;
-      margin-top: 18px;
-      padding: 14px 18px;
-      border-radius: var(--radius-sm);
-      font-size: 13.5px;
-      font-weight: 600;
-    }
-    .feedback-banner.success {
-      display: block;
-      background: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
-    }
-
+    /* --- FOOTER --- */
     .site-footer {
       background: #ffffff;
       border-top: 1px dashed #cbd5e1;
-      padding: 70px 24px 0 24px;
+      padding: 50px 20px 0 20px;
     }
     .footer-inner {
       max-width: 1240px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 60px;
+      gap: 32px;
+      padding-bottom: 40px;
     }
     .footer-col h4 {
       font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: var(--brand-slate);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-    .footer-col p {
-      font-size: 14px;
-      color: #64748b;
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-    .contact-line {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 14px;
-      color: #334155;
-      margin-bottom: 14px;
-      transition: var(--transition);
-    }
-    .contact-line a:hover {
-      color: var(--brand-navy);
-    }
-    .contact-icon {
-      width: 18px;
-      height: 18px;
-      fill: var(--brand-slate);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .social-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      transition: var(--transition);
-    }
-    .social-btn:hover {
-      transform: scale(1.1);
-      opacity: 0.9;
-    }
-    .social-btn.linkedin { background: #555c64; }
-    .social-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .social-btn.whatsapp { background: #25d366; }
-    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
-
-    .bottom-bar {
-      background: var(--brand-slate);
-      color: #94a3b8;
-      font-size: 13px;
-      padding: 22px 24px;
-    }
+    .footer-col p { font-size: 13.5px; color: #64748b; margin-bottom: 10px; line-height: 1.6; }
+    .contact-line { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #334155; margin-bottom: 10px; }
+    .bottom-bar { background: var(--brand-slate); color: #94a3b8; font-size: 12.5px; padding: 18px 20px; }
     .bottom-bar-inner {
       max-width: 1240px;
       margin: 0 auto;
@@ -766,35 +400,39 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
-    }
-    .bottom-bar strong {
-      color: #e2e8f0;
+      gap: 12px;
     }
 
-    /* Responsive Queries */
+    /* ============================================================== */
+    /* RESPONSIVE BREAKPOINTS (TABLETS & PHONES)                      */
+    /* ============================================================== */
     @media (max-width: 980px) {
       .who-we-are-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .nav-links, .btn-nav-quote { display: none; }
       .nav-hamburger { display: block; }
-      .section-header-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 12px; }
-      .section-header-right { text-align: left; }
+      .section-header-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 8px; }
+      .section-header-right { text-align: left; max-width: 100%; }
+      .category-quick-nav { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 640px) {
-      .form-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .top-strip-inner, .bottom-bar-inner { flex-direction: column; text-align: center; }
-      .products-grid { grid-template-columns: 1fr; }
+      .top-strip-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+      .top-contacts { justify-content: center; gap: 10px; font-size: 12px; }
+      .top-badge { width: 100%; text-align: center; }
+      
+      .hero-banner { min-height: 520px; padding: 40px 14px; }
+      .btn-hero-primary { width: 100%; padding: 14px 20px; }
+      
       .capability-metric-grid { grid-template-columns: 1fr; }
-      .quote-box { padding: 24px 18px; }
-      .hero-actions { flex-direction: column; }
-      .btn-solid-primary, .btn-outline-primary { width: 100%; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .bottom-bar-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Strip with Flags & All India Badge -->
   <div class="top-strip">
     <div class="top-strip-inner">
       <div class="top-contacts">
@@ -807,19 +445,19 @@
         </a>
         <span>•</span>
         <a href="mailto:ybaba@malviganomac.live" class="top-contact-link">
-          <svg class="contact-icon" style="fill:#e2e8f0; width:14px; height:14px;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           ybaba@malviganomac.live
         </a>
       </div>
       <div>
-        <span class="top-badge">Hosur & Chennai Export Units</span>
+        <span class="top-badge">Hosur & Chennai Export Units (All over India)</span>
       </div>
     </div>
   </div>
 
+  <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
-      <a href="#hero" class="brand-logo-wrap">
+      <a href="index.html" class="brand-logo-wrap">
         <div class="brand-mark">M</div>
         <div>
           <div class="brand-title">MalviganoMac</div>
@@ -827,72 +465,85 @@
         </div>
       </a>
 
+      <!-- Desktop Nav -->
       <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#who-we-are">Who We Are</a>
-        <a href="#what-we-offer">What We Offer</a>
-        <a href="#specs">Capabilities</a>
-        <a href="#quote">Request Quote</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">All Collection / Gallery</a>
+        <a href="granite-marble.html">Granite & Marble (Per Sq.Ft)</a>
+        <a href="quartz-slabs.html">Quartz & Slabs (Per Piece)</a>
+        <a href="quote.html">Custom Booking</a>
       </nav>
 
       <div>
-        <a href="#quote" class="btn-nav-quote">Inquire Stone</a>
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <a href="quote.html" class="btn-nav-quote">Inquire Stone</a>
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
+    <!-- Mobile Drawer (Tap targets >= 48px) -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#hero" onclick="closeMenu()">Home</a>
-      <a href="#who-we-are" onclick="closeMenu()">Who We Are</a>
-      <a href="#what-we-offer" onclick="closeMenu()">What We Offer</a>
-      <a href="#specs" onclick="closeMenu()">Capabilities</a>
-      <a href="#quote" onclick="closeMenu()">Request Quote</a>
-      <a href="#contact" onclick="closeMenu()">Contact Details</a>
+      <a href="index.html" onclick="toggleMenu()">Home</a>
+      <a href="gallery.html" onclick="toggleMenu()">All Collection / Gallery</a>
+      <a href="granite-marble.html" onclick="toggleMenu()">Granite & Marble (Per Sq.Ft)</a>
+      <a href="quartz-slabs.html" onclick="toggleMenu()">Quartz & Slabs (Per Piece)</a>
+      <a href="quote.html" onclick="toggleMenu()">Request Factory Quote</a>
     </div>
   </header>
 
+  <!-- Hero Banner -->
   <section class="hero-banner" id="hero">
     <div class="slider-viewport" id="sliderViewport">
-      <!-- High-resolution architectural stone surfaces -->
-      <div class="slider-frame active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');"></div>
-      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1920&q=80');"></div>
-      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');"></div>
-      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');"></div>
-      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1920&q=80');"></div>
+      <div class="slider-frame active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1920&q=85');"></div>
     </div>
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <div class="hero-pill">
-        <span class="pulse-dot"></span>
-        Global Sourcing & Processing
-      </div>
-
       <h1 class="hero-title">MalviganoMac Stone</h1>
-      <p class="hero-tagline">Natural stone crafted for exceptional spaces. Processing high-grade Granite, Metamorphic Marble, Engineered Quartz, and Monumental Thick Slabs.</p>
-
-      <!-- Category Filter Buttons -->
-      <div class="stone-filter-group">
-        <button class="stone-pill-btn active" onclick="applyStoneFilter('all', this)">All Collections</button>
-        <button class="stone-pill-btn" onclick="applyStoneFilter('granite', this)">Granite</button>
-        <button class="stone-pill-btn" onclick="applyStoneFilter('marble', this)">Marble</button>
-        <button class="stone-pill-btn" onclick="applyStoneFilter('quartz', this)">Quartz</button>
-        <button class="stone-pill-btn" onclick="applyStoneFilter('porcelain', this)">Tiles & Porcelain Slabs</button>
-        <button class="stone-pill-btn" onclick="applyStoneFilter('monument', this)">Thick Slab & Monument</button>
-      </div>
+      <p class="hero-tagline-blue">Natural stone crafted for exceptional spaces.</p>
 
       <div class="hero-actions">
-        <a href="#what-we-offer" class="btn-outline-primary">View Collection</a>
-        <a href="#quote" class="btn-solid-primary">Request a Quote</a>
+        <a href="gallery.html" class="btn-hero-primary">
+          <span>All Collection / Gallery</span>
+          <span>&rarr;</span>
+        </a>
       </div>
+
+      <!-- Quick Navigation Cards (Stack on Mobile) -->
+      <div class="category-quick-nav">
+        <a href="granite-marble.html" class="quick-card">
+          <div>
+            <h4>Granite & Marble</h4>
+            <p>Certified Gangsaw slabs for flooring, facades, and counters.</p>
+          </div>
+          <span>Shop Per Sq. Ft &rarr;</span>
+        </a>
+        <a href="quartz-slabs.html" class="quick-card">
+          <div>
+            <h4>Quartz & Porcelain</h4>
+            <p>Stain-proof quartz & sintered porcelain sheets.</p>
+          </div>
+          <span>Shop Per Piece &rarr;</span>
+        </a>
+        <a href="quartz-slabs.html" class="quick-card">
+          <div>
+            <h4>Thick Slabs & Monuments</h4>
+            <p>50mm to 250mm+ structural blocks for memorials & plinths.</p>
+          </div>
+          <span>Explore Slabs &rarr;</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
+  <!-- Corporate Profile -->
   <section class="section-wrap" id="who-we-are">
     <div class="section-header-banner">
       <div class="section-header-left">
@@ -907,19 +558,15 @@
     <div class="who-we-are-grid">
       <div class="corporate-story">
         <p>
-          At <span class="company-highlight">Malvigano Mac Pvt. Ltd.</span>, we specialize in the comprehensive processing, precision calibration, and international export of <span class="spec-highlight">premium granite, luxury marble, engineered quartz, and porcelain slabs.</span>
+          At <strong>Malvigano Mac Pvt. Ltd.</strong>, we specialize in the comprehensive processing, precision calibration, and international export of premium granite, luxury marble, engineered quartz, and porcelain slabs.
         </p>
         <p>
-          Backed by cutting-edge multi-wire saws and automated resin-polishing lines across <strong>Hosur</strong> and <strong>Chennai</strong>, and paired with active extraction partnerships in premier quarry belts across India, Brazil, and Europe, we deliver stones tailored for high-volume commercial towers, bespoke residences, and monumental architecture.
+          Backed by multi-wire saws and automated resin-polishing lines across <strong>Hosur</strong> and <strong>Chennai</strong>, and paired with active extraction partnerships in premier quarry belts across India, Brazil, and Europe, we deliver stones tailored for high-volume commercial towers, bespoke residences, and monumental architecture.
         </p>
-        <p>
-          Every shipment undergoes rigorous dry-lay matching, digital deflection tests, and seaworthy ISPM-15 export crating for sea transport.
-        </p>
-
         <div class="badge-bar">
-          <div class="spec-tag">Custom Thickness Calibrations (15mm – 250mm)</div>
+          <div class="spec-tag">Custom Thickness (15mm – 250mm)</div>
           <div class="spec-tag">Global Sourcing Networks</div>
-          <div class="spec-tag">Export-Ready Containerized Logistics</div>
+          <div class="spec-tag">Export-Ready Crating</div>
         </div>
       </div>
 
@@ -927,7 +574,7 @@
         <div class="metric-card">
           <div class="metric-number">50+</div>
           <div class="metric-label">Quarry Partnerships</div>
-          <div class="metric-desc">Certified extraction rights ensuring continuity of shade, grain, and block volume.</div>
+          <div class="metric-desc">Certified extraction rights ensuring continuity of shade and block volume.</div>
         </div>
         <div class="metric-card">
           <div class="metric-number">2 Hubs</div>
@@ -937,338 +584,77 @@
         <div class="metric-card">
           <div class="metric-number">100%</div>
           <div class="metric-label">Dry-Lay Monitored</div>
-          <div class="metric-desc">Every piece is verified for thickness uniformity, diagonal accuracy, and surface gloss.</div>
+          <div class="metric-desc">Verified for thickness uniformity, diagonal accuracy, and surface gloss.</div>
         </div>
         <div class="metric-card">
-          <div class="metric-number">ISO</div>
+          <div class="metric-number">ISPM-15</div>
           <div class="metric-label">Export Standards</div>
-          <div class="metric-desc">Fumigated ISPM-15 wooden bundle crating customized for break-free ocean transport.</div>
+          <div class="metric-desc">Fumigated wooden bundle crating customized for ocean transport.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-wrap" id="what-we-offer" style="padding-top: 0;">
-    <div class="section-header-banner">
-      <div class="section-header-left">
-        <h2>WHAT WE OFFER</h2>
-        <p>Architectural Material Portfolio</p>
-      </div>
-      <div class="section-header-right">
-        Select from our collection of natural granites, luxury vein-matched marbles, quartz, and heavy structural slabs.
-      </div>
-    </div>
-
-    <div class="products-grid" id="productGrid">
-      
-      <!-- Granite -->
-      <div class="product-card" data-stone="granite">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Natural Granite Slabs" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Natural+Granite'">
-          <span class="card-category-badge">Granite</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Natural Granite Slabs</h3>
-          <p class="product-summary">Dense crystalline stone offering outstanding compressive strength and resistance to harsh weather. Highly suited for exterior ventilated cladding, heavy-traffic flooring, and countertops.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Thickness:</span> <strong>18mm, 20mm, 30mm, Custom</strong></div>
-            <div class="spec-item"><span>Surface Finishes:</span> <strong>Polished, Flamed, Leathered, Honed</strong></div>
-            <div class="spec-item"><span>Application:</span> <strong>Flooring, Commercial Facades, Patios</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Granite Slabs')">Inquire This Stone</button>
-        </div>
-      </div>
-
-      <!-- Marble -->
-      <div class="product-card" data-stone="marble">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Veined Marble" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Luxury+Marble'">
-          <span class="card-category-badge">Marble</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Luxury Veined Marble</h3>
-          <p class="product-summary">Carefully hand-selected metamorphic stones featuring vivid mineral striations and book-match continuous vein symmetry, curated for luxury residential lounges and upscale hotels.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Thickness:</span> <strong>16mm, 18mm, 20mm</strong></div>
-            <div class="spec-item"><span>Surface Finishes:</span> <strong>Mirror Polished, Soft Honed, Antiqued</strong></div>
-            <div class="spec-item"><span>Application:</span> <strong>Wall Panels, Bathrooms, Foyers</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Luxury Veined Marble')">Inquire This Stone</button>
-        </div>
-      </div>
-
-      <!-- Quartz -->
-      <div class="product-card" data-stone="quartz">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Engineered Quartz" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Engineered+Quartz'">
-          <span class="card-category-badge">Quartz</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Engineered Quartz Slabs</h3>
-          <p class="product-summary">Formulated with 93% pure quartz and polymer resins to deliver impervious, non-porous surfaces. Exceptional stain, scratch, and chemical resistance for kitchens and sterile environments.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Thickness:</span> <strong>15mm, 20mm, 30mm</strong></div>
-            <div class="spec-item"><span>Surface Finishes:</span> <strong>High Gloss Polish, Suede Velvet</strong></div>
-            <div class="spec-item"><span>Application:</span> <strong>Kitchen Islands, Vanity Tops, Food Prep</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Engineered Quartz')">Inquire This Stone</button>
-        </div>
-      </div>
-
-      <!-- Porcelain -->
-      <div class="product-card" data-stone="porcelain">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Tiles & Porcelain Slabs" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Porcelain+Slabs'">
-          <span class="card-category-badge">Porcelain</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Tiles & Porcelain Slabs</h3>
-          <p class="product-summary">Ultra-large format sintered porcelain slabs manufactured under 15,000+ tons of pressure. Heatproof, zero water absorption, and immune to UV discoloration in indoor and outdoor settings.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Dimensions:</span> <strong>3200x1600mm, 2400x1200mm</strong></div>
-            <div class="spec-item"><span>Thickness:</span> <strong>6mm, 9mm, 12mm</strong></div>
-            <div class="spec-item"><span>Application:</span> <strong>Seamless Cladding, Exterior Facades</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Porcelain Slabs & Tiles')">Inquire This Stone</button>
-        </div>
-      </div>
-
-      <!-- Monument & Thick Slabs -->
-      <div class="product-card" data-stone="monument">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80" alt="Thick Slabs & Monuments" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Thick+Slab+Monument'">
-          <span class="card-category-badge">Monument</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Thick Slab & Monument</h3>
-          <p class="product-summary">Heavy structural granite blocks and oversized thick-sawn slabs calibrated for memorial monuments, carved architectural pedestals, colonnades, and landscape curbstones.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Thickness:</span> <strong>50mm up to 250mm+</strong></div>
-            <div class="spec-item"><span>Machining:</span> <strong>Gangsaw, Diamond Wire Saw, CNC</strong></div>
-            <div class="spec-item"><span>Application:</span> <strong>Monuments, Keystones, Public Plazas</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Thick Slab & Monument')">Inquire This Stone</button>
-        </div>
-      </div>
-
-      <!-- Project Sourcing -->
-      <div class="product-card" data-stone="granite">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Bespoke Architectural Stonework" class="product-img" onerror="this.src='https://placehold.co/800x600/003366/ffffff?text=Custom+Sourcing'">
-          <span class="card-category-badge">Turnkey</span>
-        </div>
-        <div class="product-details">
-          <h3 class="product-name">Turnkey Project Sourcing</h3>
-          <p class="product-summary">Comprehensive material takeoff, block reservation, batch matching, and container load optimization for commercial developers, architectural studios, and contractors worldwide.</p>
-          <div class="spec-table-list">
-            <div class="spec-item"><span>Incoterms:</span> <strong>FOB, CIF, CFR, Door Delivery</strong></div>
-            <div class="spec-item"><span>Documentation:</span> <strong>Certificate of Origin, ISPM-15, Packing List</strong></div>
-            <div class="spec-item"><span>Logistics:</span> <strong>Ocean Containers via Chennai Ports</strong></div>
-          </div>
-          <button class="btn-card-inquire" onclick="selectStoneForQuote('Turnkey Project Sourcing')">Inquire This Stone</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="quote-section" id="specs" style="padding: 70px 24px;">
-    <div style="max-w-1240px; margin: 0 auto; max-width: 1240px;">
-      <div class="section-header-banner" style="margin-bottom: 32px;">
-        <div class="section-header-left">
-          <h2>TECHNICAL CAPABILITIES</h2>
-          <p>Processing Precision & Logistics</p>
-        </div>
-        <div class="section-header-right">
-          Ensuring tight dimensional tolerances, defect-free finishes, and sea-freight certification.
-        </div>
-      </div>
-
-      <div class="who-we-are-grid" style="align-items: stretch;">
-        <div class="metric-card" style="border-left: 4px solid var(--brand-navy);">
-          <h4 style="font-family:'Cinzel', serif; font-size:18px; color:var(--brand-navy); margin-bottom:8px;">Custom Sawing & Calibration</h4>
-          <p style="font-size:14px; color:#475569; line-height:1.7;">Our Hosur and Chennai processing yards utilize automated gang saws and multi-wire machinery capable of cutting thicknesses from 15mm up to 250mm thick blocks with minimal tolerance deviation (±1mm tolerance).</p>
-        </div>
-        <div class="metric-card" style="border-left: 4px solid var(--brand-gold);">
-          <h4 style="font-family:'Cinzel', serif; font-size:18px; color:var(--brand-navy); margin-bottom:8px;">Ocean Packaging Standards</h4>
-          <p style="font-size:14px; color:#475569; line-height:1.7;">Treated, heat-fumigated wooden bundles meeting ISPM-15 regulations. Reinforced steel strapping, plastic weather film, and heavy A-frame supports ensure zero deflection during ocean transit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-wrap" id="quote">
-    <div class="quote-box">
-      <div style="margin-bottom: 28px;">
-        <span class="top-badge" style="background:rgba(0,51,102,0.08); color:var(--brand-navy); border-color:rgba(0,51,102,0.2);">Direct Factory Inquiries</span>
-        <h2 style="font-size: clamp(24px, 3.2vw, 36px); color: var(--brand-navy); margin-top: 8px;">Request a Stone Quotation</h2>
-        <p style="color: var(--text-muted); font-size: 14.5px;">Complete the specifications below. Our Hosur/Bangalore export desk will provide detailed slab dimensions, weight breakdowns, and CIF/FOB pricing.</p>
-      </div>
-
-      <form id="stoneQuoteForm" onsubmit="dispatchQuote(event)">
-        <div class="form-grid">
-          
-          <div class="field-group">
-            <label for="clientName">Full Name *</label>
-            <input type="text" id="clientName" required class="form-control" placeholder="e.g. John Smith">
-          </div>
-
-          <div class="field-group">
-            <label for="clientEmail">Email Address *</label>
-            <input type="email" id="clientEmail" required class="form-control" placeholder="john@company.com">
-          </div>
-
-          <div class="field-group">
-            <label for="clientPhone">Phone / WhatsApp Number</label>
-            <input type="text" id="clientPhone" class="form-control" placeholder="+1 (555) 000-0000">
-          </div>
-
-          <div class="field-group">
-            <label for="stoneType">Stone Category *</label>
-            <select id="stoneType" class="form-control" required>
-              <option value="Granite Slabs">Natural Granite</option>
-              <option value="Luxury Veined Marble">Luxury Veined Marble</option>
-              <option value="Engineered Quartz">Engineered Quartz</option>
-              <option value="Porcelain Slabs & Tiles">Tiles & Porcelain Slabs</option>
-              <option value="Thick Slab & Monument">Thick Slab & Monument</option>
-              <option value="Turnkey Project Sourcing">Turnkey Commercial Sourcing</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="stoneThickness">Required Thickness</label>
-            <select id="stoneThickness" class="form-control">
-              <option value="18mm">18 mm (Standard)</option>
-              <option value="20mm">20 mm</option>
-              <option value="30mm">30 mm</option>
-              <option value="50mm - 250mm+ (Thick/Monument)">50mm – 250mm+ (Monumental Thick)</option>
-              <option value="Custom Thickness">Custom Specification</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="stoneQty">Estimated Quantity / Area</label>
-            <input type="text" id="stoneQty" class="form-control" placeholder="e.g. 1 x 20ft Container or 3,000 sq ft">
-          </div>
-
-          <div class="field-group full-width">
-            <label for="deliveryPort">Destination City / Sea Port</label>
-            <input type="text" id="deliveryPort" class="form-control" placeholder="e.g. Port of Houston (USA), Jebel Ali (UAE), or Local Site">
-          </div>
-
-          <div class="field-group full-width">
-            <label for="clientMessage">Detailed Project Requirements</label>
-            <textarea id="clientMessage" rows="3" class="form-control" placeholder="Provide finish preference (Polished, Flamed, Leathered), color requirements, or required delivery timelines..."></textarea>
-          </div>
-
-        </div>
-
-        <div id="quoteResponse" class="feedback-banner"></div>
-
-        <div class="quote-actions-bar">
-          <button type="button" class="btn-whatsapp-quote" onclick="sendViaWhatsApp()">
-            <svg style="width:18px; height:18px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12.031 0c-6.627 0-12.031 5.405-12.031 12.031 0 2.632.846 5.068 2.28 7.085l-1.523 5.556 5.688-1.493c1.942 1.258 4.256 1.993 6.74 1.993 6.626 0 12.03-5.405 12.03-12.031s-5.404-12.031-12.03-12.031zm6.262 17.202c-.267.75-1.554 1.445-2.148 1.503-.518.05-1.229.213-3.498-.731-2.743-1.141-4.512-3.953-4.648-4.137-.137-.184-1.11-1.478-1.11-2.82 0-1.343.696-2.003.945-2.268.25-.265.545-.332.727-.332.181 0 .363.001.527.008.172.008.404-.066.633.483.238.568.805 1.966.877 2.116.072.15.12.327.029.513-.092.185-.138.298-.276.463-.138.166-.29.352-.413.484-.131.14-.268.295-.119.55.149.255.666 1.101 1.434 1.787.989.882 1.823 1.149 2.086 1.291.263.141.417.116.574-.06.157-.176.681-.795.864-1.069.182-.274.364-.229.599-.142.236.087 1.49.704 1.745.832.255.127.424.191.486.297.062.106.062.613-.205 1.363z"/></svg>
-            Quote via WhatsApp
-          </button>
-          <button type="submit" class="btn-solid-primary" style="padding: 14px 30px;">
-            Send Email Inquiry
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="footer-inner">
-      
-      <!-- Brand column -->
       <div class="footer-col">
-        <div class="brand-logo-wrap" style="margin-bottom: 16px;">
-          <div class="brand-mark" style="width:36px; height:36px; font-size:18px;">M</div>
+        <div class="brand-logo-wrap" style="margin-bottom: 14px;">
+          <div class="brand-mark" style="width:36px; height:36px; font-size:16px;">M</div>
           <div>
             <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
             <div class="brand-sub">Stone & Slabs</div>
           </div>
         </div>
         <p>Malvigano Mac Pvt. Ltd. processes and supplies architectural granites, metamorphic marbles, quartz, and heavy monumental slabs globally.</p>
-        <p style="font-size:12px; color:var(--brand-accent); font-weight:700;">Global Sourcing • Precision Calibration • Seaworthy Crating</p>
       </div>
 
-      <!-- Address column -->
       <div class="footer-col">
         <h4>Corporate Address</h4>
         <p>We operate all over from India</p>
         <div class="contact-line">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           <span>Bangalore - 560041, Karnataka, India</span>
         </div>
         <div class="contact-line">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M19 4h-4L7.11 16.63 4.5 14 3.09 15.41l4.02 4.02L19 7V4z"/></svg>
-          <span style="font-size:13px; color:#64748b;">Processing Hubs: Hosur & Chennai Plants</span>
+          <span style="font-size:12.5px; color:#64748b;">Processing Hubs: Hosur & Chennai Plants</span>
         </div>
       </div>
 
-      <!-- Contact column -->
       <div class="footer-col">
         <h4>Export Inquiries</h4>
-        
         <div class="contact-line">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           <a href="tel:+918123502007">🇮🇳 +91 81235 02007</a>
         </div>
-
         <div class="contact-line">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           <a href="tel:+17575059172">🇺🇸 +1 (757) 505-9172</a>
         </div>
-
         <div class="contact-line">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           <a href="mailto:ybaba@malviganomac.live" style="word-break: break-all;">ybaba@malviganomac.live</a>
         </div>
       </div>
 
-      <!-- Social & Connect -->
       <div class="footer-col">
-        <h4>Follow & Connect</h4>
-        <p>Contact our operations desk directly on verified business channels:</p>
-        <div class="social-links">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="social-btn linkedin" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <!-- Instagram -->
-          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-btn instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <!-- WhatsApp -->
-          <a href="https://wa.me/918123502007?text=Hello%2C%20I%20am%20inquiring%20about%20MalviganoMac%20natural%20stones" target="_blank" rel="noopener" class="social-btn whatsapp" title="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M12.031 0c-6.627 0-12.031 5.405-12.031 12.031 0 2.632.846 5.068 2.28 7.085l-1.523 5.556 5.688-1.493c1.942 1.258 4.256 1.993 6.74 1.993 6.626 0 12.03-5.405 12.03-12.031s-5.404-12.031-12.03-12.031zm6.262 17.202c-.267.75-1.554 1.445-2.148 1.503-.518.05-1.229.213-3.498-.731-2.743-1.141-4.512-3.953-4.648-4.137-.137-.184-1.11-1.478-1.11-2.82 0-1.343.696-2.003.945-2.268.25-.265.545-.332.727-.332.181 0 .363.001.527.008.172.008.404-.066.633.483.238.568.805 1.966.877 2.116.072.15.12.327.029.513-.092.185-.138.298-.276.463-.138.166-.29.352-.413.484-.131.14-.268.295-.119.55.149.255.666 1.101 1.434 1.787.989.882 1.823 1.149 2.086 1.291.263.141.417.116.574-.06.157-.176.681-.795.864-1.069.182-.274.364-.229.599-.142.236.087 1.49.704 1.745.832.255.127.424.191.486.297.062.106.062.613-.205 1.363z"/></svg>
-          </a>
-        </div>
+        <h4>Online Catalogs</h4>
+        <p><a href="gallery.html" style="color:var(--brand-navy); font-weight:700;">&bull; All Collection / Gallery</a></p>
+        <p><a href="granite-marble.html" style="color:var(--brand-navy); font-weight:700;">&bull; Granite & Marble (Per Sq.Ft)</a></p>
+        <p><a href="quartz-slabs.html" style="color:var(--brand-navy); font-weight:700;">&bull; Quartz & Porcelain (Per Piece)</a></p>
+        <p><a href="quote.html" style="color:var(--brand-navy); font-weight:700;">&bull; Custom Factory Inquiries</a></p>
       </div>
-
     </div>
 
-    <!-- Copyright Bar -->
     <div class="bottom-bar">
       <div class="bottom-bar-inner">
-        <div>
-          Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved
-        </div>
-        <div>
-          Powered by <strong>Yarab Baba</strong>
-        </div>
+        <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
+        <div>Powered by <strong>Yarab Baba</strong></div>
       </div>
     </div>
   </footer>
 
   <script>
-    // 1. Hero Automated Background Slider
+    // Automated background slider
     document.addEventListener("DOMContentLoaded", function() {
       const slides = document.querySelectorAll('#sliderViewport .slider-frame');
       let activeIndex = 0;
-
       if (slides.length > 1) {
         setInterval(() => {
           slides[activeIndex].classList.remove('active');
@@ -1278,126 +664,18 @@
       }
     });
 
-    // 2. Mobile Navigation Toggle
+    // Mobile Hamburger Toggle
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    if (hamburgerBtn && mobileMenu) {
-      hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-      });
-    }
-
-    function closeMenu() {
+    function toggleMenu() {
       if (mobileMenu) {
-        mobileMenu.classList.remove('open');
+        mobileMenu.classList.toggle('open');
       }
     }
 
-    // 3. Category Filter Logic
-    function applyStoneFilter(cat, btnElement) {
-      // Toggle button states
-      const buttons = document.querySelectorAll('.stone-pill-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      if (btnElement) btnElement.classList.add('active');
-
-      // Filter product cards
-      const cards = document.querySelectorAll('#productGrid .product-card');
-      cards.forEach(card => {
-        const itemCat = card.getAttribute('data-stone');
-        if (cat === 'all' || itemCat === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      // Smooth scroll to catalog
-      const target = document.getElementById('what-we-offer');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // 4. Select Stone from Catalog to Form
-    function selectStoneForQuote(stoneName) {
-      const select = document.getElementById('stoneType');
-      if (select) {
-        for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].text.includes(stoneName) || select.options[i].value.includes(stoneName)) {
-            select.selectedIndex = i;
-            break;
-          }
-        }
-      }
-      const quoteSection = document.getElementById('quote');
-      if (quoteSection) {
-        quoteSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // 5. Build Inquiry Payload
-    function getFormData() {
-      return {
-        name: document.getElementById('clientName').value.trim(),
-        email: document.getElementById('clientEmail').value.trim(),
-        phone: document.getElementById('clientPhone').value.trim(),
-        stone: document.getElementById('stoneType').value,
-        thickness: document.getElementById('stoneThickness').value,
-        qty: document.getElementById('stoneQty').value.trim(),
-        port: document.getElementById('deliveryPort').value.trim(),
-        message: document.getElementById('clientMessage').value.trim()
-      };
-    }
-
-    // 6. Send Inquiry via Email Client
-    function dispatchQuote(e) {
-      e.preventDefault();
-      const d = getFormData();
-      
-      const subject = encodeURIComponent(`Stone Inquiry: ${d.stone} - ${d.name}`);
-      const body = encodeURIComponent(
-        `MalviganoMac Stone Quotation Request:\n\n` +
-        `Customer Name: ${d.name}\n` +
-        `Email: ${d.email}\n` +
-        `Phone/WhatsApp: ${d.phone || 'Not provided'}\n` +
-        `Material of Interest: ${d.stone}\n` +
-        `Thickness: ${d.thickness}\n` +
-        `Estimated Quantity: ${d.qty || 'To be specified'}\n` +
-        `Destination Port/City: ${d.port || 'To be specified'}\n\n` +
-        `Special Notes:\n${d.message || 'None'}\n`
-      );
-
-      // Trigger default email handler
-      window.location.href = `mailto:ybaba@malviganomac.live?subject=${subject}&body=${body}`;
-
-      const resp = document.getElementById('quoteResponse');
-      resp.className = 'feedback-banner success';
-      resp.innerHTML = `Inquiry prepared for <strong>${d.name}</strong>. Your default email software has opened. Alternatively, use the green button to message us via WhatsApp.`;
-    }
-
-    // 7. Send Inquiry via WhatsApp
-    function sendViaWhatsApp() {
-      const d = getFormData();
-      if (!d.name) {
-        alert('Please fill in your name before connecting to WhatsApp.');
-        document.getElementById('clientName').focus();
-        return;
-      }
-
-      const text = encodeURIComponent(
-        `Hello MalviganoMac Stone Team,\n\n` +
-        `My name is ${d.name}.\n` +
-        `I am requesting a quotation for:\n` +
-        `• Stone: ${d.stone}\n` +
-        `• Thickness: ${d.thickness}\n` +
-        `• Quantity: ${d.qty || 'TBD'}\n` +
-        `• Destination: ${d.port || 'TBD'}\n` +
-        `• Email: ${d.email || 'N/A'}\n\n` +
-        `Project Notes: ${d.message || 'Please send available slab lots and catalog.'}`
-      );
-
-      window.open(`https://wa.me/918123502007?text=${text}`, '_blank');
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', toggleMenu);
     }
   </script>
 </body>
