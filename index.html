@@ -378,9 +378,47 @@
       letter-spacing: 0.08em;
       color: var(--brand-slate);
       margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     .footer-col p { font-size: 13.5px; color: #64748b; margin-bottom: 10px; line-height: 1.6; }
     .contact-line { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #334155; margin-bottom: 10px; }
+    
+    /* Social & WhatsApp Links in Footer */
+    .social-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .social-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13.5px;
+      color: #334155;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 4px 0;
+    }
+    .social-link-item:hover {
+      color: var(--brand-navy);
+      transform: translateX(3px);
+    }
+    .social-icon-box {
+      width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .icon-wa { background: #25D366; color: #fff; }
+    .icon-li { background: #0A66C2; color: #fff; }
+    .icon-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; }
+
     .bottom-bar { background: var(--brand-slate); color: #94a3b8; font-size: 12.5px; padding: 18px 20px; }
     .bottom-bar-inner {
       max-width: 1240px;
@@ -595,7 +633,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Corporate Address</h4>
+        <h4>📍 Corporate Address</h4>
         <p>We operate all over from India</p>
         <div class="contact-line">
           <span>Bangalore - 560041, Karnataka, India</span>
@@ -606,7 +644,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Export Inquiries</h4>
+        <h4>📞 Export Inquiries</h4>
         <div class="contact-line">
           <a href="tel:+918123502007">🇮🇳 +91 81235 02007</a>
         </div>
@@ -618,12 +656,27 @@
         </div>
       </div>
 
+      <!-- Follow Us Column -->
       <div class="footer-col">
-        <h4>Online Catalogs</h4>
-        <p><a href="gallery.html" style="color:var(--brand-navy); font-weight:700;">&bull; All Collection / Gallery</a></p>
-        <p><a href="granite-marble.html" style="color:var(--brand-navy); font-weight:700;">&bull; Granite & Marble</a></p>
-        <p><a href="quartz-slabs.html" style="color:var(--brand-navy); font-weight:700;">&bull; Quartz & Porcelain</a></p>
-        <p><a href="quote.html" style="color:var(--brand-navy); font-weight:700;">&bull; Get a Quote</a></p>
+        <h4>🌐 Follow Us</h4>
+        <div class="social-links-list">
+          <a href="https://wa.me/918123502007" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <span class="social-icon-box icon-wa">💬</span>
+            <span>WhatsApp (🇮🇳 India)</span>
+          </a>
+          <a href="https://wa.me/17575059172" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <span class="social-icon-box icon-wa">💬</span>
+            <span>WhatsApp (🇺🇸 USA)</span>
+          </a>
+          <a href="https://www.linkedin.com/company/malviganomac" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <span class="social-icon-box icon-li">in</span>
+            <span>LinkedIn Page</span>
+          </a>
+          <a href="https://www.instagram.com/malvigano_mac?stkn=MXM4a3A3emZiZmY4dg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link-item">
+            <span class="social-icon-box icon-ig">📸</span>
+            <span>Instagram</span>
+          </a>
+        </div>
       </div>
     </div>
 
