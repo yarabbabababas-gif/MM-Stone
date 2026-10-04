@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Welcome to My Website</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-  </style>
-</head>
-<body>
-
-</body>
-</html>
-<!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -150,9 +136,9 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
       font-weight: 600;
-      font-size: 13.5px;
+      font-size: 14px;
       color: var(--brand-slate);
     }
     .nav-links a:hover { color: var(--brand-navy); }
@@ -164,6 +150,9 @@
       font-size: 13px;
       font-weight: 700;
       transition: var(--transition);
+    }
+    .btn-nav-quote:hover {
+      background: var(--brand-navy-dark);
     }
     .nav-hamburger {
       display: none;
@@ -198,7 +187,7 @@
       color: #ffffff;
     }
 
-    /* --- HERO BANNER (REACTIVE TO MOBILE SCREEN) --- */
+    /* --- HERO BANNER --- */
     .hero-banner {
       position: relative;
       min-height: 580px;
@@ -403,9 +392,7 @@
       gap: 12px;
     }
 
-    /* ============================================================== */
-    /* RESPONSIVE BREAKPOINTS (TABLETS & PHONES)                      */
-    /* ============================================================== */
+    /* --- RESPONSIVE BREAKPOINTS --- */
     @media (max-width: 980px) {
       .who-we-are-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -469,26 +456,25 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="gallery.html">All Collection / Gallery</a>
-        <a href="granite-marble.html">Granite & Marble (Per Sq.Ft)</a>
-        <a href="quartz-slabs.html">Quartz & Slabs (Per Piece)</a>
-        <a href="quote.html">Custom Booking</a>
+        <a href="granite-marble.html">Granite & Marble</a>
+        <a href="quartz-slabs.html">Quartz & Slabs</a>
       </nav>
 
       <div>
-        <a href="quote.html" class="btn-nav-quote">Inquire Stone</a>
+        <a href="quote.html" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer (Tap targets >= 48px) -->
+    <!-- Mobile Drawer -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html" onclick="toggleMenu()">Home</a>
       <a href="gallery.html" onclick="toggleMenu()">All Collection / Gallery</a>
-      <a href="granite-marble.html" onclick="toggleMenu()">Granite & Marble (Per Sq.Ft)</a>
-      <a href="quartz-slabs.html" onclick="toggleMenu()">Quartz & Slabs (Per Piece)</a>
-      <a href="quote.html" onclick="toggleMenu()">Request Factory Quote</a>
+      <a href="granite-marble.html" onclick="toggleMenu()">Granite & Marble</a>
+      <a href="quartz-slabs.html" onclick="toggleMenu()">Quartz & Slabs</a>
+      <a href="quote.html" onclick="toggleMenu()">Get a Quote</a>
     </div>
   </header>
 
@@ -515,7 +501,7 @@
         </a>
       </div>
 
-      <!-- Quick Navigation Cards (Stack on Mobile) -->
+      <!-- Quick Navigation Cards -->
       <div class="category-quick-nav">
         <a href="granite-marble.html" class="quick-card">
           <div>
@@ -636,9 +622,9 @@
       <div class="footer-col">
         <h4>Online Catalogs</h4>
         <p><a href="gallery.html" style="color:var(--brand-navy); font-weight:700;">&bull; All Collection / Gallery</a></p>
-        <p><a href="granite-marble.html" style="color:var(--brand-navy); font-weight:700;">&bull; Granite & Marble (Per Sq.Ft)</a></p>
-        <p><a href="quartz-slabs.html" style="color:var(--brand-navy); font-weight:700;">&bull; Quartz & Porcelain (Per Piece)</a></p>
-        <p><a href="quote.html" style="color:var(--brand-navy); font-weight:700;">&bull; Custom Factory Inquiries</a></p>
+        <p><a href="granite-marble.html" style="color:var(--brand-navy); font-weight:700;">&bull; Granite & Marble</a></p>
+        <p><a href="quartz-slabs.html" style="color:var(--brand-navy); font-weight:700;">&bull; Quartz & Porcelain</a></p>
+        <p><a href="quote.html" style="color:var(--brand-navy); font-weight:700;">&bull; Get a Quote</a></p>
       </div>
     </div>
 
