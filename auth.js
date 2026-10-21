@@ -2,9 +2,7 @@
 // Authentication & OTP Verification Handler for MalviganoMac
 
 const AUTH_CONFIG = {
-  storageKey: 'malvigano_user_session',
-  // Backend endpoint recommendation: proxy requests through your server to protect secret keys
-  apiEndpoint: '/api/auth' 
+  storageKey: 'malvigano_user_session'
 };
 
 let pendingVerification = {
@@ -13,7 +11,6 @@ let pendingVerification = {
   generatedOtp: null
 };
 
-// Check if user is logged in
 function getCurrentUser() {
   const data = localStorage.getItem(AUTH_CONFIG.storageKey);
   return data ? JSON.parse(data) : null;
@@ -63,11 +60,11 @@ function submitLoginStep1(event) {
   const password = document.getElementById('authPassword').value;
 
   if (!identifier || !password) {
-    alert('Please provide mobile/email and password.');
+    alert('Please enter your mobile or email along with your password.');
     return;
   }
 
-  // Simulated OTP Generation (Connect to SMS Gateway / Backend API)
+  // Generate 6-digit OTP
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
   pendingVerification = {
     identifier: identifier,
@@ -75,8 +72,7 @@ function submitLoginStep1(event) {
     generatedOtp: otp
   };
 
-  // Demo alert: In production, your server dispatches this via SMS/Email API
-  alert(`[Security Verification] An OTP has been dispatched to ${identifier}.\n(Demo Code: ${otp})`);
+  alert(`[Security Verification]\nAn OTP has been dispatched to ${identifier}.\n(Demo Code: ${otp})`);
 
   document.getElementById('authStep1').style.display = 'none';
   document.getElementById('authStep2').style.display = 'block';
@@ -93,29 +89,32 @@ function submitVerifyOtp(event) {
       loginAt: new Date().toISOString()
     };
     localStorage.setItem(AUTH_CONFIG.storageKey, JSON.stringify(session));
-    alert('Authentication successful!');
+    alert('Logged in successfully!');
     closeAuthModal();
     updateNavAuthUI();
+    if (typeof syncCartUI === 'function') syncCartUI();
   } else {
-    alert('Invalid OTP code. Please verify and try again.');
+    alert('Invalid OTP code. Please enter the valid code.');
   }
 }
 
 function handleLogout() {
   localStorage.removeItem(AUTH_CONFIG.storageKey);
   updateNavAuthUI();
-  alert('You have been logged out.');
+  alert('You have logged out.');
 }
 
 function injectAuthModal() {
+  if (document.getElementById('authModal')) return;
+
   const div = document.createElement('div');
   div.id = 'authModal';
   div.className = 'modal-backdrop';
   div.innerHTML = `
-    <div class="modal-card" style="max-width:400px; width:100%; background:#fff; border-radius:14px; padding:28px; box-shadow:0 15px 35px rgba(0,0,0,0.15);">
+    <div class="modal-card" style="max-width:400px; width:100%; background:#fff; border-radius:14px; padding:28px; box-shadow:0 15px 35px rgba(0,0,0,0.15); margin: auto;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
         <h3 style="font-size:18px; color:var(--brand-navy); font-weight:800;">Customer Login</h3>
-        <button onclick="closeAuthModal()" style="border:none; background:transparent; font-size:22px; cursor:pointer;">&times;</button>
+        <button onclick="closeAuthModal()" style="border:none; background:transparent; font-size:24px; cursor:pointer;">&times;</button>
       </div>
 
       <!-- Step 1: Mobile/Email + Password -->
