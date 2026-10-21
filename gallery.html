@@ -188,20 +188,14 @@
     .gallery-tag { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--brand-gold); }
     .gallery-name { font-size: 18px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
 
-    /* Footer Upper Section (Clean White) */
     .site-footer {
       background: #ffffff;
       border-top: 1px dashed #cbd5e1;
       padding: 40px 20px;
       width: 100%;
     }
-    .footer-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-    .footer-brand {
-      max-width: 600px;
-    }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-brand { max-width: 600px; }
     .footer-desc {
       font-size: 13.5px;
       color: #64748b;
@@ -209,7 +203,6 @@
       line-height: 1.6;
     }
 
-    /* Blue Bottom Banner (Full Width) */
     .bottom-bar {
       width: 100%;
       background: var(--brand-slate);
@@ -227,10 +220,7 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .bottom-bar strong {
-      color: #e2e8f0;
-      font-weight: 700;
-    }
+    .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
 
     @media (max-width: 980px) {
       .nav-links, .btn-nav-quote { display: none; }
@@ -240,11 +230,7 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
       .filter-btn { white-space: nowrap; flex-shrink: 0; }
-      .bottom-bar-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-      }
+      .bottom-bar-inner { flex-direction: column; text-align: center; gap: 8px; }
     }
   </style>
 </head>
@@ -253,7 +239,7 @@
   <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo-wrap">
+      <a href="/" class="brand-logo-wrap">
         <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
@@ -261,24 +247,24 @@
         </div>
       </a>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gallery.html" class="active-link">All Collection / Gallery</a>
-        <a href="granite-marble.html">Granite & Marble</a>
-        <a href="quartz-slabs.html">Quartz & Slabs</a>
+        <a href="/">Home</a>
+        <a href="/gallery" class="active-link">All Collection / Gallery</a>
+        <a href="/granite-marble">Granite & Marble</a>
+        <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
       <div>
-        <a href="quote.html" class="btn-nav-quote">Get a Quote</a>
+        <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">All Collection / Gallery</a>
-      <a href="granite-marble.html">Granite & Marble</a>
-      <a href="quartz-slabs.html">Quartz & Slabs</a>
-      <a href="quote.html">Get a Quote</a>
+      <a href="/">Home</a>
+      <a href="/gallery">All Collection / Gallery</a>
+      <a href="/granite-marble">Granite & Marble</a>
+      <a href="/quartz-slabs">Quartz & Slabs</a>
+      <a href="/quote">Get a Quote</a>
     </div>
   </header>
 
@@ -351,7 +337,7 @@
     </div>
   </div>
 
-  <!-- Upper Footer (White) -->
+  <!-- Upper Footer -->
   <footer class="site-footer" id="contact">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -369,7 +355,7 @@
     </div>
   </footer>
 
-  <!-- Blue Bottom Banner (Full Width Across Screen) -->
+  <!-- Blue Bottom Banner -->
   <div class="bottom-bar">
     <div class="bottom-bar-inner">
       <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
@@ -377,7 +363,6 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
