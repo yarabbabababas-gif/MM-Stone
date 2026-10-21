@@ -215,8 +215,24 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.72) 0%, rgba(248, 250, 252, 0.84) 80%);
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.45) 85%);
       z-index: 2;
+    }
+    .hero-title {
+      font-size: clamp(28px, 6vw, 54px);
+      font-weight: 900;
+      color: var(--brand-navy);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.8);
+    }
+    .hero-tagline-blue {
+      font-size: clamp(17px, 3.5vw, 24px);
+      color: #002244;
+      font-weight: 700;
+      max-width: 680px;
+      margin: 0 auto 30px auto;
+      text-shadow: 0 1px 8px rgba(255, 255, 255, 0.7);
     }
     .hero-content {
       position: relative;
