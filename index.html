@@ -1,467 +1,1533 @@
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
+
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Hosur & Chennai.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+
+
   <style>
+
     :root {
+
       --brand-navy: #003366;
+
       --brand-navy-dark: #002244;
+
       --brand-navy-deep: #0b1a2b;
+
       --brand-slate: #2b3a4a;
+
       --brand-gold: #c5a059;
+
       --brand-gold-light: #dfbe7d;
+
       --brand-accent: #b32d2d;
+
       --text-main: #1f2937;
+
       --text-muted: #64748b;
+
       --bg-cream: #fbfbfd;
+
       --card-border: #e2e8f0;
+
       --radius-sm: 8px;
+
       --radius-md: 14px;
+
       --shadow-soft: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
+
       --shadow-hover: 0 20px 40px -10px rgba(0, 51, 102, 0.16);
+
       --transition: all 0.25s ease-in-out;
+
     }
+
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     html, body {
+
       width: 100%;
+
       overflow-x: hidden;
+
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
       color: var(--text-main);
+
       background-color: var(--bg-cream);
+
       line-height: 1.6;
+
       -webkit-font-smoothing: antialiased;
+
     }
+
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
+
     a { text-decoration: none; color: inherit; }
 
+
+
     /* --- TOP STRIP --- */
+
     .top-strip {
+
       background: var(--brand-slate);
+
       color: #cbd5e1;
+
       font-size: 13px;
+
       padding: 8px 16px;
+
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
     }
+
     .top-strip-inner {
+
       max-width: 1240px;
+
       margin: 0 auto;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       flex-wrap: wrap;
+
       gap: 8px;
+
     }
+
     .top-contacts {
+
       display: flex;
+
       gap: 14px;
+
       align-items: center;
+
       flex-wrap: wrap;
+
     }
+
     .top-contact-link {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 6px;
+
       color: #e2e8f0;
+
       font-weight: 500;
+
     }
+
     .top-badge {
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.05em;
+
       font-weight: 700;
+
       color: var(--brand-gold-light);
+
       background: rgba(197, 160, 89, 0.18);
+
       padding: 4px 10px;
+
       border-radius: 999px;
+
       border: 1px solid rgba(197, 160, 89, 0.35);
+
       white-space: nowrap;
+
     }
+
+
 
     /* --- NAVIGATION & MOBILE DRAWER --- */
+
     .nav-bar {
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
+
       background: rgba(255, 255, 255, 0.98);
+
       backdrop-filter: blur(10px);
+
       border-bottom: 1px solid var(--card-border);
+
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+
     }
+
     .nav-container {
+
       max-width: 1240px;
+
       margin: 0 auto;
+
       padding: 12px 20px;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
     }
+
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
+
     
+
     /* Logo Image Style */
+
     .brand-logo-img {
+
       width: 46px;
+
       height: 46px;
+
       object-fit: cover;
+
       border-radius: 50%;
+
       border: 1.5px solid var(--brand-gold);
+
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
       flex-shrink: 0;
+
       background-color: #ffffff;
+
     }
+
     .brand-logo-img.footer-logo {
+
       width: 42px;
+
       height: 42px;
+
     }
+
+
 
     .brand-title {
+
       font-family: 'Cinzel', serif;
+
       font-size: 20px;
+
       font-weight: 800;
+
       color: var(--brand-navy);
+
       line-height: 1.1;
+
     }
+
     .brand-sub {
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: 0.16em;
+
       color: var(--text-muted);
+
       font-weight: 600;
+
     }
+
     .nav-links {
+
       display: flex;
+
       align-items: center;
+
       gap: 24px;
+
       font-weight: 600;
+
       font-size: 14px;
+
       color: var(--brand-slate);
+
     }
+
     .nav-links a:hover { color: var(--brand-navy); }
+
     .btn-nav-quote {
+
       background: var(--brand-navy);
+
       color: #ffffff !important;
+
       padding: 9px 18px;
+
       border-radius: var(--radius-sm);
+
       font-size: 13px;
+
       font-weight: 700;
+
       transition: var(--transition);
+
     }
+
     .btn-nav-quote:hover {
+
       background: var(--brand-navy-dark);
+
     }
+
     .nav-hamburger {
+
       display: none;
+
       background: none;
+
       border: none;
+
       cursor: pointer;
+
       padding: 8px;
+
       color: var(--brand-navy);
+
     }
+
+
 
     /* Mobile Drawer */
+
     .mobile-menu {
+
       display: none;
+
       flex-direction: column;
+
       gap: 6px;
+
       padding: 16px 20px 24px 20px;
+
       background: #ffffff;
+
       border-top: 1px solid var(--card-border);
+
       box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+
     }
+
     .mobile-menu.open { display: flex; }
+
     .mobile-menu a {
+
       font-size: 15px;
+
       font-weight: 700;
+
       padding: 12px 14px;
+
       border-radius: var(--radius-sm);
+
       color: var(--brand-slate);
+
       background: #f8fafc;
+
     }
+
     .mobile-menu a:active {
+
       background: var(--brand-navy);
+
       color: #ffffff;
+
     }
+
+
 
     /* --- HERO BANNER --- */
+
     .hero-banner {
+
       position: relative;
+
       min-height: 580px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       text-align: center;
+
       padding: 60px 16px;
+
       overflow: hidden;
+
       background-color: #0b1a2b;
+
     }
+
     .slider-viewport { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+
     .slider-frame {
+
       position: absolute;
+
       inset: 0;
+
       background-size: cover;
+
       background-position: center;
+
       opacity: 0;
+
       transform: scale(1.04);
+
       transition: opacity 1.8s ease-in-out, transform 8s ease-out;
+
     }
+
     .slider-frame.active { opacity: 1; transform: scale(1); }
-    
-    /* Enhanced Visibility Overlay */
+
     .hero-overlay {
+
       position: absolute;
+
       inset: 0;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(248, 250, 252, 0.45) 85%);
+
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.45) 85%);
+
       z-index: 2;
+
     }
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 980px;
-      margin: 0 auto;
-      width: 100%;
-    }
+
     .hero-title {
+
       font-size: clamp(28px, 6vw, 54px);
+
       font-weight: 900;
+
       color: var(--brand-navy);
+
       line-height: 1.15;
+
       margin-bottom: 12px;
-      text-shadow: 0 2px 14px rgba(255, 255, 255, 0.85);
+
+      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.8);
+
     }
+
     .hero-tagline-blue {
+
       font-size: clamp(17px, 3.5vw, 24px);
+
       color: #002244;
+
       font-weight: 700;
+
       max-width: 680px;
+
       margin: 0 auto 30px auto;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+
+      text-shadow: 0 1px 8px rgba(255, 255, 255, 0.7);
+
     }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 30px;
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 3;
+
+      max-width: 980px;
+
+      margin: 0 auto;
+
+      width: 100%;
+
     }
-    .btn-hero-primary {
-      background: var(--brand-navy);
-      color: #ffffff;
-      padding: 14px 30px;
-      font-size: 14px;
+
+    .hero-title {
+
+      font-size: clamp(28px, 6vw, 54px);
+
+      font-weight: 900;
+
+      color: var(--brand-navy);
+
+      line-height: 1.15;
+
+      margin-bottom: 12px;
+
+    }
+
+    .hero-tagline-blue {
+
+      font-size: clamp(17px, 3.5vw, 24px);
+
+      color: #002244;
+
       font-weight: 700;
-      letter-spacing: 0.04em;
-      border-radius: var(--radius-sm);
-      border: 2px solid var(--brand-navy);
-      box-shadow: 0 8px 20px rgba(0, 51, 102, 0.22);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+
+      max-width: 680px;
+
+      margin: 0 auto 30px auto;
+
     }
+
+    .hero-actions {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      margin-bottom: 30px;
+
+    }
+
+    .btn-hero-primary {
+
+      background: var(--brand-navy);
+
+      color: #ffffff;
+
+      padding: 14px 30px;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.04em;
+
+      border-radius: var(--radius-sm);
+
+      border: 2px solid var(--brand-navy);
+
+      box-shadow: 0 8px 20px rgba(0, 51, 102, 0.22);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+    }
+
+
 
     /* Category Cards */
+
     .category-quick-nav {
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 16px;
+
     }
+
     .quick-card {
+
       background: rgba(255, 255, 255, 0.95);
+
       border: 1px solid var(--card-border);
+
       border-radius: var(--radius-md);
+
       padding: 18px;
+
       text-align: left;
+
       box-shadow: var(--shadow-soft);
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
+
     }
+
     .quick-card h4 {
+
       font-family: 'Cinzel', serif;
+
       font-size: 16px;
+
       color: var(--brand-navy);
+
       margin-bottom: 6px;
+
     }
+
     .quick-card p {
+
       font-size: 12.5px;
+
       color: var(--text-muted);
+
       margin-bottom: 12px;
+
     }
+
     .quick-card span {
+
       font-size: 12px;
+
       font-weight: 800;
+
       color: var(--brand-accent);
+
       text-transform: uppercase;
+
     }
+
+
 
     /* --- CORPORATE PROFILE & METRICS --- */
+
     .section-wrap {
+
       max-width: 1240px;
+
       margin: 0 auto;
+
       padding: 60px 20px;
+
     }
+
     .section-header-banner {
+
       background: linear-gradient(135deg, var(--brand-slate) 0%, var(--brand-navy-deep) 100%);
+
       color: #ffffff;
+
       padding: 22px 28px;
+
       border-radius: var(--radius-md);
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       margin-bottom: 36px;
+
       border-left: 6px solid var(--brand-gold);
+
     }
+
     .section-header-left h2 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; }
+
     .section-header-left p {
+
       color: var(--brand-gold-light);
+
       font-size: 12px;
+
       font-weight: 600;
+
       text-transform: uppercase;
+
       letter-spacing: 0.1em;
+
       margin-top: 4px;
+
     }
+
     .section-header-right { max-width: 440px; font-size: 13px; color: #cbd5e1; text-align: right; }
 
+
+
     .who-we-are-grid {
+
       display: grid;
+
       grid-template-columns: 1.2fr 0.8fr;
+
       gap: 36px;
+
       align-items: center;
+
     }
+
     .corporate-story { font-size: 15px; color: #475569; line-height: 1.8; }
+
     .corporate-story p { margin-bottom: 16px; }
+
     .badge-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
     .spec-tag {
+
       background: #f1f5f9;
+
       color: var(--brand-slate);
+
       font-size: 12.5px;
+
       font-weight: 700;
+
       padding: 8px 14px;
+
       border-radius: var(--radius-sm);
+
       border-left: 3px solid var(--brand-accent);
+
     }
+
+
 
     .capability-metric-grid {
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 14px;
+
     }
+
     .metric-card {
+
       background: #ffffff;
+
       padding: 20px;
+
       border-radius: var(--radius-md);
+
       border: 1px solid var(--card-border);
+
       box-shadow: var(--shadow-soft);
+
     }
+
     .metric-number { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 900; color: var(--brand-navy); line-height: 1; }
+
     .metric-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin: 6px 0; }
+
     .metric-desc { font-size: 12px; color: #64748b; line-height: 1.35; }
 
+
+
     /* --- FOOTER --- */
+
     .site-footer {
+
       background: #ffffff;
+
       border-top: 1px dashed #cbd5e1;
+
       padding: 50px 20px 0 20px;
+
     }
+
     .footer-inner {
+
       max-width: 1240px;
+
       margin: 0 auto;
+
       display: grid;
+
       grid-template-columns: 1.4fr 1fr 1fr 1fr;
+
       gap: 32px;
+
       padding-bottom: 40px;
+
     }
+
     .footer-col h4 {
+
       font-size: 13px;
+
       font-weight: 800;
+
       text-transform: uppercase;
+
       letter-spacing: 0.08em;
+
       color: var(--brand-slate);
+
       margin-bottom: 16px;
+
       display: flex;
+
       align-items: center;
+
       gap: 6px;
+
     }
+
     .footer-col p { font-size: 13.5px; color: #64748b; margin-bottom: 10px; line-height: 1.6; }
+
     .contact-line { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #334155; margin-bottom: 10px; }
+
     
-    .contact-line a {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: #334155;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .contact-line a:hover {
-      color: var(--brand-navy);
-    }
-    .contact-flag-svg {
-      width: 20px;
-      height: 14px;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .contact-mail-svg {
-      width: 18px;
-      height: 18px;
-      fill: var(--brand-slate);
-      flex-shrink: 0;
-      display: inline-block;
-      vertical-align: middle;
-    }
 
     /* Social Links with Scalable Vector Icons */
+
     .social-links-list {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 10px;
-    }
-    .social-link-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13.5px;
-      color: #334155;
-      font-weight: 600;
-      transition: var(--transition);
-      padding: 3px 0;
-    }
-    .social-link-item:hover {
-      color: var(--brand-navy);
-      transform: translateX(3px);
-    }
-    .social-icon-box {
-      width: 28px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 7px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-    .social-icon-box svg {
-      width: 16px;
-      height: 16px;
-      fill: #ffffff;
-      display: block;
-    }
-    .icon-wa { background-color: #25D366; }
-    .icon-li { background-color: #0A66C2; }
-    .icon-ig { 
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+
     }
 
+    .social-link-item {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-size: 13.5px;
+
+      color: #334155;
+
+      font-weight: 600;
+
+      transition: var(--transition);
+
+      padding: 3px 0;
+
+    }
+
+    .social-link-item:hover {
+
+      color: var(--brand-navy);
+
+      transform: translateX(3px);
+
+    }
+
+    .social-icon-box {
+
+      width: 28px;
+
+      height: 28px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 7px;
+
+      flex-shrink: 0;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+
+    }
+
+    .social-icon-box svg {
+
+      width: 16px;
+
+      height: 16px;
+
+      fill: #ffffff;
+
+      display: block;
+
+    }
+
+    .icon-wa { background-color: #25D366; }
+
+    .icon-li { background-color: #0A66C2; }
+
+    .icon-ig { 
+
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+
+    }
+
+
+
     .bottom-bar { background: var(--brand-slate); color: #94a3b8; font-size: 12.5px; padding: 18px 20px; }
+
     .bottom-bar-inner {
-      max-width:
+
+      max-width: 1240px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+    }
+
+
+
+    /* --- RESPONSIVE BREAKPOINTS --- */
+
+    @media (max-width: 980px) {
+
+      .who-we-are-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+
+      .nav-links, .btn-nav-quote { display: none; }
+
+      .nav-hamburger { display: block; }
+
+      .section-header-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 8px; }
+
+      .section-header-right { text-align: left; max-width: 100%; }
+
+      .category-quick-nav { grid-template-columns: 1fr; }
+
+    }
+
+
+
+    @media (max-width: 640px) {
+
+      .top-strip-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+
+      .top-contacts { justify-content: center; gap: 10px; font-size: 12px; }
+
+      .top-badge { width: 100%; text-align: center; }
+
+      
+
+      .hero-banner { min-height: 520px; padding: 40px 14px; }
+
+      .btn-hero-primary { width: 100%; padding: 14px 20px; }
+
+      
+
+      .capability-metric-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+
+      .bottom-bar-inner { flex-direction: column; text-align: center; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <!-- Top Strip with Flags & All India Badge -->
+
+  <div class="top-strip">
+
+    <div class="top-strip-inner">
+
+      <div class="top-contacts">
+
+        <a href="tel:+918123502007" class="top-contact-link">
+
+          <span>🇮🇳</span> +91 81235 02007
+
+        </a>
+
+        <span>•</span>
+
+        <a href="tel:+17575059172" class="top-contact-link">
+
+          <span>🇺🇸</span> +1 (757) 505-9172
+
+        </a>
+
+        <span>•</span>
+
+        <a href="mailto:ybaba@malviganomac.live" class="top-contact-link">
+
+          ybaba@malviganomac.live
+
+        </a>
+
+      </div>
+
+      <div>
+
+        <span class="top-badge">Hosur & Chennai Export Units (All over India)</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Header Navigation -->
+
+  <header class="nav-bar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand-logo-wrap">
+
+        <!-- Logo Image updated to Logo.png -->
+
+        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
+
+        <div>
+
+          <div class="brand-title">MalviganoMac</div>
+
+          <div class="brand-sub">Stone & Slabs</div>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- Desktop Nav -->
+
+      <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="gallery.html">All Collection / Gallery</a>
+
+        <a href="granite-marble.html">Granite & Marble</a>
+
+        <a href="quartz-slabs.html">Quartz & Slabs</a>
+
+      </nav>
+
+
+
+      <div>
+
+        <a href="quote.html" class="btn-nav-quote">Get a Quote</a>
+
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Mobile Drawer -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="index.html" onclick="toggleMenu()">Home</a>
+
+      <a href="gallery.html" onclick="toggleMenu()">All Collection / Gallery</a>
+
+      <a href="granite-marble.html" onclick="toggleMenu()">Granite & Marble</a>
+
+      <a href="quartz-slabs.html" onclick="toggleMenu()">Quartz & Slabs</a>
+
+      <a href="quote.html" onclick="toggleMenu()">Get a Quote</a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- Hero Banner -->
+
+  <section class="hero-banner" id="hero">
+
+    <div class="slider-viewport" id="sliderViewport">
+
+      <div class="slider-frame active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85');"></div>
+
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1920&q=85');"></div>
+
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=85');"></div>
+
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=85');"></div>
+
+      <div class="slider-frame" style="background-image: url('https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1920&q=85');"></div>
+
+    </div>
+
+
+
+    <div class="hero-overlay"></div>
+
+
+
+    <div class="hero-content">
+
+      <h1 class="hero-title">MalviganoMac Stone</h1>
+
+      <p class="hero-tagline-blue">Natural stone crafted for exceptional spaces.</p>
+
+
+
+      <div class="hero-actions">
+
+        <a href="gallery.html" class="btn-hero-primary">
+
+          <span>All Collection / Gallery</span>
+
+        </a>
+
+      </div>
+
+
+
+      <!-- Quick Navigation Cards -->
+
+      <div class="category-quick-nav">
+
+        <a href="granite-marble.html" class="quick-card">
+
+          <div>
+
+            <h4>Granite & Marble</h4>
+
+            <p>Gangsaw slabs for flooring, facades, and counters.</p>
+
+          </div>
+
+          <span>Shop Per Sq. Ft &rarr;</span>
+
+        </a>
+
+        <a href="quartz-slabs.html" class="quick-card">
+
+          <div>
+
+            <h4>Quartz & Porcelain</h4>
+
+            <p>Stain-proof quartz & sintered porcelain sheets.</p>
+
+          </div>
+
+          <span>Shop Per Piece &rarr;</span>
+
+        </a>
+
+        <a href="quartz-slabs.html" class="quick-card">
+
+          <div>
+
+            <h4>Thick Slabs & Monuments</h4>
+
+            <p>50mm to 250mm+ structural blocks for memorials & plinths.</p>
+
+          </div>
+
+          <span>Explore Slabs &rarr;</span>
+
+        </a>
+
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Corporate Profile -->
+
+  <section class="section-wrap" id="who-we-are">
+
+    <div class="section-header-banner">
+
+      <div class="section-header-left">
+
+        <h2>WHO WE ARE</h2>
+
+        <p>Corporate Profile & Infrastructure</p>
+
+      </div>
+
+      <div class="section-header-right">
+
+        Advanced processing facilities located in Hosur and Chennai supplying certified natural stones across global markets.
+
+      </div>
+
+    </div>
+
+
+
+    <div class="who-we-are-grid">
+
+      <div class="corporate-story">
+
+        <p>
+
+          At <strong>Malvigano Mac Pvt. Ltd.</strong>, we specialize in processing the precision calibration, and national export of <span style="color: darkred;">granite, marble, quartz, and slabs</span>.
+
+        </p>
+
+        <p>
+
+          Backed by multi-wire saws and automated resin-polishing lines across <strong>Hosur</strong> and <strong>Chennai</strong>, and paired with active extraction partnerships in premier quarry belts across India, Brazil, and Europe, we deliver stones tailored for high-volume commercial towers, bespoke residences, and monumental architecture.
+
+        </p>
+
+        <div class="badge-bar">
+
+          <div class="spec-tag">Custom Thickness (15mm – 25mm)</div>
+
+          <div class="spec-tag">Global Sourcing Networks</div>
+
+          <div class="spec-tag">Export-Ready Crating</div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="capability-metric-grid">
+
+        <div class="metric-card">
+
+          <div class="metric-number">50+</div>
+
+          <div class="metric-label">Quarry Partnerships</div>
+
+          <div class="metric-desc">Certified extraction rights ensuring continuity of shade and block volume.</div>
+
+        </div>
+
+        <div class="metric-card">
+
+          <div class="metric-number">2 Hubs</div>
+
+          <div class="metric-label">Hosur & Chennai</div>
+
+          <div class="metric-desc">High-capacity processing plants offering gangsaw, wire-saw, and CNC surface finishes.</div>
+
+        </div>
+
+        <div class="metric-card">
+
+          <div class="metric-number">100%</div>
+
+          <div class="metric-label">Dry-Lay Monitored</div>
+
+          <div class="metric-desc">Verified for thickness uniformity, diagonal accuracy, and surface gloss.</div>
+
+        </div>
+
+        <div class="metric-card">
+
+          <div class="metric-number">ISPM-15</div>
+
+          <div class="metric-label">Export Standards</div>
+
+          <div class="metric-desc">Fumigated wooden bundle crating customized for ocean transport.</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer" id="contact">
+
+    <div class="footer-inner">
+
+      <div class="footer-col">
+
+        <div class="brand-logo-wrap" style="margin-bottom: 14px;">
+
+          <!-- Logo Image updated to Logo.png -->
+
+          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
+
+          <div>
+
+            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
+
+            <div class="brand-sub">Stone & Slabs</div>
+
+          </div>
+
+        </div>
+
+        <p>Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.</p>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>📍 Corporate Address</h4>
+
+        <p>We operate all over from India</p>
+
+        <div class="contact-line">
+
+          <span>Bangalore - 560041, Karnataka, India</span>
+
+        </div>
+
+        <div class="contact-line">
+
+          <span style="font-size:12.5px; color:#64748b;">Processing Hubs: Hosur & Chennai Plants</span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>📞 Export Inquiries</h4>
+
+        <div class="contact-line">
+
+          <a href="tel:+918123502007">🇮🇳 +91 81235 02007</a>
+
+        </div>
+
+        <div class="contact-line">
+
+          <a href="tel:+17575059172">🇺🇸 +1 (757) 505-9172</a>
+
+        </div>
+
+        <div class="contact-line">
+
+          <a href="mailto:ybaba@malviganomac.live" style="word-break: break-all;">ybaba@malviganomac.live</a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Follow Us Column -->
+
+      <div class="footer-col">
+
+        <h4>🌐 Follow Us</h4>
+
+        <div class="social-links-list">
+
+          <a href="https://wa.me/918123502007" target="_blank" rel="noopener noreferrer" class="social-link-item">
+
+            <span class="social-icon-box icon-wa">
+
+              <svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp">
+
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+
+              </svg>
+
+            </span>
+
+            <span>WhatsApp (🇮🇳 India)</span>
+
+          </a>
+
+
+
+          <a href="https://wa.me/17575059172" target="_blank" rel="noopener noreferrer" class="social-link-item">
+
+            <span class="social-icon-box icon-wa">
+
+              <svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp">
+
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+
+              </svg>
+
+            </span>
+
+            <span>WhatsApp (🇺🇸 USA)</span>
+
+          </a>
+
+
+
+          <a href="https://www.linkedin.com/company/malviganomac" target="_blank" rel="noopener noreferrer" class="social-link-item">
+
+            <span class="social-icon-box icon-li">
+
+              <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn">
+
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.53-1.53A1.53 1.53 0 0 0 6.46 5.7a1.53 1.53 0 0 0-1.53 1.53c0 .85.68 1.53 1.53 1.53m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+
+              </svg>
+
+            </span>
+
+            <span>LinkedIn Page</span>
+
+          </a>
+
+
+
+          <a href="https://www.instagram.com/malvigano_mac?stkn=MXM4a3A3emZiZmY4dg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link-item">
+
+            <span class="social-icon-box icon-ig">
+
+              <svg viewBox="0 0 24 24" role="img" aria-label="Instagram">
+
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+
+              </svg>
+
+            </span>
+
+            <span>Instagram</span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="bottom-bar">
+
+      <div class="bottom-bar-inner">
+
+        <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
+
+        <div>Powered by <strong>Yarab Baba</strong></div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    // Automated background slider
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+      const slides = document.querySelectorAll('#sliderViewport .slider-frame');
+
+      let activeIndex = 0;
+
+      if (slides.length > 1) {
+
+        setInterval(() => {
+
+          slides[activeIndex].classList.remove('active');
+
+          activeIndex = (activeIndex + 1) % slides.length;
+
+          slides[activeIndex].classList.add('active');
+
+        }, 5500);
+
+      }
+
+    });
+
+
+
+    // Mobile Hamburger Toggle
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+
+    const mobileMenu = document.getElementById('mobileMenu');
+
+
+
+    function toggleMenu() {
+
+      if (mobileMenu) {
+
+        mobileMenu.classList.toggle('open');
+
+      }
+
+    }
+
+
+
+    if (hamburgerBtn) {
+
+      hamburgerBtn.addEventListener('click', toggleMenu);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
