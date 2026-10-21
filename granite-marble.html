@@ -1,103 +1,452 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Granite & Marble | Per Square Feet Pricing & Booking | MalviganoMac</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --brand-navy: #003366;
+      --brand-navy-dark: #002244;
+      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
       --brand-gold-light: #dfbe7d;
+      --brand-accent: #b32d2d;
+      --text-main: #1f2937;
+      --text-muted: #64748b;
+      --bg-cream: #fbfbfd;
       --card-border: #e2e8f0;
       --radius-sm: 8px;
       --radius-md: 14px;
+      --shadow-soft: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
+      --transition: all 0.25s ease-in-out;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #fbfbfd; color: #1f2937; }
-    h1, h2, h3 { font-family: 'Cinzel', serif; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    .top-strip { background: var(--brand-slate); color: #cbd5e1; font-size: 13px; padding: 9px 24px; }
-    .top-strip-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .top-badge { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--brand-gold-light); background: rgba(197, 160, 89, 0.18); padding: 4px 12px; border-radius: 999px; }
+    /* Navigation */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .brand-logo-img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5px solid var(--brand-gold);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+      background-color: #ffffff;
+    }
+    .brand-logo-img.footer-logo { width: 42px; height: 42px; }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--brand-navy);
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--brand-slate);
+    }
+    .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+    .btn-nav-quote {
+      background: var(--brand-navy);
+      color: #ffffff !important;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .btn-nav-quote:hover { background: var(--brand-navy-dark); }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--brand-navy);
+    }
 
-    .nav-bar { background: #ffffff; border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100; }
-    .nav-container { max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
-    .brand-mark { width: 40px; height: 40px; background: var(--brand-navy); color: var(--brand-gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 800; font-size: 20px; }
-    .brand-title { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 800; color: var(--brand-navy); }
-    .nav-links { display: flex; gap: 20px; font-weight: 600; font-size: 14px; }
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 20px 24px 20px;
+      background: #ffffff;
+      border-top: 1px solid var(--card-border);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--brand-slate);
+      background: #f8fafc;
+    }
+    .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
 
-    .catalog-header { max-width: 1240px; margin: 40px auto 20px auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
-    .catalog-header h1 { font-size: 32px; color: var(--brand-navy); }
-    .policy-pill { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+    /* Info Strip */
+    .info-strip {
+      background: var(--brand-slate);
+      color: #cbd5e1;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+    .info-strip-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .strip-contacts {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .strip-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e2e8f0;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .strip-separator { color: rgba(255, 255, 255, 0.35); font-size: 11px; }
+    .strip-badge-wrap { display: flex; align-items: center; }
+    .strip-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      color: var(--brand-gold-light);
+      background: rgba(197, 160, 89, 0.18);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      display: inline-block;
+      text-align: center;
+      line-height: 1.4;
+    }
 
-    .grid-container { max-width: 1240px; margin: 0 auto 80px auto; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
-    .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    /* Catalog Content */
+    .catalog-header {
+      max-width: 1240px;
+      margin: 40px auto 20px auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .catalog-header h1 { font-size: clamp(24px, 4vw, 32px); color: var(--brand-navy); font-weight: 800; }
+    .policy-pill {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
 
-    .card { background: #ffffff; border: 1px solid var(--card-border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; }
+    .grid-container {
+      max-width: 1240px;
+      margin: 0 auto 80px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2.3fr 1fr;
+      gap: 32px;
+    }
+    .products-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-soft);
+    }
     .card-img { width: 100%; height: 210px; object-fit: cover; }
     .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
     .card-title { font-size: 18px; color: var(--brand-navy); font-weight: 800; margin-bottom: 4px; }
     .price-box { font-size: 22px; font-weight: 800; color: #003366; margin: 10px 0; }
-    .price-unit { font-size: 13px; font-weight: 500; color: #64748b; }
+    .price-unit { font-size: 13px; font-weight: 500; color: var(--text-muted); }
     
     .card-ctrl { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
-    .input-row { display: flex; gap: 10px; align-items: center; }
-    .sqft-input { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; }
-    .btn-add { background: var(--brand-navy); color: #ffffff; padding: 10px 16px; border-radius: var(--radius-sm); border: none; font-weight: 700; cursor: pointer; }
-    .btn-add:hover { background: #002244; }
+    .sqft-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+    }
+    .btn-add {
+      background: var(--brand-navy);
+      color: #ffffff;
+      padding: 11px 16px;
+      border-radius: var(--radius-sm);
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-add:hover { background: var(--brand-navy-dark); }
 
-    /* Booking Cart Drawer */
-    .cart-box { background: #ffffff; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 90px; height: fit-content; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
-    .cart-box h3 { font-size: 20px; color: var(--brand-navy); border-bottom: 1px solid var(--card-border); padding-bottom: 12px; margin-bottom: 16px; }
+    /* Cart Box */
+    .cart-box {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: sticky;
+      top: 90px;
+      height: fit-content;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .cart-box h3 {
+      font-size: 20px;
+      color: var(--brand-navy);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
     .cart-items { max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
     .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; }
     .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 20px; }
     .split-row { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
     .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
+    .btn-checkout {
+      width: 100%;
+      background: #25d366;
+      color: #ffffff;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+    .btn-checkout:hover { background: #20bd5a; }
 
-    .btn-checkout { width: 100%; background: #25d366; color: #ffffff; padding: 14px; border: none; border-radius: var(--radius-sm); font-weight: 800; font-size: 14px; cursor: pointer; margin-bottom: 10px; }
+    /* Footer */
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px dashed #cbd5e1;
+      padding: 50px 20px 40px 20px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-slate);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-col p { font-size: 13.5px; color: #64748b; margin-bottom: 10px; line-height: 1.6; }
+    .contact-line { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #334155; margin-bottom: 10px; }
+    .social-links-list { display: flex; flex-direction: column; gap: 10px; }
+    .social-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #334155;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 3px 0;
+    }
+    .social-link-item:hover { color: var(--brand-navy); transform: translateX(3px); }
+    .social-icon-box {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+    .social-icon-box svg { width: 16px; height: 16px; fill: #ffffff; display: block; }
+    .icon-wa { background-color: #25D366; }
+    .icon-li { background-color: #0A66C2; }
+    .icon-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+
+    .bottom-bar {
+      width: 100%;
+      margin: 0;
+      background: var(--brand-slate);
+      color: #94a3b8;
+      font-size: 12.5px;
+      padding: 18px 20px;
+    }
+    .bottom-bar-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
     @media (max-width: 980px) {
       .grid-container { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links, .btn-nav-quote { display: none; }
+      .nav-hamburger { display: block; }
+    }
+    @media (max-width: 768px) {
+      .info-strip { padding: 10px 12px; }
+      .info-strip-inner { flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; }
+      .strip-contacts { justify-content: center; gap: 10px 14px; font-size: 12px; }
+      .strip-contact-link { font-size: 12px; }
+      .strip-badge-wrap { width: 100%; justify-content: center; }
+      .strip-badge { font-size: 10px; padding: 5px 10px; border-radius: 6px; width: 100%; max-width: 440px; white-space: normal; }
+    }
+    @media (max-width: 480px) {
+      .strip-contacts { flex-direction: column; gap: 4px; }
+      .strip-separator { display: none; }
+      .products-list { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .bottom-bar-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <div class="top-strip">
-    <div class="top-strip-inner">
-      <div>
-        <a href="tel:+918123502007" style="color:#e2e8f0; margin-right:14px;">🇮🇳 +91 81235 02007</a>
-        <a href="tel:+17575059172" style="color:#e2e8f0;">🇺🇸 +1 (757) 505-9172</a>
-      </div>
-      <div><span class="top-badge">Hosur & Chennai Export Units (All over India)</span></div>
-    </div>
-  </div>
-
+  <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
-      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
-        <div class="brand-mark">M</div>
-        <div class="brand-title">MalviganoMac</div>
+      <a href="index.html" class="brand-logo-wrap">
+        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
+        <div>
+          <div class="brand-title">MalviganoMac</div>
+          <div class="brand-sub">Stone & Slabs</div>
+        </div>
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="granite-marble.html" style="color:var(--brand-navy);">Granite & Marble (Per Sq.Ft)</a>
-        <a href="quartz-slabs.html">Quartz & Slabs (Per Piece)</a>
-        <a href="quote.html">Custom Booking</a>
+        <a href="gallery.html">All Collection / Gallery</a>
+        <a href="granite-marble.html" class="active-link">Granite & Marble</a>
+        <a href="quartz-slabs.html">Quartz & Slabs</a>
       </nav>
+      <div>
+        <a href="quote.html" class="btn-nav-quote">Get a Quote</a>
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">All Collection / Gallery</a>
+      <a href="granite-marble.html">Granite & Marble</a>
+      <a href="quartz-slabs.html">Quartz & Slabs</a>
+      <a href="quote.html">Get a Quote</a>
     </div>
   </header>
+
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="strip-contacts">
+        <a href="tel:+918123502007" class="strip-contact-link">
+          <img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
+          +91 81235 02007
+        </a>
+        <span class="strip-separator">•</span>
+        <a href="tel:+17575059172" class="strip-contact-link">
+          <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
+          +1 (757) 505-9172
+        </a>
+        <span class="strip-separator">•</span>
+        <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
+          <span>✉️</span> admin@malviganomac.live
+        </a>
+      </div>
+      <div class="strip-badge-wrap">
+        <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
+      </div>
+    </div>
+  </div>
 
   <div class="catalog-header">
     <div>
       <h1>Granite & Marble Collection</h1>
-      <p style="color:#64748b; font-size:14px;">Real gangsaw lots available at Hosur processing yards. Priced per square foot.</p>
+      <p style="color:var(--text-muted); font-size:14px;">Real gangsaw lots available at Chennai (Tamil Nadu) & Kishangarh (Rajasthan) processing yards. Priced per square foot.</p>
     </div>
     <div class="policy-pill">
       🔒 Booking Policy: 70% Advance Confirmation | 30% Balance On Delivery
@@ -150,98 +499,4 @@
 
       <!-- Item 4 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Emerald Green Marble">
-        <div class="card-body">
-          <div class="card-title">Verde Emerald Rainforest Marble</div>
-          <p style="font-size:12.5px; color:#64748b;">Vivid earthy green striations for living spaces.</p>
-          <div class="price-box">₹260 <span class="price-unit">/ sq. ft.</span></div>
-          <div class="card-ctrl">
-            <input type="number" id="qty_4" placeholder="Enter Sq. Ft. (e.g. 400)" class="sqft-input" min="100" value="400">
-            <button class="btn-add" onclick="addToCart('Verde Emerald Marble', 260, 'qty_4')">Add To Booking Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Booking Cart Summary -->
-    <div class="cart-box">
-      <h3>Booking Order Summary</h3>
-      <div class="cart-items" id="cartItems">
-        <p style="font-size:13px; color:#94a3b8;">No stone slabs added yet. Enter square footage to calculate.</p>
-      </div>
-
-      <div class="split-bill">
-        <div class="split-row">
-          <span>Gross Total:</span>
-          <span id="grossTotal">₹0</span>
-        </div>
-        <div class="split-row adv">
-          <span>Advance Payable (70%):</span>
-          <span id="advTotal">₹0</span>
-        </div>
-        <div class="split-row" style="color:#64748b;">
-          <span>Balance On Delivery (30%):</span>
-          <span id="balTotal">₹0</span>
-        </div>
-      </div>
-
-      <button class="btn-checkout" onclick="checkoutBooking()">Place Booking via WhatsApp</button>
-      <p style="font-size:11.5px; color:#64748b; text-align:center;">Our operations team in Hosur/Bangalore confirms shade consistency & dispatch schedule upon 70% advance payment.</p>
-    </div>
-  </div>
-
-  <script>
-    let cart = [];
-
-    function addToCart(title, rate, inputId) {
-      const sqft = parseFloat(document.getElementById(inputId).value);
-      if(!sqft || sqft <= 0) { alert('Please enter valid sq. footage'); return; }
-      
-      const total = sqft * rate;
-      cart.push({ title, rate, sqft, total });
-      renderCart();
-    }
-
-    function renderCart() {
-      const container = document.getElementById('cartItems');
-      if(cart.length === 0) {
-        container.innerHTML = '<p style="font-size:13px; color:#94a3b8;">No slabs added yet.</p>';
-        return;
-      }
-      container.innerHTML = '';
-      let sum = 0;
-      cart.forEach((item, idx) => {
-        sum += item.total;
-        const div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `<div><strong>${item.title}</strong><br>${item.sqft} sq.ft @ ₹${item.rate}</div><div><strong>₹${item.total.toLocaleString('en-IN')}</strong></div>`;
-        container.appendChild(div);
-      });
-
-      const adv = sum * 0.70;
-      const bal = sum * 0.30;
-      document.getElementById('grossTotal').innerText = `₹${sum.toLocaleString('en-IN')}`;
-      document.getElementById('advTotal').innerText = `₹${adv.toLocaleString('en-IN')}`;
-      document.getElementById('balTotal').innerText = `₹${bal.toLocaleString('en-IN')}`;
-    }
-
-    function checkoutBooking() {
-      if(cart.length === 0) { alert('Please add items to cart first.'); return; }
-      let summary = "MalviganoMac Stone Booking Order:\n\n";
-      let sum = 0;
-      cart.forEach(i => {
-        sum += i.total;
-        summary += `• ${i.title}: ${i.sqft} sq.ft @ ₹${i.rate}/sq.ft = ₹${i.total.toLocaleString('en-IN')}\n`;
-      });
-      const adv = sum * 0.70;
-      const bal = sum * 0.30;
-      summary += `\nGross Total: ₹${sum.toLocaleString('en-IN')}\n`;
-      summary += `70% Advance Payable: ₹${adv.toLocaleString('en-IN')}\n`;
-      summary += `30% On Delivery Balance: ₹${bal.toLocaleString('en-IN')}\n\n`;
-      summary += `Kindly share the lot confirmation and invoice.`;
-
-      window.open(`https://wa.me/918123502007?text=${encodeURIComponent(summary)}`, '_blank');
-    }
-  </script>
-</body>
-</html>
+        <img src="
