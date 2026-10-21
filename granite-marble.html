@@ -53,7 +53,9 @@
     .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin: 16px 0; }
     .split-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
     .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
-    .btn-checkout { width: 100%; background: #25d366; color: #fff; padding: 13px; border: none; border-radius: var(--radius-sm); font-weight: 800; cursor: pointer; margin-bottom: 10px; }
+    
+    .btn-pay-online { width: 100%; background: #003366; color: #fff; padding: 13px; border: none; border-radius: var(--radius-sm); font-weight: 800; cursor: pointer; margin-bottom: 10px; font-size: 14px; }
+    .btn-checkout { width: 100%; background: #25d366; color: #fff; padding: 12px; border: none; border-radius: var(--radius-sm); font-weight: 800; cursor: pointer; margin-bottom: 10px; }
 
     .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
     .modal-backdrop.open { display: flex; }
@@ -131,12 +133,14 @@
         <div class="split-row"><span>30% Balance on Delivery:</span><span id="balTotal">₹0</span></div>
       </div>
 
+      <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance (UPI / Cards / NetBanking)</button>
       <button class="btn-checkout" onclick="triggerCheckout('whatsapp')">Order via WhatsApp</button>
       <button class="btn-add" style="width:100%; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Gateway & Application Scripts -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="auth.js"></script>
   <script src="cart.js"></script>
 </body>
