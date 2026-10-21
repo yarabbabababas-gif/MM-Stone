@@ -42,7 +42,7 @@
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* --- NAVIGATION & MOBILE DRAWER --- */
+    /* Navigation */
     .nav-bar {
       position: sticky;
       top: 0;
@@ -145,7 +145,7 @@
       color: #ffffff;
     }
 
-    /* --- INFO STRIP (RESPONSIVE & WRAPPING) --- */
+    /* Info Strip */
     .info-strip {
       background: var(--brand-slate);
       color: #cbd5e1;
@@ -201,7 +201,7 @@
       line-height: 1.4;
     }
 
-    /* --- HERO BANNER --- */
+    /* Hero Banner */
     .hero-banner {
       position: relative;
       min-height: 580px;
@@ -310,7 +310,7 @@
       text-transform: uppercase;
     }
 
-    /* --- CORPORATE PROFILE & METRICS --- */
+    /* Profile Section */
     .section-wrap {
       max-width: 1240px;
       margin: 0 auto;
@@ -373,7 +373,7 @@
     .metric-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin: 6px 0; }
     .metric-desc { font-size: 12px; color: #64748b; line-height: 1.35; }
 
-    /* --- FOOTER --- */
+    /* Footer */
     .site-footer {
       background: #ffffff;
       border-top: 1px dashed #cbd5e1;
@@ -459,7 +459,6 @@
       gap: 12px;
     }
 
-    /* --- RESPONSIVE BREAKPOINTS --- */
     @media (max-width: 980px) {
       .who-we-are-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -516,7 +515,7 @@
   <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo-wrap">
+      <a href="/" class="brand-logo-wrap">
         <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
@@ -526,14 +525,14 @@
 
       <!-- Desktop Nav -->
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">All Collection / Gallery</a>
-        <a href="granite-marble.html">Granite & Marble</a>
-        <a href="quartz-slabs.html">Quartz & Slabs</a>
+        <a href="/">Home</a>
+        <a href="/gallery">All Collection / Gallery</a>
+        <a href="/granite-marble">Granite & Marble</a>
+        <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
 
       <div>
-        <a href="quote.html" class="btn-nav-quote">Get a Quote</a>
+        <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
@@ -542,15 +541,15 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" onclick="toggleMenu()">Home</a>
-      <a href="gallery.html" onclick="toggleMenu()">All Collection / Gallery</a>
-      <a href="granite-marble.html" onclick="toggleMenu()">Granite & Marble</a>
-      <a href="quartz-slabs.html" onclick="toggleMenu()">Quartz & Slabs</a>
-      <a href="quote.html" onclick="toggleMenu()">Get a Quote</a>
+      <a href="/" onclick="toggleMenu()">Home</a>
+      <a href="/gallery" onclick="toggleMenu()">All Collection / Gallery</a>
+      <a href="/granite-marble" onclick="toggleMenu()">Granite & Marble</a>
+      <a href="/quartz-slabs" onclick="toggleMenu()">Quartz & Slabs</a>
+      <a href="/quote" onclick="toggleMenu()">Get a Quote</a>
     </div>
   </header>
 
-  <!-- Info Strip Positioned After Navigation (Mobile Friendly) -->
+  <!-- Info Strip -->
   <div class="info-strip">
     <div class="info-strip-inner">
       <div class="strip-contacts">
@@ -591,28 +590,28 @@
       <p class="hero-tagline-blue">Natural stone crafted for exceptional spaces.</p>
 
       <div class="hero-actions">
-        <a href="gallery.html" class="btn-hero-primary">
+        <a href="/gallery" class="btn-hero-primary">
           <span>All Collection / Gallery</span>
         </a>
       </div>
 
       <!-- Quick Navigation Cards -->
       <div class="category-quick-nav">
-        <a href="granite-marble.html" class="quick-card">
+        <a href="/granite-marble" class="quick-card">
           <div>
             <h4>Granite & Marble</h4>
             <p>Gangsaw slabs for flooring, facades, and counters.</p>
           </div>
           <span>Shop Per Sq. Ft &rarr;</span>
         </a>
-        <a href="quartz-slabs.html" class="quick-card">
+        <a href="/quartz-slabs" class="quick-card">
           <div>
             <h4>Quartz & Porcelain</h4>
             <p>Stain-proof quartz & sintered porcelain sheets.</p>
           </div>
           <span>Shop Per Piece &rarr;</span>
         </a>
-        <a href="quartz-slabs.html" class="quick-card">
+        <a href="/quartz-slabs" class="quick-card">
           <div>
             <h4>Thick Slabs & Monuments</h4>
             <p>50mm to 250mm+ structural blocks for memorials & plinths.</p>
@@ -766,7 +765,7 @@
     </div>
   </footer>
 
-  <!-- Full-Width Edge-to-Edge Bottom Bar -->
+  <!-- Bottom Bar -->
   <div class="bottom-bar">
     <div class="bottom-bar-inner">
       <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
@@ -775,7 +774,6 @@
   </div>
 
   <script>
-    // Automated background slider
     document.addEventListener("DOMContentLoaded", function() {
       const slides = document.querySelectorAll('#sliderViewport .slider-frame');
       let activeIndex = 0;
@@ -788,7 +786,6 @@
       }
     });
 
-    // Mobile Hamburger Toggle
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
