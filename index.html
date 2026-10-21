@@ -364,7 +364,7 @@
     .site-footer {
       background: #ffffff;
       border-top: 1px dashed #cbd5e1;
-      padding: 50px 20px 0 20px;
+      padding: 50px 20px 40px 20px;
     }
     .footer-inner {
       max-width: 1240px;
@@ -372,7 +372,6 @@
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr 1fr;
       gap: 32px;
-      padding-bottom: 40px;
     }
     .footer-col h4 {
       font-size: 13px;
@@ -429,7 +428,15 @@
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
     }
 
-    .bottom-bar { background: var(--brand-slate); color: #94a3b8; font-size: 12.5px; padding: 18px 20px; }
+    /* Edge-to-edge full width bottom bar */
+    .bottom-bar {
+      width: 100%;
+      margin: 0;
+      background: var(--brand-slate);
+      color: #94a3b8;
+      font-size: 12.5px;
+      padding: 18px 20px;
+    }
     .bottom-bar-inner {
       max-width: 1240px;
       margin: 0 auto;
@@ -718,14 +725,15 @@
         </div>
       </div>
     </div>
-
-    <div class="bottom-bar">
-      <div class="bottom-bar-inner">
-        <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
-        <div>Powered by <strong>Yarab Baba</strong></div>
-      </div>
-    </div>
   </footer>
+
+  <!-- Full-Width Edge-to-Edge Bottom Bar -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
+      <div>Powered by <strong>Yarab Baba</strong></div>
+    </div>
+  </div>
 
   <script>
     // Automated background slider
