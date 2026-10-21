@@ -132,56 +132,6 @@
     }
     .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
 
-    /* Info Strip */
-    .info-strip {
-      background: var(--brand-slate);
-      color: #cbd5e1;
-      font-size: 13px;
-      padding: 10px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      width: 100%;
-    }
-    .info-strip-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .strip-contacts {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .strip-contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #e2e8f0;
-      font-weight: 500;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-    .strip-separator { color: rgba(255, 255, 255, 0.35); font-size: 11px; }
-    .strip-badge-wrap { display: flex; align-items: center; }
-    .strip-badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-weight: 700;
-      color: var(--brand-gold-light);
-      background: rgba(197, 160, 89, 0.18);
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(197, 160, 89, 0.35);
-      display: inline-block;
-      text-align: center;
-      line-height: 1.4;
-    }
-
     /* Gallery Content */
     .gallery-hero {
       text-align: center;
@@ -238,86 +188,63 @@
     .gallery-tag { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--brand-gold); }
     .gallery-name { font-size: 18px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
 
-    /* Unified Footer Styling */
+    /* Footer Upper Section (Clean White) */
     .site-footer {
-      background: var(--brand-slate);
-      color: #cbd5e1;
-      padding: 30px 20px;
-      margin-top: 50px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff;
+      border-top: 1px dashed #cbd5e1;
+      padding: 40px 20px;
+      width: 100%;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      max-width: 600px;
+    }
+    .footer-desc {
+      font-size: 13.5px;
+      color: #64748b;
+      margin-top: 12px;
+      line-height: 1.6;
     }
 
-    .footer-content {
+    /* Blue Bottom Banner (Full Width) */
+    .bottom-bar {
+      width: 100%;
+      background: var(--brand-slate);
+      color: #94a3b8;
+      font-size: 13px;
+      padding: 16px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .bottom-bar-inner {
       max-width: 1240px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 28px;
       flex-wrap: wrap;
+      gap: 12px;
     }
-
-    .footer-brand {
-      max-width: 550px;
-    }
-
-    .footer-brand .brand-title {
-      color: #ffffff;
-      font-size: 19px;
-    }
-
-    .footer-brand .brand-sub {
-      color: var(--brand-gold-light);
-    }
-
-    .brand-desc {
-      font-size: 13.5px;
-      color: #94a3b8;
-      margin-top: 8px;
-      line-height: 1.5;
-    }
-
-    .footer-meta {
-      text-align: right;
-      font-size: 13px;
-      color: #cbd5e1;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .footer-meta {
-        text-align: left;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 14px;
-        width: 100%;
-      }
+    .bottom-bar strong {
+      color: #e2e8f0;
+      font-weight: 700;
     }
 
     @media (max-width: 980px) {
-      .footer-inner { grid-template-columns: 1fr 1fr; }
       .nav-links, .btn-nav-quote { display: none; }
       .nav-hamburger { display: block; }
     }
     @media (max-width: 768px) {
-      .info-strip { padding: 10px 12px; }
-      .info-strip-inner { flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; }
-      .strip-contacts { justify-content: center; gap: 10px 14px; font-size: 12px; }
-      .strip-contact-link { font-size: 12px; }
-      .strip-badge-wrap { width: 100%; justify-content: center; }
-      .strip-badge { font-size: 10px; padding: 5px 10px; border-radius: 6px; width: 100%; max-width: 440px; white-space: normal; }
       .gallery-grid { grid-template-columns: 1fr; }
       .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
       .filter-btn { white-space: nowrap; flex-shrink: 0; }
-    }
-    @media (max-width: 480px) {
-      .strip-contacts { flex-direction: column; gap: 4px; }
-      .strip-separator { display: none; }
-      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; }
+      .bottom-bar-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
     }
   </style>
 </head>
@@ -424,30 +351,31 @@
     </div>
   </div>
 
-<!-- Footer -->
+  <!-- Upper Footer (White) -->
   <footer class="site-footer" id="contact">
-    <div class="footer-content">
-      <!-- Left side: Brand info & description -->
+    <div class="footer-inner">
       <div class="footer-brand">
         <div class="brand-logo-wrap">
           <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
           <div>
-            <div class="brand-title">MalviganoMac</div>
+            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
             <div class="brand-sub">Stone & Slabs</div>
           </div>
         </div>
-        <p class="brand-desc">
+        <p class="footer-desc">
           Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
         </p>
       </div>
-
-      <!-- Right side: Copyright & operations -->
-      <div class="footer-meta">
-        <div>© 2026 Malvigano Mac Pvt. Ltd. All rights reserved.</div>
-        <div>Designed for International Trade & Wholesale Operations</div>
-      </div>
     </div>
   </footer>
+
+  <!-- Blue Bottom Banner (Full Width Across Screen) -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
+      <div>Powered by <strong>Yarab Baba</strong></div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script>
@@ -473,5 +401,3 @@
   </script>
 </body>
 </html>
-
-  
