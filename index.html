@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,13 +145,14 @@
       color: #ffffff;
     }
 
-    /* --- INFO STRIP (POSITIONED BELOW NAV) --- */
+    /* --- INFO STRIP (RESPONSIVE & WRAPPING) --- */
     .info-strip {
       background: var(--brand-slate);
       color: #cbd5e1;
       font-size: 13px;
-      padding: 8px 16px;
+      padding: 10px 16px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
     }
     .info-strip-inner {
       max-width: 1240px;
@@ -160,11 +161,11 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
     .strip-contacts {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -174,18 +175,30 @@
       gap: 6px;
       color: #e2e8f0;
       font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .strip-separator {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 11px;
+    }
+    .strip-badge-wrap {
+      display: flex;
+      align-items: center;
     }
     .strip-badge {
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       font-weight: 700;
       color: var(--brand-gold-light);
       background: rgba(197, 160, 89, 0.18);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 999px;
       border: 1px solid rgba(197, 160, 89, 0.35);
-      white-space: nowrap;
+      display: inline-block;
+      text-align: center;
+      line-height: 1.4;
     }
 
     /* --- HERO BANNER --- */
@@ -196,7 +209,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 16px;
+      padding: 50px 16px;
       overflow: hidden;
       background-color: #0b1a2b;
     }
@@ -225,7 +238,7 @@
       width: 100%;
     }
     .hero-title {
-      font-size: clamp(28px, 6vw, 54px);
+      font-size: clamp(26px, 6vw, 54px);
       font-weight: 900;
       color: var(--brand-navy);
       line-height: 1.15;
@@ -233,23 +246,23 @@
       text-shadow: 0 2px 12px rgba(255, 255, 255, 0.8);
     }
     .hero-tagline-blue {
-      font-size: clamp(17px, 3.5vw, 24px);
+      font-size: clamp(15px, 3.5vw, 24px);
       color: #002244;
       font-weight: 700;
       max-width: 680px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 26px auto;
       text-shadow: 0 1px 8px rgba(255, 255, 255, 0.7);
     }
     .hero-actions {
       display: flex;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
     .btn-hero-primary {
       background: var(--brand-navy);
       color: #ffffff;
-      padding: 14px 30px;
+      padding: 13px 26px;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -428,7 +441,6 @@
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
     }
 
-    /* Edge-to-edge full width bottom bar */
     .bottom-bar {
       width: 100%;
       margin: 0;
@@ -458,14 +470,41 @@
       .category-quick-nav { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .info-strip-inner { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
-      .strip-contacts { justify-content: center; gap: 10px; font-size: 12px; }
-      .strip-badge { width: 100%; text-align: center; }
-      
-      .hero-banner { min-height: 520px; padding: 40px 14px; }
-      .btn-hero-primary { width: 100%; padding: 14px 20px; }
-      
+    @media (max-width: 768px) {
+      .info-strip { padding: 10px 12px; }
+      .info-strip-inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+      }
+      .strip-contacts {
+        justify-content: center;
+        gap: 10px 14px;
+        font-size: 12px;
+      }
+      .strip-contact-link { font-size: 12px; }
+      .strip-badge-wrap { width: 100%; justify-content: center; }
+      .strip-badge {
+        font-size: 10px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        width: 100%;
+        max-width: 440px;
+        white-space: normal;
+        word-break: normal;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .strip-contacts {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .strip-separator { display: none; }
+      .hero-banner { min-height: 480px; padding: 36px 12px; }
+      .btn-hero-primary { width: 100%; padding: 13px 18px; }
       .capability-metric-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; gap: 24px; }
       .bottom-bar-inner { flex-direction: column; text-align: center; }
@@ -511,25 +550,25 @@
     </div>
   </header>
 
-  <!-- Info Strip Positioned After Navigation -->
+  <!-- Info Strip Positioned After Navigation (Mobile Friendly) -->
   <div class="info-strip">
     <div class="info-strip-inner">
       <div class="strip-contacts">
         <a href="tel:+918123502007" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/in.png" width="18" height="13" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
+          <img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
           +91 81235 02007
         </a>
-        <span>•</span>
+        <span class="strip-separator">•</span>
         <a href="tel:+17575059172" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/us.png" width="18" height="13" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
+          <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
           +1 (757) 505-9172
         </a>
-        <span>•</span>
+        <span class="strip-separator">•</span>
         <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
           <span>✉️</span> admin@malviganomac.live
         </a>
       </div>
-      <div>
+      <div class="strip-badge-wrap">
         <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
       </div>
     </div>
