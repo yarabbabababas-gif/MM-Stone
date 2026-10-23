@@ -1,6 +1,5 @@
 // File: cart.js
 // Persistent Stone E-Commerce Cart & Payment Gateway Manager
-
 const CART_KEY = 'malvigano_ecom_cart';
 const RAZORPAY_KEY_ID = 'rzp_test_placeholder';
 
