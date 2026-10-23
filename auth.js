@@ -1,6 +1,8 @@
 // auth.js
-// Real Register/Login flow using email or mobile + password
-// Persistent local storage, no OTP loop, no duplicate registrations
+// Clean login/register flow using localStorage
+// Saves user accounts and current session
+// Prevents duplicate email/phone registration
+// Keeps logged-in user across later visits
 
 const AUTH_CONFIG = {
   storageKey: 'malvigano_user_session',
@@ -120,33 +122,40 @@ function updateNavAuthUI() {
   if (typeof syncCartUI === 'function') syncCartUI();
 }
 
+function bindAuthButtons() {
+  document.querySelectorAll('.auth-open-trigger').forEach((button) => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      openAuthModal('login');
+    });
+  });
+}
+
 function openAuthModal(mode = 'login') {
   authState.mode = mode;
+
   let modal = document.getElementById('authModal');
   if (!modal) {
     injectAuthModal();
     modal = document.getElementById('authModal');
   }
 
-  const legacyBackdrop = document.getElementById('authModalBackdrop');
-  if (legacyBackdrop) {
-    legacyBackdrop.classList.add('open');
+  const modalBackdrop = document.getElementById('authModal');
+  if (modalBackdrop) {
+    modalBackdrop.classList.add('open');
     document.body.classList.add('modal-open');
   }
 
   if (modal) {
-    modal.classList.add('open');
-    document.body.classList.add('modal-open');
-
     const title = document.getElementById('authModalTitle');
-    if (title) {
-      title.textContent = mode === 'register' ? 'Create Customer Account' : 'Customer Login';
-    }
-
     const loginView = document.getElementById('authLoginView');
     const registerView = document.getElementById('authRegisterView');
     const loginTab = document.getElementById('authTabLogin');
     const registerTab = document.getElementById('authTabRegister');
+
+    if (title) {
+      title.textContent = mode === 'register' ? 'Create Customer Account' : 'Customer Login';
+    }
 
     if (mode === 'register') {
       if (loginView) loginView.style.display = 'none';
@@ -166,21 +175,12 @@ function closeAuthModal() {
   const modal = document.getElementById('authModal');
   if (modal) modal.classList.remove('open');
 
-  const legacyBackdrop = document.getElementById('authModalBackdrop');
-  if (legacyBackdrop) legacyBackdrop.classList.remove('open');
-
   document.body.classList.remove('modal-open');
 }
 
-function handleLogout() {
-  localStorage.removeItem(AUTH_CONFIG.storageKey);
-  updateNavAuthUI();
-  alert('You have successfully logged out.');
-}
-
-function findAccountByEmailOrPhone(emailOrPhone) {
+function findAccountByEmailOrPhone(value) {
   const accounts = getUserAccounts();
-  const normalized = normalizeEmail(emailOrPhone) || normalizePhone(emailOrPhone);
+  const normalized = normalizeEmail(value) || normalizePhone(value);
 
   return accounts.find((account) => {
     const email = normalizeEmail(account.email);
@@ -202,7 +202,7 @@ function registerUser(data) {
     return false;
   }
 
-  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     alert('Please enter a valid email address.');
     return false;
   }
@@ -255,15 +255,15 @@ function registerUser(data) {
 }
 
 function loginUser(data) {
-  const emailOrPhone = (data.emailOrPhone || '').trim();
+  const identifier = (data.emailOrPhone || '').trim();
   const password = (data.password || '').trim();
 
-  if (!emailOrPhone || !password) {
+  if (!identifier || !password) {
     alert('Please enter both your email/mobile and password.');
     return false;
   }
 
-  const account = findAccountByEmailOrPhone(emailOrPhone);
+  const account = findAccountByEmailOrPhone(identifier);
 
   if (!account) {
     alert('No account found for this email or mobile number.');
@@ -291,7 +291,7 @@ function loginUser(data) {
 }
 
 function submitRegisterForm(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   const name = document.getElementById('regName')?.value || '';
   const email = document.getElementById('regEmail')?.value || '';
@@ -313,7 +313,7 @@ function submitRegisterForm(event) {
 }
 
 function submitLoginForm(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   const emailOrPhone = document.getElementById('loginEmailOrPhone')?.value || '';
   const password = document.getElementById('loginPassword')?.value || '';
@@ -324,16 +324,11 @@ function submitLoginForm(event) {
   });
 }
 
-// Legacy compatibility for old pages
-window.handleAccountSubmit = function (event) {
-  event.preventDefault();
-  submitRegisterForm(event);
-};
-
-window.handleLoginSubmit = function (event) {
-  event.preventDefault();
-  submitLoginForm(event);
-};
+function handleLogout() {
+  localStorage.removeItem(AUTH_CONFIG.storageKey);
+  updateNavAuthUI();
+  alert('You have successfully logged out.');
+}
 
 function injectAuthModal() {
   if (document.getElementById('authModal')) return;
@@ -413,9 +408,6 @@ function injectAuthModal() {
 
 document.addEventListener('DOMContentLoaded', () => {
   injectAuthModal();
+  bindAuthButtons();
   updateNavAuthUI();
 });
-
-window.openAuthModal = openAuthModal;
-window.closeAuthModal = closeAuthModal;
-window.handleLogout = handleLogout;
