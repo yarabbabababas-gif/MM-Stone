@@ -1,7 +1,7 @@
 // File: cart.js
-// Persistent Stone E-Commerce Cart & Payment Gateway Manager
+// Snipcart-powered Stone E-Commerce Cart + Local Fallback
 const CART_KEY = 'malvigano_ecom_cart';
-const RAZORPAY_KEY_ID = 'rzp_test_placeholder';
+const SNIPCART_PUBLIC_KEY = 'ZTljNThhZjEtMzEyMS00YjU3LWFlMWUtOTg1ZjRhY2RiYWI1NjM5MjcyMzk2ODgwNTgwNjYy';
 
 function safeParseJSON(data, fallback) {
   try {
@@ -21,17 +21,41 @@ function saveCart(cart) {
   syncCartUI();
 }
 
+function getSnipcartItemId(title, unit) {
+  return (title + '-' + unit)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function addItemToCart(title, rate, unit, quantity) {
+  const qty = Number(quantity);
+  if (!qty || qty <= 0) {
+    alert('Please enter a valid quantity.');
+    return;
+  }
+
+  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
+    const item = {
+      id: getSnipcartItemId(title, unit),
+      name: title,
+      price: Number(rate),
+      quantity: qty,
+      url: window.location.href
+    };
+
+    try {
+      window.Snipcart.api.items.add(item);
+      return;
+    } catch (err) {
+      console.warn('Snipcart add failed, falling back:', err);
+    }
+  }
+
   const user = getCurrentUser();
   if (!user) {
     alert('Please authenticate your email and mobile before adding stone lots to your order.');
     openAuthModal('login');
-    return;
-  }
-
-  const qty = Number(quantity);
-  if (!qty || qty <= 0) {
-    alert('Please enter a valid quantity.');
     return;
   }
 
@@ -122,6 +146,11 @@ function syncCartUI() {
 }
 
 function initiateOnlinePayment() {
+  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
+    window.Snipcart.api.theme.cart.open();
+    return;
+  }
+
   const user = getCurrentUser();
   if (!user) {
     alert('Please verify your email & mobile OTP prior to checkout.');
@@ -144,7 +173,7 @@ function initiateOnlinePayment() {
   }
 
   const options = {
-    key: RAZORPAY_KEY_ID,
+    key: 'rzp_test_placeholder',
     amount: advanceAmount * 100,
     currency: "INR",
     name: "MalviganoMac Pvt Ltd",
@@ -173,6 +202,11 @@ function initiateOnlinePayment() {
 }
 
 function triggerCheckout(method) {
+  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
+    window.Snipcart.api.theme.cart.open();
+    return;
+  }
+
   const user = getCurrentUser();
   if (!user) {
     alert('Please authenticate your phone and email before booking.');
