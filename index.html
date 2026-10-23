@@ -356,41 +356,11 @@
       transition: opacity 1.8s ease-in-out, transform 8s ease-out;
     }
     .slider-frame.active { opacity: 1; transform: scale(1); }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.45) 85%);
-      z-index: 2;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 980px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .hero-title {
-      font-size: clamp(26px, 6vw, 54px);
-      font-weight: 900;
-      color: var(--brand-navy);
-      line-height: 1.15;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 12px rgba(255,255,255,0.8);
-    }
-    .hero-tagline-blue {
-      font-size: clamp(15px, 3.5vw, 24px);
-      color: #002244;
-      font-weight: 700;
-      max-width: 680px;
-      margin: 0 auto 26px auto;
-      text-shadow: 0 1px 8px rgba(255,255,255,0.7);
-    }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
+    .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.45) 85%); z-index: 2; }
+    .hero-content { position: relative; z-index: 3; max-width: 980px; margin: 0 auto; width: 100%; }
+    .hero-title { font-size: clamp(26px, 6vw, 54px); font-weight: 900; color: var(--brand-navy); line-height: 1.15; margin-bottom: 12px; text-shadow: 0 2px 12px rgba(255,255,255,0.8); }
+    .hero-tagline-blue { font-size: clamp(15px, 3.5vw, 24px); color: #002244; font-weight: 700; max-width: 680px; margin: 0 auto 26px auto; text-shadow: 0 1px 8px rgba(255,255,255,0.7); }
+    .hero-actions { display: flex; justify-content: center; gap: 14px; margin-bottom: 26px; }
     .btn-hero-primary {
       background: var(--brand-navy);
       color: #ffffff;
@@ -697,6 +667,7 @@
           <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
+
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M3 12h18M3 6h18M3 18h18"/>
@@ -729,19 +700,19 @@
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <a href="/" class="drawer-nav-link" onclick="closeDrawer()">
+      <a href="/" class="drawer-nav-link">
         <span>Home</span>
         <span>&rarr;</span>
       </a>
-      <a href="/gallery" class="drawer-nav-link" onclick="closeDrawer()">
+      <a href="/gallery" class="drawer-nav-link">
         <span>All Collection / Gallery</span>
         <span>&rarr;</span>
       </a>
-      <a href="/granite-marble" class="drawer-nav-link" onclick="closeDrawer()">
+      <a href="/granite-marble" class="drawer-nav-link">
         <span>Granite & Marble</span>
         <span>&rarr;</span>
       </a>
-      <a href="/quartz-slabs" class="drawer-nav-link" onclick="closeDrawer()">
+      <a href="/quartz-slabs" class="drawer-nav-link">
         <span>Quartz & Slabs</span>
         <span>&rarr;</span>
       </a>
