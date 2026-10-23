@@ -112,7 +112,6 @@
     .field-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--brand-slate); margin-bottom: 6px; }
     .form-control { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; }
     
-    /* Phone input combo */
     .phone-input-group {
       display: flex;
       gap: 8px;
@@ -127,7 +126,6 @@
       background-color: #fff;
     }
 
-    /* Location input combo */
     .location-input-group {
       display: flex;
       gap: 8px;
@@ -168,7 +166,29 @@
       transition: var(--transition);
     }
     .btn-primary { background: var(--brand-navy); color: #fff; }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
     .btn-whatsapp { background: #25d366; color: #fff; }
+
+    .status-msg {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
+      display: none;
+    }
+    .status-msg.success {
+      display: block;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .status-msg.error {
+      display: block;
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
 
     .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
     .modal-backdrop.open { display: flex; }
@@ -227,7 +247,7 @@
     <div class="quote-card">
       <h2>Factory Stone Quotation Request</h2>
       <p style="color:var(--text-muted); font-size:14px; margin-top:6px;">
-        All submissions require dual OTP (Email & Mobile) verification before dispatch to <strong>admin@malviganomac.live</strong>.
+        All submissions require dual OTP (Email & Mobile) verification before automated dispatch to <strong>admin@malviganomac.live</strong>.
       </p>
 
       <form id="quoteForm" onsubmit="processQuoteSubmit(event)">
@@ -241,7 +261,6 @@
             <input type="email" id="email" required class="form-control" placeholder="client@example.com">
           </div>
           
-          <!-- Country Code + Phone Number Group -->
           <div class="field-group full-width">
             <label for="phone">Phone Number *</label>
             <div class="phone-input-group">
@@ -293,7 +312,6 @@
             <input type="text" id="quantity" class="form-control" placeholder="e.g. 5,000 sq ft or 2 Containers">
           </div>
           
-          <!-- Delivery Port / Destination City with Geolocation option -->
           <div class="field-group full-width">
             <label for="port">Delivery Port / Destination City</label>
             <div class="location-input-group">
@@ -311,9 +329,11 @@
           </div>
         </div>
 
+        <div id="submitStatusMsg" class="status-msg"></div>
+
         <div class="actions-row">
           <button type="button" class="btn-whatsapp" onclick="submitWhatsAppQuote()">Inquire via WhatsApp</button>
-          <button type="submit" class="btn-primary">Verify & Submit Inquiry to Admin</button>
+          <button type="submit" id="submitBtn" class="btn-primary">Verify & Submit Inquiry to Admin</button>
         </div>
       </form>
     </div>
@@ -337,10 +357,7 @@
       if (u) {
         if (u.name) document.getElementById('name').value = u.name;
         if (u.email) document.getElementById('email').value = u.email;
-        if (u.phone) {
-          // Parse potential country code if saved together
-          parseAndSetPhone(u.phone);
-        }
+        if (u.phone) parseAndSetPhone(u.phone);
       }
     });
 
@@ -363,7 +380,6 @@
       }
     }
 
-    // Geolocation detection with reverse geocoding fallback
     function detectCurrentLocation() {
       const portInput = document.getElementById('port');
       const geoBtn = document.getElementById('btnDetectLocation');
@@ -383,17 +399,14 @@
           const lon = position.coords.longitude;
 
           try {
-            // Free OpenStreetMap reverse-geocoding endpoint
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
             const data = await res.json();
-            
             const city = data.address.city || data.address.town || data.address.state_district || data.address.state || '';
             const country = data.address.country || '';
             const locationStr = [city, country].filter(Boolean).join(', ');
 
             portInput.value = locationStr || `Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`;
           } catch (err) {
-            // Fallback to coordinates if reverse geocode fails
             portInput.value = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
           } finally {
             geoBtn.innerHTML = originalBtnText;
@@ -447,33 +460,70 @@
           if (authPhone) authPhone.value = payload.phone;
 
           window.onAuthSuccess = function() {
-            sendFinalQuoteEmail(payload);
+            sendFinalQuoteDirectly(payload);
           };
         }
         return;
       }
 
-      sendFinalQuoteEmail(payload);
+      sendFinalQuoteDirectly(payload);
     }
 
-    function sendFinalQuoteEmail(d) {
-      const subject = `[Verified Factory Quote] ${d.cat} - ${d.name}`;
-      const body = 
-        `VERIFIED QUOTATION SUBMISSION\n` +
-        `-----------------------------------------\n` +
-        `Client Name: ${d.name}\n` +
-        `Verified Email: ${d.email}\n` +
-        `Verified Phone: ${d.phone}\n` +
-        `Category: ${d.cat}\n` +
-        `Thickness: ${d.thick}\n` +
-        `Volume/Quantity: ${d.qty || 'Not Specified'}\n` +
-        `Destination Port / Location: ${d.port || 'Not Specified'}\n` +
-        `Notes: ${d.notes || 'None'}\n` +
-        `-----------------------------------------\n` +
-        `Authentication: Dual OTP (Email & Mobile) Validated`;
+    // Direct background sending via API (without launching Outlook/Mail clients)
+    async function sendFinalQuoteDirectly(d) {
+      const submitBtn = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('submitStatusMsg');
 
-      window.location.href = `mailto:admin@malviganomac.live?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      alert('Quotation details verified. Your email client will now dispatch this inquiry to admin@malviganomac.live.');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Transmitting to Factory...';
+      statusMsg.className = 'status-msg';
+      statusMsg.style.display = 'none';
+
+      const emailData = {
+        // You can obtain an access key instantly from web3forms.com
+        // or replace this endpoint with your Node/PHP/Python backend route
+        access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+        to_email: "admin@malviganomac.live",
+        subject: `[Verified Stone Quote] ${d.cat} - ${d.name}`,
+        from_name: d.name,
+        replyto: d.email,
+        client_name: d.name,
+        client_email: d.email,
+        client_phone: d.phone,
+        stone_category: d.cat,
+        thickness: d.thick,
+        quantity: d.qty || "Not specified",
+        destination_location: d.port || "Not specified",
+        requirements: d.notes || "None",
+        auth_verification: "Dual OTP (Email & Mobile) Validated"
+      };
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(emailData)
+        });
+
+        const result = await response.json();
+
+        if (response.status === 200) {
+          statusMsg.className = 'status-msg success';
+          statusMsg.innerHTML = '✓ Your verified stone quote request has been sent directly to <strong>admin@malviganomac.live</strong>. Our team will review and get in touch shortly.';
+          document.getElementById('quoteForm').reset();
+        } else {
+          throw new Error(result.message || 'Failed to submit inquiry.');
+        }
+      } catch (err) {
+        statusMsg.className = 'status-msg error';
+        statusMsg.innerHTML = `Submission error: ${err.message}. Please try again or reach out directly on WhatsApp.`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Verify & Submit Inquiry to Admin';
+      }
     }
 
     function submitWhatsAppQuote() {
