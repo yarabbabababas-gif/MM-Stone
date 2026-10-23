@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MalviganoMac | Stone & Slabs</title>
-  <meta name="description" content="Premium granite, marble, quartz and porcelain stone products for homes, projects and export." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MalviganoMac | Premium Stone, Granite & Marble</title>
+  <meta name="description" content="Premium granite, marble, quartz and stone products for homes, offices and landscaping.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --brand-navy:#06264a;
-      --brand-navy-2:#0d2d4f;
-      --brand-gold:#c8a15a;
-      --brand-gold-soft:#efe2c4;
-      --brand-accent:#b93d3d;
-      --text:#1f2937;
-      --muted:#64748b;
-      --bg:#f5f7fb;
-      --white:#fff;
-      --border:#e6edf4;
-      --shadow:0 18px 45px rgba(6, 38, 74, .10);
-      --shadow-soft:0 10px 28px rgba(17, 24, 39, .08);
-      --radius:18px;
-      --radius-sm:10px;
-      --transition:all .25s ease;
+      --navy:#0d223d;
+      --navy-deep:#081d32;
+      --gold:#c7a269;
+      --gold-soft:#efe0bb;
+      --text:#182634;
+      --muted:#5f6e7d;
+      --bg:#f5f4f1;
+      --white:#ffffff;
+      --line:#e9e5df;
+      --shadow:0 18px 45px rgba(13,34,61,.12);
+      --shadow-soft:0 12px 30px rgba(13,34,61,.08);
+      --radius:22px;
     }
+
     *{box-sizing:border-box; margin:0; padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      margin:0;
-      font-family:'Plus Jakarta Sans', sans-serif;
-      color:var(--text);
+      font-family:'Inter', sans-serif;
       background:var(--bg);
+      color:var(--text);
       line-height:1.6;
     }
     a{text-decoration:none; color:inherit;}
     img{max-width:100%; display:block;}
     button,input{font:inherit;}
-    .container{max-width:1240px; margin:0 auto; padding:0 20px;}
+    .container{
+      width:min(1200px, calc(100% - 32px));
+      margin:0 auto;
+    }
 
-    /* Header */
+    h1,h2,h3,h4{
+      font-family:'Cinzel', serif;
+      font-weight:700;
+      letter-spacing:.02em;
+      color:var(--navy);
+    }
+
     .topbar{
-      background:var(--brand-navy);
-      color:#dbe8f5;
+      background:var(--navy-deep);
+      color:#dfeaf6;
       font-size:12px;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      letter-spacing:.02em;
     }
     .topbar-inner{
+      min-height:38px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      min-height:38px;
-      gap:12px;
+      gap:16px;
       flex-wrap:wrap;
       padding:8px 0;
     }
     .topbar-links{
       display:flex;
-      justify-content:center;
       align-items:center;
-      gap:16px;
+      gap:18px;
       flex-wrap:wrap;
     }
-    .topbar a{color:#edf4ff;}
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 12px;
+    .topbar-links a{
+      color:#e8eef6;
+      opacity:.9;
+    }
+    .tagline{
+      background:rgba(199,162,105,.12);
+      border:1px solid rgba(199,162,105,.26);
+      color:var(--gold-soft);
+      padding:6px 10px;
       border-radius:999px;
-      background:rgba(200,161,90,.12);
-      border:1px solid rgba(200,161,90,.3);
-      color:var(--brand-gold-soft);
-      font-weight:700;
-      letter-spacing:.04em;
-      text-transform:uppercase;
       font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
     }
 
     .nav{
       position:sticky;
       top:0;
-      z-index:1000;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(11px);
-      border-bottom:1px solid var(--border);
+      z-index:100;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(10px);
     }
     .nav-inner{
-      max-width:1240px;
-      margin:0 auto;
-      padding:14px 20px;
+      min-height:82px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -102,53 +105,55 @@
       gap:12px;
       min-width:0;
     }
-    .brand-mark{
-      width:48px;height:48px;border-radius:50%;
+    .brand img{
+      width:46px;
+      height:46px;
       object-fit:cover;
-      border:1.5px solid var(--brand-gold);
+      border-radius:50%;
+      border:1.5px solid var(--gold);
       background:#fff;
-      box-shadow:0 6px 16px rgba(6,38,74,.12);
     }
-    .brand-copy{
-      line-height:1.1;
+    .brand-text{
+      line-height:1.08;
     }
     .brand-name{
-      font-family:'Cinzel', serif;
       font-size:20px;
-      font-weight:800;
-      color:var(--brand-navy);
-      letter-spacing:.02em;
+      font-family:'Cinzel', serif;
+      font-weight:700;
+      color:var(--navy);
     }
-    .brand-tag{
+    .brand-sub{
       font-size:10px;
       text-transform:uppercase;
-      letter-spacing:.16em;
+      letter-spacing:.18em;
       color:var(--muted);
       font-weight:700;
     }
     .nav-links{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:26px;
       font-size:14px;
-      font-weight:700;
-      color:#334155;
+      font-weight:600;
+      color:#2d3c4e;
     }
     .nav-links a{
       position:relative;
-      padding:6px 0;
-      transition:var(--transition);
+      transition:.25s ease;
     }
-    .nav-links a:hover{color:var(--brand-navy);}
     .nav-links a::after{
       content:"";
       position:absolute;
-      left:0; bottom:-4px;
-      width:0; height:2px;
-      background:var(--brand-gold);
-      transition:var(--transition);
+      left:0;
+      bottom:-8px;
+      width:0;
+      height:2px;
+      background:var(--gold);
+      transition:.25s ease;
     }
-    .nav-links a:hover::after{width:100%;}
+    .nav-links a:hover::after{
+      width:100%;
+    }
     .nav-actions{
       display:flex;
       align-items:center;
@@ -160,772 +165,564 @@
       justify-content:center;
       min-height:42px;
       padding:0 18px;
-      border-radius:10px;
-      font-weight:700;
+      border-radius:12px;
       border:1px solid transparent;
+      font-weight:700;
       cursor:pointer;
-      transition:var(--transition);
+      transition:.25s ease;
       white-space:nowrap;
     }
     .btn-primary{
-      background:var(--brand-navy);
+      background:var(--navy);
       color:#fff;
-      box-shadow:0 12px 25px rgba(6,38,74,.12);
+      box-shadow:0 12px 25px rgba(13,34,61,.14);
     }
     .btn-primary:hover{
-      background:var(--brand-navy-2);
+      background:#102a4d;
       transform:translateY(-1px);
     }
-    .btn-outline{
+    .btn-light{
       background:#fff;
-      border-color:var(--brand-gold);
-      color:var(--brand-navy);
+      color:var(--navy);
+      border-color:var(--gold);
     }
-    .btn-outline:hover{
-      background:rgba(200,161,90,.08);
-      border-color:var(--brand-navy);
-    }
-    .cart-btn{
-      position:relative;
-      background:var(--white);
-      border:1px solid var(--border);
-      color:var(--brand-navy);
-      min-width:52px;
-      padding:0 12px;
-      gap:8px;
-    }
-    .cart-badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:18px; height:18px;
-      padding:0 5px;
-      border-radius:999px;
-      background:var(--brand-accent);
-      color:#fff;
-      font-size:11px;
-      font-weight:800;
-      line-height:1;
+    .btn-light:hover{
+      background:rgba(199,162,105,.08);
     }
     .menu-btn{
       display:none;
-      width:42px; height:42px;
+      width:42px;
+      height:42px;
       border-radius:10px;
-      border:1px solid var(--border);
-      background:#fff; color:var(--brand-navy);
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      font-size:22px;
       cursor:pointer;
     }
 
-    /* Hero */
     .hero{
       position:relative;
-      background:#0d1b2e;
+      background:#0c1c2d;
       overflow:hidden;
-      min-height:620px;
+      min-height:640px;
       display:flex;
       align-items:center;
     }
     .hero-bg{
-      position:absolute; inset:0;
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(90deg, rgba(7,30,52,.78) 0%, rgba(7,30,52,.50) 45%, rgba(7,30,52,.28) 100%),
-        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      transform:scale(1.05);
+        linear-gradient(90deg, rgba(8,29,50,.82) 0%, rgba(8,29,50,.62) 42%, rgba(8,29,50,.28) 100%),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      transform:scale(1.04);
     }
-    .hero-content{
+    .hero-inner{
       position:relative;
       z-index:1;
-      max-width:1240px;
-      margin:0 auto;
-      width:100%;
-      padding:62px 20px 50px;
+      padding:70px 0;
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:32px;
+      grid-template-columns:1.25fr .75fr;
+      gap:36px;
       align-items:center;
     }
     .hero-copy{
-      max-width:740px;
+      max-width:620px;
     }
     .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 12px;
+      padding:8px 14px;
       border-radius:999px;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.16);
+      color:#edf5ff;
       font-size:11px;
       text-transform:uppercase;
-      font-weight:800;
-      letter-spacing:.12em;
-      background:rgba(255,255,255,.12);
-      color:#edf5ff;
-      border:1px solid rgba(255,255,255,.18);
+      letter-spacing:.15em;
+      font-weight:700;
       margin-bottom:18px;
     }
-    h1{
-      font-family:'Cinzel', serif;
+    .hero h1{
+      font-size:clamp(38px, 5vw, 62px);
+      line-height:1.06;
       color:#fff;
-      font-size:clamp(36px, 5vw, 64px);
-      line-height:1.08;
-      letter-spacing:.02em;
       margin-bottom:18px;
-      text-shadow:0 8px 32px rgba(0,0,0,.18);
+      text-shadow:0 8px 28px rgba(0,0,0,.20);
     }
-    .hero-sub{
+    .hero p{
       color:rgba(255,255,255,.82);
-      font-size:clamp(16px,2vw,22px);
-      max-width:620px;
+      font-size:18px;
+      max-width:560px;
       margin-bottom:28px;
     }
     .hero-actions{
       display:flex;
-      flex-wrap:wrap;
+      align-items:center;
       gap:14px;
-      margin-bottom:28px;
-    }
-    .hero-stats{
-      display:flex;
       flex-wrap:wrap;
-      gap:18px;
+      margin-bottom:26px;
     }
-    .stat{
+    .mini-stats{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .mini-stats .stat{
       min-width:120px;
       padding:14px 18px;
-      border-radius:14px;
+      border-radius:16px;
       background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(3px);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(5px);
     }
-    .stat strong{
+    .mini-stats strong{
       display:block;
       color:#fff;
-      font-size:22px;
+      font-size:24px;
       line-height:1;
-      margin-bottom:4px;
+      margin-bottom:5px;
     }
-    .stat span{
-      font-size:12px;
+    .mini-stats span{
       color:rgba(255,255,255,.78);
+      font-size:11px;
       text-transform:uppercase;
       letter-spacing:.08em;
       font-weight:700;
     }
 
     .hero-card{
-      background:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.09);
       border:1px solid rgba(255,255,255,.18);
       border-radius:24px;
-      padding:22px;
+      padding:20px;
       backdrop-filter:blur(6px);
       box-shadow:var(--shadow);
     }
-    .mini-product{
-      background:rgba(255,255,255,.96);
-      border-radius:20px;
+    .stone-box{
+      background:#fff;
+      border-radius:18px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.2);
-      box-shadow:0 16px 40px rgba(6,38,74,.18);
+      box-shadow:0 16px 40px rgba(0,0,0,.18);
     }
-    .mini-product img{
-      height:235px;
-      object-fit:cover;
+    .stone-box img{
+      height:280px;
       width:100%;
+      object-fit:cover;
     }
-    .mini-product-info{
-      padding:18px 18px 14px;
+    .stone-box-info{
+      padding:18px 18px 16px;
     }
-    .mini-tag{
+    .label{
       display:inline-block;
-      color:var(--brand-navy);
-      background:#f4f7fb;
-      border:1px solid var(--border);
-      padding:6px 10px;
+      background:#f4f3ef;
+      padding:7px 10px;
       border-radius:999px;
       font-size:10px;
-      font-weight:800;
-      letter-spacing:.08em;
+      letter-spacing:.12em;
       text-transform:uppercase;
+      color:var(--navy);
+      font-weight:700;
       margin-bottom:10px;
     }
-    .mini-product h3{
-      font-family:'Cinzel', serif;
-      font-size:22px;
-      letter-spacing:.02em;
-      color:var(--brand-navy);
-      margin-bottom:8px;
+    .stone-box-info h3{
+      font-size:24px;
+      margin-bottom:12px;
     }
-    .mini-meta{
+    .price-row{
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:12px;
-      margin-top:16px;
+      border-top:1px solid var(--line);
       padding-top:14px;
-      border-top:1px solid var(--border);
+      margin-top:14px;
     }
     .price{
       font-size:24px;
       font-weight:800;
-      color:var(--brand-navy);
+      color:var(--navy);
+      line-height:1;
     }
     .price small{
-      color:var(--muted);
       font-size:12px;
+      color:var(--muted);
       font-weight:700;
-      margin-left:6px;
+      margin-left:4px;
     }
 
     .section{
-      padding:72px 0;
+      padding:80px 0;
     }
     .section-head{
       display:flex;
       justify-content:space-between;
       align-items:end;
-      gap:18px;
-      margin-bottom:26px;
+      gap:20px;
       flex-wrap:wrap;
+      margin-bottom:28px;
     }
     .section-kicker{
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.12em;
+      font-size:11px;
       text-transform:uppercase;
-      color:var(--brand-gold);
+      letter-spacing:.16em;
+      font-weight:800;
+      color:var(--gold);
+      margin-bottom:8px;
     }
-    .section-title{
-      font-family:'Cinzel', serif;
-      font-size:clamp(28px, 2.8vw, 42px);
-      color:var(--brand-navy);
+    .section-head h2{
+      font-size:clamp(28px, 3vw, 40px);
       line-height:1.15;
     }
-    .section-copy{
-      font-size:15px;
+    .section-head p{
+      max-width:540px;
       color:var(--muted);
-      max-width:520px;
+      font-size:15px;
     }
 
-    .collection-grid{
+    .category-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
-    .collection-card{
+    .category-card{
+      position:relative;
       overflow:hidden;
+      border-radius:24px;
       background:#fff;
-      border:1px solid var(--border);
-      border-radius:22px;
+      border:1px solid var(--line);
       box-shadow:var(--shadow-soft);
-      transition:var(--transition);
+      transition:.3s ease;
     }
-    .collection-card:hover{
+    .category-card:hover{
       transform:translateY(-5px);
       box-shadow:var(--shadow);
     }
-    .collection-card img{
+    .category-card img{
       width:100%;
-      height:220px;
+      height:300px;
       object-fit:cover;
     }
-    .collection-body{
-      padding:18px 18px 20px;
-    }
-    .collection-body h3{
-      font-size:18px;
-      font-weight:800;
-      color:var(--brand-navy);
-      margin-bottom:6px;
-    }
-    .collection-body p{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:14px;
-    }
-    .collection-link{
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      font-size:12px;
-      font-weight:800;
-      color:var(--brand-accent);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-
-    .promo-strip{
-      background:linear-gradient(135deg,#0a2a4c,#123c67 55%, #183d5d);
-      padding:22px 0;
-      color:#edf4ff;
-    }
-    .promo-inner{
-      max-width:1240px;
-      margin:0 auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-    .promo-item{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:18px 16px;
-    }
-    .promo-icon{
-      width:44px;height:44px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(200,161,90,.18);
-      color:var(--brand-gold-soft);
-      font-size:20px;
-      border:1px solid rgba(200,161,90,.22);
-    }
-    .promo-item strong{
-      display:block;
-      font-size:15px;
-      margin-bottom:2px;
-    }
-    .promo-item span{
-      font-size:12px;
-      color:rgba(237,244,255,.78);
-    }
-
-    .filter-bar{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:24px;
-    }
-    .filter-btn{
-      border:1px solid var(--border);
-      background:#fff;
-      color:var(--brand-slate);
-      border-radius:999px;
-      padding:10px 16px;
-      font-size:13px;
-      font-weight:800;
-      cursor:pointer;
-      transition:var(--transition);
-    }
-    .filter-btn.active{
-      background:var(--brand-navy);
+    .category-card .content{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:22px 20px 18px;
+      background:linear-gradient(180deg, rgba(8,29,50,0) 0%, rgba(8,29,50,.8) 100%);
       color:#fff;
-      border-color:var(--brand-navy);
-      box-shadow:0 10px 20px rgba(6,38,74,.12);
     }
-    .product-grid{
+    .category-card h3{
+      font-size:24px;
+      color:#fff;
+      margin-bottom:8px;
+      font-family:'Cinzel', serif;
+    }
+    .category-card p{
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+      margin-bottom:12px;
+    }
+    .category-link{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+      color:var(--gold-soft);
+    }
+
+    .featured-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:22px;
     }
     .product-card{
-      overflow:hidden;
       background:#fff;
-      border:1px solid var(--border);
-      border-radius:22px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
       box-shadow:var(--shadow-soft);
-      transition:var(--transition);
+      transition:.25s ease;
     }
     .product-card:hover{
       transform:translateY(-5px);
       box-shadow:var(--shadow);
     }
-    .product-thumb{
-      position:relative;
-      overflow:hidden;
-      background:#f6f8fb;
-    }
-    .product-thumb img{
+    .product-card img{
+      height:260px;
       width:100%;
-      height:250px;
       object-fit:cover;
-      transition:transform .5s ease;
     }
-    .product-card:hover .product-thumb img{
-      transform:scale(1.05);
+    .product-info{
+      padding:18px 18px 20px;
     }
-    .tag{
-      position:absolute;
-      top:12px; left:12px;
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--border);
-      color:var(--brand-navy);
-      padding:6px 9px;
-      border-radius:999px;
+    .product-tag{
+      display:inline-block;
       font-size:10px;
-      font-weight:800;
-      letter-spacing:.08em;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      z-index:2;
-    }
-    .product-body{
-      padding:18px 16px 16px;
-    }
-    .product-name{
-      font-size:18px;
+      background:#f4f1ec;
+      color:var(--navy);
+      border-radius:999px;
+      padding:6px 9px;
       font-weight:800;
-      color:var(--brand-navy);
-      margin-bottom:8px;
-      line-height:1.3;
+      margin-bottom:10px;
     }
-    .product-meta{
+    .product-info h3{
+      font-size:22px;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+    .product-info p{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+    .product-bottom{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:10px;
-      color:var(--muted);
-      font-size:12px;
-      margin-bottom:12px;
-    }
-    .product-price-row{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:14px;
-      padding-top:12px;
-      border-top:1px solid var(--border);
+      gap:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
     }
     .product-price{
       font-size:22px;
       font-weight:800;
-      color:var(--brand-navy);
-      line-height:1;
+      color:var(--navy);
     }
-    .product-price small{
-      font-size:11px;
+    .product-price span{
+      font-size:12px;
       color:var(--muted);
       font-weight:700;
-      margin-left:6px;
+      margin-left:2px;
     }
-    .add-cart{
-      border:none;
-      background:var(--brand-navy);
-      color:white;
+    .small-btn{
       min-height:38px;
       padding:0 14px;
       border-radius:10px;
-      font-weight:800;
-      font-size:12px;
+      background:var(--navy);
+      color:#fff;
+      border:none;
+      font-weight:700;
       cursor:pointer;
-      transition:var(--transition);
-    }
-    .add-cart:hover{
-      background:var(--brand-navy-2);
-      transform:translateY(-1px);
     }
 
-    .features{
+    .benefits{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
-      margin-top:18px;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
-    .feature-card{
+    .benefit{
       background:#fff;
-      border:1px solid var(--border);
-      border-radius:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
       padding:24px 20px;
       box-shadow:var(--shadow-soft);
     }
-    .feature-icon{
-      width:48px;height:48px;border-radius:14px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(200,161,90,.12);
-      color:var(--brand-navy);
-      font-size:20px;
-      margin-bottom:16px;
-      border:1px solid rgba(200,161,90,.18);
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(199,162,105,.12);
+      border:1px solid rgba(199,162,105,.2);
+      color:var(--navy);
+      font-size:22px;
+      margin-bottom:18px;
     }
-    .feature-card h3{
-      font-size:18px;
-      color:var(--brand-navy);
+    .benefit h3{
+      font-size:20px;
       margin-bottom:8px;
     }
-    .feature-card p{
+    .benefit p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .project-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+    .project-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+    .project-info{
+      padding:18px;
+    }
+    .project-info h3{
+      font-size:22px;
+      margin-bottom:6px;
+    }
+    .project-info p{
       color:var(--muted);
       font-size:14px;
     }
 
     .cta-banner{
-      background:linear-gradient(135deg,#f8ecd2,#f3f4f6 38%, #eef5ff);
-      border:1px solid #eae2ce;
+      background:linear-gradient(135deg, #f1e8d6 0%, #f5f5f2 50%, #edf4fb 100%);
+      border:1px solid #e8deca;
       border-radius:28px;
-      padding:30px 28px;
+      padding:34px 30px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:18px;
+      align-items:center;
+      gap:24px;
       flex-wrap:wrap;
     }
-    .cta-banner h3{
-      font-family:'Cinzel', serif;
-      font-size:clamp(24px,4vw,34px);
-      color:var(--brand-navy);
-      margin-bottom:6px;
+    .cta-banner h2{
+      font-size:clamp(28px, 3vw, 38px);
+      margin-bottom:8px;
     }
     .cta-banner p{
       color:var(--muted);
-      font-size:15px;
+      max-width:620px;
     }
     .cta-actions{
       display:flex;
-      flex-wrap:wrap;
       gap:12px;
-    }
-
-    .testimonial-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    .testimonial{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:22px;
-      padding:24px;
-      box-shadow:var(--shadow-soft);
-    }
-    .stars{
-      color:var(--brand-gold);
-      font-size:18px;
-      letter-spacing:.08em;
-      margin-bottom:12px;
-    }
-    .testimonial p{
-      color:#475569;
-      font-size:15px;
-      margin-bottom:16px;
-    }
-    .testimonial-person{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding-top:14px;
-      border-top:1px solid var(--border);
-    }
-    .pilot{
-      width:42px;height:42px;border-radius:50%;
-      background:linear-gradient(135deg,#d8e4f3,#c7ddff);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--brand-navy);
-      font-weight:800;
-      font-size:14px;
-    }
-    .person h4{
-      font-size:14px;
-      color:var(--brand-navy);
-      margin-bottom:2px;
-    }
-    .person span{
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    .newsletter{
-      background:#0d1b2e;
-      border-radius:28px;
-      padding:34px 28px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-    .newsletter h3{
-      font-family:'Cinzel', serif;
-      font-size:clamp(24px,3vw,34px);
-      color:#fff;
-    }
-    .newsletter p{
-      color:rgba(255,255,255,.78);
-      margin-top:6px;
-    }
-    .subscribe{
-      display:flex;
-      align-items:center;
-      gap:10px;
       flex-wrap:wrap;
     }
-    .subscribe input{
-      min-width:260px;
-      height:48px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.15);
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      padding:0 16px;
-      outline:none;
-      width:300px;
-    }
-    .subscribe input::placeholder{color:rgba(255,255,255,.6);}
-    .subscribe button{
-      min-height:48px;padding:0 22px;border:none;border-radius:12px;
-      background:var(--brand-gold);color:var(--brand-navy);
-      font-weight:800; cursor:pointer;
-    }
 
-    /* Footer */
     footer{
       background:#fff;
-      border-top:1px solid var(--border);
-      margin-top:80px;
+      border-top:1px solid var(--line);
+      margin-top:40px;
     }
     .footer-inner{
-      max-width:1240px; margin:0 auto; padding:52px 20px 30px;
+      padding:52px 0 28px;
       display:grid;
-      grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+      grid-template-columns:1.4fr 1fr 1fr 1.1fr;
       gap:28px;
     }
-    .footer-title{
-      font-size:13px; font-weight:800; letter-spacing:.12em;
-      text-transform:uppercase; color:var(--brand-slate); margin-bottom:16px;
+    .footer-col h4{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--navy);
+      margin-bottom:16px;
+      font-weight:800;
     }
-    .footer p, .footer li, .footer a{
-      color:var(--muted); font-size:14px; line-height:1.7;
+    .footer-col p,
+    .footer-col a{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
     }
-    .footer-col{
-      display:flex; flex-direction:column; gap:10px;
-    }
+    .footer-col a:hover{color:var(--navy);}
     .socials{
-      display:flex; flex-direction:column; gap:10px;
-      margin-top:8px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
     .social{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       width:max-content;
+      background:#f5f6f8;
+      border:1px solid var(--line);
       padding:8px 10px;
       border-radius:10px;
-      background:#f7f9fd;
-      border:1px solid var(--border);
-      color:var(--brand-navy);
-      font-weight:700;
+      color:var(--navy);
+      font-weight:600;
     }
     .social span{
-      width:26px; height:26px; border-radius:8px; display:flex; align-items:center; justify-content:center;
-      color:#fff; font-weight:700; font-size:12px;
+      width:26px;
+      height:26px;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:11px;
+      font-weight:800;
     }
     .wa{background:#25d366;}
     .li{background:#0a66c2;}
     .ig{background:linear-gradient(135deg,#feda75,#d62976,#4f5bd5);}
-    .copy{
-      background:var(--brand-navy);
-      color:#cfdbe9;
-      font-size:12px;
-      padding:16px 0;
-    }
-    .copy-inner{
-      max-width:1240px; margin:0 auto; padding:0 20px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
-    }
 
-    /* Drawer */
-    .drawer-backdrop{
-      position:fixed; inset:0; background:rgba(10,20,32,.52); z-index:1200;
-      opacity:0; visibility:hidden; transition:var(--transition);
+    .copyright{
+      padding:18px 0 24px;
+      border-top:1px solid var(--line);
+      background:#fbfaf8;
     }
-    .drawer-backdrop.show{
-      opacity:1; visibility:visible;
-    }
-    .cart-drawer{
-      position:fixed; top:0; right:0; bottom:0; width:min(420px, 92vw);
-      background:#fff; z-index:1300; transform:translateX(110%);
-      transition:transform .3s ease; box-shadow:-20px 0 50px rgba(0,0,0,.18);
-      display:flex; flex-direction:column;
-    }
-    .cart-drawer.open{transform:translateX(0);}
-    .drawer-header{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:18px 22px; border-bottom:1px solid var(--border);
-    }
-    .drawer-header h3{
-      font-family:'Cinzel', serif;
-      font-size:22px; color:var(--brand-navy);
-    }
-    .close-btn{
-      border:none; background:#f3f6fb; color:var(--brand-navy);
-      width:36px; height:36px; border-radius:10px; cursor:pointer;
-    }
-    .cart-items{
-      padding:18px 18px 0;
-      overflow:auto; flex:1;
-    }
-    .cart-empty{
-      display:none;
-      padding:20px 8px;
+    .copyright-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
       color:var(--muted);
-      font-weight:600;
-      text-align:center;
-    }
-    .cart-empty.show{display:block;}
-    .cart-item{
-      display:grid; grid-template-columns:80px 1fr auto; gap:12px;
-      padding:12px 0; border-bottom:1px solid var(--border);
-    }
-    .cart-item img{
-      width:80px;height:80px;object-fit:cover;border-radius:12px;
-    }
-    .cart-item h4{
-      font-size:14px; color:var(--brand-navy); margin-bottom:4px;
-    }
-    .cart-item p{
-      font-size:12px; color:var(--muted); margin-bottom:6px;
-    }
-    .qty{
-      display:inline-flex; align-items:center; gap:8px; padding:4px 8px;
-      border:1px solid var(--border); border-radius:999px;
-      font-size:12px; color:var(--brand-navy); font-weight:700;
-    }
-    .qty button{border:none;background:transparent; cursor:pointer; color:var(--brand-navy); font-size:16px; width:18px; height:18px;}
-    .cart-item .remove{
-      border:none; background:transparent; color:var(--brand-accent); font-weight:700; cursor:pointer; font-size:12px;
-    }
-    .cart-footer{
-      padding:18px; border-top:1px solid var(--border); background:#fff;
-    }
-    .totals{
-      display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;
-      color:var(--brand-navy); font-weight:800;
-    }
-    .totals .sub{font-size:14px;color:var(--muted);font-weight:700;}
-    .cart-footer .btn{
-      width:100%;
-      justify-content:center;
-      min-height:48px;
+      font-size:13px;
     }
 
-    @media (max-width:1100px){
-      .collection-grid, .product-grid{grid-template-columns:repeat(2,1fr);}
-      .features{grid-template-columns:repeat(2,1fr);}
-      .hero-content{grid-template-columns:1fr;}
-      .hero-card{max-width:420px;}
-    }
-    @media (max-width:860px){
-      .nav-links{display:none;}
-      .menu-btn{display:inline-flex; align-items:center; justify-content:center;}
-      .hero-content{padding-top:42px;}
-      .footer-inner{grid-template-columns:repeat(2,1fr);}
-      .testimonial-grid{grid-template-columns:1fr;}
-    }
-    @media (max-width:640px){
-      .topbar-inner, .copy-inner{justify-content:center; text-align:center;}
-      .hero-stats{display:grid; grid-template-columns:repeat(2,1fr);}
-      .collection-grid, .product-grid, .features, .footer-inner, .promo-inner{
+    @media (max-width:980px){
+      .nav-links{
+        display:none;
+      }
+      .menu-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .hero-inner{
         grid-template-columns:1fr;
       }
-      .subscribe{
+      .category-grid,
+      .featured-grid,
+      .benefits,
+      .project-grid,
+      .footer-inner{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:620px){
+      .topbar-inner{
+        justify-content:center;
+        text-align:center;
+      }
+      .nav-actions .btn-light{
+        display:none;
+      }
+      .category-grid,
+      .featured-grid,
+      .benefits,
+      .project-grid,
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+      .hero{
+        min-height:560px;
+      }
+      .hero-actions{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .hero-actions .btn{
         width:100%;
       }
-      .subscribe input{width:100%; min-width:0;}
-      .subscribe button{width:100%;}
-      .section{padding:60px 0;}
-      .nav-actions .btn-outline{display:none;}
-      .brand-name{font-size:18px;}
-      .brand-tag{letter-spacing:.1em;}
-      .cta-banner{padding:22px 18px;}
+      .cta-banner{
+        padding:26px 20px;
+      }
+      .cta-actions{
+        width:100%;
+      }
+      .cta-actions .btn{
+        flex:1;
+      }
     }
   </style>
 </head>
@@ -935,39 +732,35 @@
     <div class="container topbar-inner">
       <div class="topbar-links">
         <a href="tel:+918123502007">+91 81235 02007</a>
+        <a href="tel:+17575059172">+1 (757) 505-9172</a>
         <a href="mailto:admin@malviganomac.live">admin@malviganomac.live</a>
       </div>
-      <span class="badge">Export-ready stone supplier</span>
+      <div class="tagline">Natural stone export & supply</div>
     </div>
   </div>
 
   <header class="nav">
-    <div class="nav-inner">
-      <a href="/" class="brand" aria-label="MalviganoMac Home">
-        <img class="brand-mark" src="Logo.png" alt="MalviganoMac logo">
-        <div class="brand-copy">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="MalviganoMac home">
+        <img src="Logo.png" alt="MalviganoMac Logo">
+        <div class="brand-text">
           <div class="brand-name">MalviganoMac</div>
-          <div class="brand-tag">Stone & Slabs</div>
+          <div class="brand-sub">Stone & Slabs</div>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Main site navigation">
+      <nav class="nav-links" aria-label="Main menu">
         <a href="/">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#products">Shop</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#testimonials">Reviews</a>
+        <a href="#categories">Collections</a>
+        <a href="#featured">Featured</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-outline" type="button">Login / Register</button>
-        <button class="btn btn-primary" type="button">Request Quote</button>
-        <button class="btn cart-btn" type="button" id="cartToggle">
-          <span>Cart</span>
-          <span class="cart-badge" id="cartCount">0</span>
-        </button>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <button class="btn btn-light" type="button">Login / Register</button>
+        <a class="btn btn-primary" href="#contact">Get a Quote</a>
+        <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
       </div>
     </div>
   </header>
@@ -975,18 +768,19 @@
   <main>
     <section class="hero">
       <div class="hero-bg"></div>
-      <div class="hero-content">
+
+      <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="eyebrow">Premium natural stone for global projects</div>
-          <h1>Luxury stone for homes, villas & commercial spaces.</h1>
-          <p class="hero-sub">Granite, marble, quartz, porcelain, and monumental slabs curated for architects, builders, designers, and export buyers.</p>
+          <div class="eyebrow">Premium natural stone</div>
+          <h1>Stone that brings luxury to every space.</h1>
+          <p>Granite, marble, quartz and architectural stone for homes, offices, landscaping and modern commercial projects.</p>
 
           <div class="hero-actions">
-            <a href="#products" class="btn btn-primary">Shop Collection</a>
-            <a href="#contact" class="btn btn-outline" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.28); color:#fff;">Talk to an Expert</a>
+            <a href="#featured" class="btn btn-primary">Explore Collection</a>
+            <a href="#contact" class="btn btn-light">Request a Quote</a>
           </div>
 
-          <div class="hero-stats">
+          <div class="mini-stats">
             <div class="stat">
               <strong>50+</strong>
               <span>Quarry partners</span>
@@ -997,22 +791,20 @@
             </div>
             <div class="stat">
               <strong>100%</strong>
-              <span>Export-ready</span>
+              <span>Export ready</span>
             </div>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="mini-product">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Italian marble">
-            <div class="mini-product-info">
-              <span class="mini-tag">Best Seller</span>
-              <h3>Bianco Carrara Marble</h3>
-              <div class="mini-meta">
-                <div>
-                  <span class="price">₹1,490<small>/sq.ft</small></span>
-                </div>
-                <a href="#products" class="btn btn-primary" style="min-height:38px; padding:0 14px; font-size:12px;">View</a>
+          <div class="stone-box">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Luxury marble">
+            <div class="stone-box-info">
+              <span class="label">Best Seller</span>
+              <h3>Bianco Carrara</h3>
+              <div class="price-row">
+                <div class="price">₹1,490<small>/sq.ft</small></div>
+                <a class="btn btn-primary" href="#featured" style="min-height:38px; padding:0 14px;">View</a>
               </div>
             </div>
           </div>
@@ -1020,248 +812,93 @@
       </div>
     </section>
 
-    <div class="promo-strip">
-      <div class="promo-inner">
-        <div class="promo-item">
-          <div class="promo-icon">🚚</div>
-          <div>
-            <strong>Fast Dispatch</strong>
-            <span>Ready stock across sizes</span>
-          </div>
-        </div>
-        <div class="promo-item">
-          <div class="promo-icon">🧪</div>
-          <div>
-            <strong>Quality Checked</strong>
-            <span>Surface, thickness & finish</span>
-          </div>
-        </div>
-        <div class="promo-item">
-          <div class="promo-icon">🏛️</div>
-          <div>
-            <strong>Architect Supply</strong>
-            <span>Commercial & residential</span>
-          </div>
-        </div>
-        <div class="promo-item">
-          <div class="promo-icon">💬</div>
-          <div>
-            <strong>Export Support</strong>
-            <span>Documentation & packaging</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="section" id="collections">
+    <section class="section" id="categories">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Shop by Category</div>
-            <h2 class="section-title">Explore our premium collection</h2>
+            <div class="section-kicker">Collections</div>
+            <h2>Choose the right stone for your project</h2>
           </div>
-          <p class="section-copy">From statement marble to industrial quartz, discover refined materials for intimate spaces and large-scale projects.</p>
+          <p>Minimal, durable, and elegant stone solutions for residential, commercial, and outdoor spaces.</p>
         </div>
 
-        <div class="collection-grid">
-          <a href="#products" class="collection-card">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Granite slabs">
-            <div class="collection-body">
-              <h3>Granite & Marble</h3>
-              <p>Premium natural stones for flooring, wall cladding and counters.</p>
-              <span class="collection-link">View selection →</span>
+        <div class="category-grid">
+          <a href="#featured" class="category-card">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80" alt="Granite">
+            <div class="content">
+              <h3>Granite</h3>
+              <p>Strong and premium surfaces for countertops, flooring and exterior applications.</p>
+              <div class="category-link">Explore →</div>
             </div>
           </a>
 
-          <a href="#products" class="collection-card">
-            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80" alt="Quartz and stone">
-            <div class="collection-body">
-              <h3>Quartz & Porcelain</h3>
-              <p>Low-maintenance surfaces for contemporary luxury interiors.</p>
-              <span class="collection-link">View selection →</span>
+          <a href="#featured" class="category-card">
+            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=900&q=80" alt="Marble">
+            <div class="content">
+              <h3>Marble</h3>
+              <p>Classic luxury for homes, offices, foyers, and statement interiors.</p>
+              <div class="category-link">Explore →</div>
             </div>
           </a>
 
-          <a href="#products" class="collection-card">
-            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=900&q=80" alt="Slab stone">
-            <div class="collection-body">
-              <h3>Slab & Blocks</h3>
-              <p>Large-format slabs, monument stone and architectural blocks.</p>
-              <span class="collection-link">View selection →</span>
-            </div>
-          </a>
-
-          <a href="#products" class="collection-card">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Luxury stone">
-            <div class="collection-body">
-              <h3>Custom Project Supply</h3>
-              <p>Tailored sourcing and cut-to-size solutions for global clients.</p>
-              <span class="collection-link">View selection →</span>
+          <a href="#featured" class="category-card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Quartz & Slabs">
+            <div class="content">
+              <h3>Quartz & Slabs</h3>
+              <p>Modern finishes designed for sleek interiors and heavy-use surfaces.</p>
+              <div class="category-link">Explore →</div>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="products">
+    <section class="section" id="featured">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Top products</div>
-            <h2 class="section-title">Best selling stone products</h2>
+            <div class="section-kicker">Featured products</div>
+            <h2>Popular stone ranges</h2>
           </div>
-          <p class="section-copy">Browse top sellers for homes, projects, and export shipments with dependable quality and beautiful finishes.</p>
+          <p>Premium slabs and surfaces selected for beauty, durability and long-term performance.</p>
         </div>
 
-        <div class="filter-bar" aria-label="Product filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="granite">Granite</button>
-          <button class="filter-btn" data-filter="marble">Marble</button>
-          <button class="filter-btn" data-filter="quartz">Quartz</button>
-          <button class="filter-btn" data-filter="porcelain">Porcelain</button>
-        </div>
-
-        <div class="product-grid" id="productGrid">
-          <article class="product-card" data-category="marble">
-            <div class="product-thumb">
-              <span class="tag">Marble</span>
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Bianco Carrara Marble">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Bianco Carrara Marble</div>
-              <div class="product-meta">
-                <span>Polished Finish</span>
-                <span>18mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹1,490<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Bianco Carrara Marble" data-price="1490">Add to cart</button>
+        <div class="featured-grid">
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Carrara Marble">
+            <div class="product-info">
+              <span class="product-tag">Marble</span>
+              <h3>Carrara Marble</h3>
+              <p>Elegant white stone with soft veins for luxury interiors.</p>
+              <div class="product-bottom">
+                <div class="product-price">₹1,490<span>/sq.ft</span></div>
+                <button class="small-btn" type="button">Add</button>
               </div>
             </div>
           </article>
 
-          <article class="product-card" data-category="granite">
-            <div class="product-thumb">
-              <span class="tag">Granite</span>
-              <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80" alt="Absolute Black Granite">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Absolute Black Granite</div>
-              <div class="product-meta">
-                <span>Leather Finish</span>
-                <span>20mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹1,980<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Absolute Black Granite" data-price="1980">Add to cart</button>
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=900&q=80" alt="Absolute Black Granite">
+            <div class="product-info">
+              <span class="product-tag">Granite</span>
+              <h3>Absolute Black</h3>
+              <p>High-contrast natural stone for premium residential and commercial spaces.</p>
+              <div class="product-bottom">
+                <div class="product-price">₹1,980<span>/sq.ft</span></div>
+                <button class="small-btn" type="button">Add</button>
               </div>
             </div>
           </article>
 
-          <article class="product-card" data-category="quartz">
-            <div class="product-thumb">
-              <span class="tag">Quartz</span>
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Calacatta Quartz">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Calacatta Quartz</div>
-              <div class="product-meta">
-                <span>Crystal Finish</span>
-                <span>12mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹2,240<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Calacatta Quartz" data-price="2240">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="porcelain">
-            <div class="product-thumb">
-              <span class="tag">Porcelain</span>
-              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Porcelain Stone Slab">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Sintered Porcelain Slab</div>
-              <div class="product-meta">
-                <span>Stone Look</span>
-                <span>6mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹1,760<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Sintered Porcelain Slab" data-price="1760">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="granite">
-            <div class="product-thumb">
-              <span class="tag">Granite</span>
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Titanium Granite">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Titanium Granite</div>
-              <div class="product-meta">
-                <span>Honed Finish</span>
-                <span>18mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹1,680<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Titanium Granite" data-price="1680">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="marble">
-            <div class="product-thumb">
-              <span class="tag">Marble</span>
-              <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=900&q=80" alt="Italian White Marble">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Italian White Marble</div>
-              <div class="product-meta">
-                <span>Gloss Finish</span>
-                <span>20mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹2,110<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Italian White Marble" data-price="2110">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="quartz">
-            <div class="product-thumb">
-              <span class="tag">Quartz</span>
-              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Mystic Grey Quartz">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Mystic Grey Quartz</div>
-              <div class="product-meta">
-                <span>Matt Finish</span>
-                <span>20mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹2,020<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Mystic Grey Quartz" data-price="2020">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="porcelain">
-            <div class="product-thumb">
-              <span class="tag">Porcelain</span>
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Concrete Porcelain">
-            </div>
-            <div class="product-body">
-              <div class="product-name">Concrete Look Porcelain</div>
-              <div class="product-meta">
-                <span>Large Format</span>
-                <span>12mm</span>
-              </div>
-              <div class="product-price-row">
-                <div class="product-price">₹1,540<small>/sq.ft</small></div>
-                <button class="add-cart" data-name="Concrete Look Porcelain" data-price="1540">Add to cart</button>
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Quartz">
+            <div class="product-info">
+              <span class="product-tag">Quartz</span>
+              <h3>Calacatta Quartz</h3>
+              <p>Polished and durable engineered stone for modern countertops.</p>
+              <div class="product-bottom">
+                <div class="product-price">₹2,240<span>/sq.ft</span></div>
+                <button class="small-btn" type="button">Add</button>
               </div>
             </div>
           </article>
@@ -1269,38 +906,69 @@
       </div>
     </section>
 
-    <section class="section" id="why-us">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <div>
             <div class="section-kicker">Why choose us</div>
-            <h2 class="section-title">Designed for buyers who expect quality, speed & trust</h2>
+            <h2>Trusted quality, dependable supply</h2>
           </div>
         </div>
 
-        <div class="features">
-          <div class="feature-card">
-            <div class="feature-icon">✅</div>
-            <h3>Certified Supply</h3>
-            <p>Quality-assured natural stone with consistent thickness, polish and finish.</p>
+        <div class="benefits">
+          <div class="benefit">
+            <div class="icon">✓</div>
+            <h3>Quality checked</h3>
+            <p>Each stone is inspected for finish, thickness and consistency before dispatch.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">🏭</div>
-            <h3>Processing Hubs</h3>
-            <p>Expert fabrication support in Chennai and Kishangarh under strict standards.</p>
+          <div class="benefit">
+            <div class="icon">🏭</div>
+            <h3>Processing hubs</h3>
+            <p>Advanced processing and finishing support from Chennai and Kishangarh.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">📦</div>
-            <h3>Export Packaging</h3>
-            <p>Safe packaging, documentation and shipping coordination for international buyers.</p>
+          <div class="benefit">
+            <div class="icon">📦</div>
+            <h3>Export ready</h3>
+            <p>Professional packaging, documentation, and support for international buyers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Project inspiration</div>
+            <h2>Stone solutions for elegant living</h2>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Luxury villa exterior">
+            <div class="project-info">
+              <h3>Villa façade</h3>
+              <p>Natural granite and stone styling for premium exteriors.</p>
+            </div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">💬</div>
-            <h3>Project Consultation</h3>
-            <p>We help you choose the right finish, slab size and volume for your project.</p>
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Kitchen countertop">
+            <div class="project-info">
+              <h3>Kitchen surfaces</h3>
+              <p>Elegant stone finishes for luxury homes and hospitality spaces.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Landscaping">
+            <div class="project-info">
+              <h3>Landscape stone</h3>
+              <p>Outdoor stone solutions for gardens, pathways and entry features.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1310,279 +978,88 @@
       <div class="container">
         <div class="cta-banner">
           <div>
-            <h3>Need a custom quote for your project?</h3>
-            <p>Tell us your dimensions, quantity, and finish preferences. We’ll suggest the best stone solution.</p>
+            <h2>Need a stone solution for your project?</h2>
+            <p>Tell us your requirement and our team will suggest the right material, slab size and finish.</p>
           </div>
+
           <div class="cta-actions">
             <a href="#contact" class="btn btn-primary">Request a Quote</a>
-            <a href="#products" class="btn btn-outline">Browse Products</a>
+            <a href="#featured" class="btn btn-light">Browse Products</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonials">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Customer feedback</div>
-            <h2 class="section-title">Trusted by architects, builders & homeowners</h2>
-          </div>
-        </div>
-
-        <div class="testimonial-grid">
-          <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“The slab quality and finish were excellent. Delivery was timely and the team gave us very useful guidance for the project.”</p>
-            <div class="testimonial-person">
-              <div class="pilot">AR</div>
-              <div class="person">
-                <h4>Arun Reddy</h4>
-                <span>Interior Consultant</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“We sourced marble and granite for a villa project and the consistency across slabs was very impressive. Highly recommended.”</p>
-            <div class="testimonial-person">
-              <div class="pilot">SK</div>
-              <div class="person">
-                <h4>Sanjay Khanna</h4>
-                <span>Project Builder</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>“The export support and communication were excellent. They handled packaging, documents and quality coordination without issues.”</p>
-            <div class="testimonial-person">
-              <div class="pilot">MM</div>
-              <div class="person">
-                <h4>Maria M.</h4>
-                <span>International Buyer</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="newsletter">
-          <div>
-            <h3>Subscribe for stock updates & new arrivals</h3>
-            <p>Receive special stone pricing, collection launches and export announcements.</p>
-          </div>
-          <form class="subscribe" onsubmit="event.preventDefault(); alert('Thanks! You are subscribed.');">
-            <input type="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
-          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer id="contact">
-    <div class="footer-inner">
+    <div class="container footer-inner">
       <div class="footer-col">
-        <div class="brand" style="margin-bottom:8px;">
-          <img class="brand-mark" src="Logo.png" alt="MalviganoMac logo" style="width:42px;height:42px;">
-          <div class="brand-copy">
+        <div class="brand" style="margin-bottom:14px;">
+          <img src="Logo.png" alt="MalviganoMac Logo" style="width:42px;height:42px;">
+          <div class="brand-text">
             <div class="brand-name" style="font-size:18px;">MalviganoMac</div>
-            <div class="brand-tag">Stone & Slabs</div>
+            <div class="brand-sub">Stone & Slabs</div>
           </div>
         </div>
-        <p>Premium granite, marble, quartz, porcelain and monumental stone supplier for homes, architecture and export projects.</p>
+        <p>Premium granite, marble, quartz and natural stone supplier for homes, offices, landscaping and export projects.</p>
       </div>
 
       <div class="footer-col">
-        <div class="footer-title">Quick links</div>
-        <a href="/">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#products">Shop</a>
-        <a href="#why-us">Why Us</a>
+        <h4>Quick Links</h4>
+        <a href="/">Home</a><br>
+        <a href="#categories">Collections</a><br>
+        <a href="#featured">Featured</a><br>
+        <a href="#projects">Projects</a>
       </div>
 
       <div class="footer-col">
-        <div class="footer-title">Contact</div>
-        <a href="tel:+918123502007">+91 81235 02007</a>
-        <a href="tel:+17575059172">+1 (757) 505-9172</a>
-        <a href="mailto:admin@malviganomac.live">admin@malviganomac.live</a>
-        <p>Bangalore – 560041, Karnataka, India</p>
+        <h4>Contact</h4>
+        <a href="tel:+918123502007">+91 81235 02007</a><br>
+        <a href="tel:+17575059172">+1 (757) 505-9172</a><br>
+        <a href="mailto:admin@malviganomac.live">admin@malviganomac.live</a><br>
+        <span>Bangalore, Karnataka, India</span>
       </div>
 
       <div class="footer-col">
-        <div class="footer-title">Follow us</div>
+        <h4>Follow Us</h4>
         <div class="socials">
-          <a href="https://wa.me/918123502007" target="_blank" class="social"><span class="wa">WA</span> WhatsApp</a>
-          <a href="https://wa.me/17575059172" target="_blank" class="social"><span class="wa">WA</span> USA WhatsApp</a>
-          <a href="https://www.linkedin.com/company/malviganomac" target="_blank" class="social"><span class="li">IN</span> LinkedIn</a>
-          <a href="https://www.instagram.com/malvigano_mac" target="_blank" class="social"><span class="ig">IG</span> Instagram</a>
+          <a class="social" href="https://wa.me/918123502007" target="_blank"><span class="wa">WA</span> WhatsApp</a>
+          <a class="social" href="https://www.linkedin.com/company/malviganomac" target="_blank"><span class="li">IN</span> LinkedIn</a>
+          <a class="social" href="https://www.instagram.com/malvigano_mac" target="_blank"><span class="ig">IG</span> Instagram</a>
         </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container copyright-inner">
+        <div>© 2026 MalviganoMac Pvt. Ltd. All Rights Reserved.</div>
+        <div>Natural stone supply for elegant living</div>
       </div>
     </div>
   </footer>
 
-  <div class="copy">
-    <div class="copy-inner">
-      <div>© 2026 MalviganoMac Pvt. Ltd. All Rights Reserved.</div>
-      <div>Designed for ecommerce-ready stone trading</div>
-    </div>
-  </div>
-
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-    <div class="drawer-header">
-      <h3>Your Cart</h3>
-      <button class="close-btn" id="closeCart" aria-label="Close cart">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty" id="cartEmpty">Your cart is empty.</div>
-    </div>
-    <div class="cart-footer">
-      <div class="totals">
-        <span class="sub">Subtotal</span>
-        <span id="cartTotal">₹0</span>
-      </div>
-      <button class="btn btn-primary" type="button">Checkout</button>
-    </div>
-  </aside>
-
   <script>
-    const cart = [];
-    const cartCountEl = document.getElementById('cartCount');
-    const cartItemsEl = document.getElementById('cartItems');
-    const cartEmptyEl = document.getElementById('cartEmpty');
-    const cartTotalEl = document.getElementById('cartTotal');
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
 
-    function updateCartUI() {
-      cartCountEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartItemsEl.innerHTML = '';
-      if (cart.length === 0) {
-        cartEmptyEl.classList.add('show');
-      } else {
-        cartEmptyEl.classList.remove('show');
-        cart.forEach((item, index) => {
-          const div = document.createElement('div');
-          div.className = 'cart-item';
-          div.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div>
-              <h4>${item.name}</h4>
-              <p>₹${item.price}</p>
-              <div class="qty">
-                <button data-action="minus" data-index="${index}">−</button>
-                <span>${item.qty}</span>
-                <button data-action="plus" data-index="${index}">+</button>
-              </div>
-            </div>
-            <div style="display:flex; flex-direction:column; align-items:flex-end; justify-content:space-between;">
-              <div style="font-weight:800; color:var(--brand-navy);">₹${item.price * item.qty}</div>
-              <button class="remove" data-action="remove" data-index="${index}">Remove</button>
-            </div>
-          `;
-          cartItemsEl.appendChild(div);
-        });
-      }
-
-      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-      cartTotalEl.textContent = `₹${total}`;
-    }
-
-    document.querySelectorAll('.add-cart').forEach(button => {
-      button.addEventListener('click', () => {
-        const name = button.dataset.name;
-        const price = Number(button.dataset.price);
-
-        const existing = cart.find(item => item.name === name);
-        if (existing) {
-          existing.qty += 1;
-        } else {
-          cart.push({
-            name,
-            price,
-            qty: 1,
-            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80'
-          });
-        }
-
-        updateCartUI();
-        openCart();
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const visible = navLinks.style.display === 'flex';
+        navLinks.style.display = visible ? 'none' : 'flex';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '82px';
+        navLinks.style.left = '16px';
+        navLinks.style.right = '16px';
+        navLinks.style.background = '#fff';
+        navLinks.style.border = '1px solid #e9e5df';
+        navLinks.style.borderRadius = '16px';
+        navLinks.style.padding = '16px 14px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.alignItems = 'flex-start';
+        navLinks.style.boxShadow = '0 18px 35px rgba(0,0,0,.08)';
       });
-    });
-
-    document.addEventListener('click', (event) => {
-      const target = event.target;
-      const action = target.dataset.action;
-      if (!action) return;
-
-      const index = Number(target.dataset.index);
-
-      if (action === 'plus') {
-        cart[index].qty += 1;
-      } else if (action === 'minus') {
-        cart[index].qty -= 1;
-        if (cart[index].qty <= 0) cart.splice(index, 1);
-      } else if (action === 'remove') {
-        cart.splice(index, 1);
-      }
-
-      updateCartUI();
-    });
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const selected = btn.dataset.filter;
-        filterButtons.forEach(b => b.classList.toggle('active', b === btn));
-        const cards = document.querySelectorAll('.product-card');
-        cards.forEach(card => {
-          const show = selected === 'all' || card.dataset.category === selected;
-          card.style.display = show ? '' : 'none';
-        });
-      });
-    });
-
-    const cartDrawer = document.getElementById('cartDrawer');
-    const drawerBackdrop = document.getElementById('drawerBackdrop');
-    const cartToggle = document.getElementById('cartToggle');
-    const closeCart = document.getElementById('closeCart');
-
-    function openCart() {
-      cartDrawer.classList.add('open');
-      drawerBackdrop.classList.add('show');
     }
-    function closeCartDrawer() {
-      cartDrawer.classList.remove('open');
-      drawerBackdrop.classList.remove('show');
-    }
-
-    cartToggle.addEventListener('click', openCart);
-    closeCart.addEventListener('click', closeCartDrawer);
-    drawerBackdrop.addEventListener('click', closeCartDrawer);
-
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', () => {
-      document.querySelector('.nav-links').style.display =
-        document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
-      document.querySelector('.nav-links').style.position = 'absolute';
-      document.querySelector('.nav-links').style.top = '72px';
-      document.querySelector('.nav-links').style.left = '20px';
-      document.querySelector('.nav-links').style.right = '20px';
-      document.querySelector('.nav-links').style.background = '#fff';
-      document.querySelector('.nav-links').style.border = '1px solid var(--border)';
-      document.querySelector('.nav-links').style.borderRadius = '14px';
-      document.querySelector('.nav-links').style.padding = '14px 12px';
-      document.querySelector('.nav-links').style.flexDirection = 'column';
-      document.querySelector('.nav-links').style.alignItems = 'flex-start';
-    });
-
-    updateCartUI();
   </script>
+
 </body>
 </html>
