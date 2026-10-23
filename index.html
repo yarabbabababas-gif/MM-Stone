@@ -43,6 +43,9 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    body.drawer-open {
+      overflow: hidden;
+    }
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
@@ -116,7 +119,7 @@
       gap: 10px;
     }
 
-    /* Standardized Buttons (Identical Height & Geometry) */
+    /* Standardized Buttons (Solid & Outline) */
     .btn-action-solid,
     .btn-action-outline,
     .auth-nav-slot button,
@@ -139,7 +142,6 @@
       line-height: 1;
     }
 
-    /* Solid Navy (Get a Quote) */
     .btn-action-solid {
       background: var(--brand-navy);
       color: #ffffff !important;
@@ -151,7 +153,6 @@
       box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
     }
 
-    /* Outline Slate/Gold (Login / Register) */
     .btn-action-outline,
     .auth-nav-slot button,
     .auth-nav-slot a {
@@ -167,62 +168,142 @@
       color: var(--brand-navy) !important;
     }
 
-    /* Mobile Hamburger Button */
+    /* Hamburger Button (Available everywhere) */
     .nav-hamburger {
-      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--brand-navy);
+      border-radius: var(--radius-sm);
+      line-height: 0;
+      transition: var(--transition);
+    }
+    .nav-hamburger:hover {
+      background: rgba(0, 51, 102, 0.05);
+    }
+
+    /* Slide-Over Side Popup Drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 26, 43, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 2100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 360px;
+      background: #ffffff;
+      z-index: 2200;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .side-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .drawer-close {
       background: none;
       border: none;
       cursor: pointer;
       padding: 6px;
-      color: var(--brand-navy);
+      color: var(--text-muted);
       border-radius: var(--radius-sm);
       line-height: 0;
-    }
-    .nav-hamburger:focus-visible {
-      outline: 2px solid var(--brand-gold);
-    }
-
-    /* Mobile Drawer */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 16px 20px 24px 20px;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    }
-    .mobile-menu.open { display: flex; }
-    
-    .mobile-nav-link {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
       transition: var(--transition);
     }
-    .mobile-nav-link:active,
-    .mobile-nav-link:hover {
-      background: var(--brand-navy);
-      color: #ffffff;
+    .drawer-close:hover {
+      color: var(--brand-navy);
+      background: #f1f5f9;
     }
 
-    .mobile-actions-grid {
+    .drawer-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .drawer-actions-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
       border-bottom: 1px solid var(--card-border);
     }
-    .mobile-actions-grid .btn-action-solid,
-    .mobile-actions-grid .btn-action-outline,
+    .drawer-actions-grid .btn-action-solid,
+    .drawer-actions-grid .btn-action-outline,
     .mobile-auth-slot button,
     .mobile-auth-slot a {
       width: 100%;
       height: 42px;
+    }
+
+    .drawer-nav-link {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      color: var(--brand-slate);
+      background: #f8fafc;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-nav-link:hover,
+    .drawer-nav-link:active {
+      background: var(--brand-navy);
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    .drawer-footer-contact {
+      margin-top: auto;
+      padding: 18px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--card-border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .drawer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand-slate);
+      font-weight: 600;
     }
 
     /* Info Strip */
@@ -549,13 +630,9 @@
       gap: 12px;
     }
 
-    /* Breakpoints */
-    @media (max-width: 1024px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: block; }
-    }
-
+    /* Breakpoint adjustments */
     @media (max-width: 980px) {
+      .nav-links { display: none; }
       .who-we-are-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .section-header-banner { flex-direction: column; text-align: left; align-items: flex-start; gap: 8px; }
@@ -588,7 +665,6 @@
         white-space: normal;
         word-break: normal;
       }
-      /* Hide inline header buttons on mobile to prevent overflow; they appear inside drawer */
       .nav-actions .auth-nav-slot,
       .nav-actions .btn-action-solid {
         display: none;
@@ -596,7 +672,7 @@
     }
 
     @media (max-width: 480px) {
-      .mobile-actions-grid { grid-template-columns: 1fr; }
+      .drawer-actions-grid { grid-template-columns: 1fr; }
       .strip-contacts {
         flex-direction: column;
         gap: 4px;
@@ -631,36 +707,76 @@
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
 
-      <!-- Desktop Actions with Auth Slot -->
+      <!-- Actions & 3-Line Menu Trigger -->
       <div class="nav-actions">
         <div class="auth-nav-slot">
           <a href="/login" class="btn-action-outline">Login / Register</a>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
         
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation" aria-expanded="false">
-          <svg id="hamburgerIcon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Drawer with Actions & Menu Items -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-actions-grid">
+  <!-- Side Popup Backdrop Overlay -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Slide-Over Side Popup Drawer (Desktop + Mobile) -->
+  <aside class="side-drawer" id="sideDrawer" aria-label="Side Navigation Drawer">
+    <div class="drawer-header">
+      <div class="brand-logo-wrap">
+        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img" style="width:36px;height:36px;">
+        <span class="brand-title" style="font-size:16px;">MalviganoMac</span>
+      </div>
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation Drawer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Buttons in Side Popup -->
+      <div class="drawer-actions-grid">
         <div class="mobile-auth-slot">
           <a href="/login" class="btn-action-outline">Login / Register</a>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
-      
-      <a href="/" class="mobile-nav-link" onclick="toggleMenu()">Home</a>
-      <a href="/gallery" class="mobile-nav-link" onclick="toggleMenu()">All Collection / Gallery</a>
-      <a href="/granite-marble" class="mobile-nav-link" onclick="toggleMenu()">Granite & Marble</a>
-      <a href="/quartz-slabs" class="mobile-nav-link" onclick="toggleMenu()">Quartz & Slabs</a>
+
+      <!-- Navigation links in Side Popup -->
+      <a href="/" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Home</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/gallery" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>All Collection / Gallery</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/granite-marble" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Granite & Marble</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/quartz-slabs" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Quartz & Slabs</span>
+        <span>&rarr;</span>
+      </a>
     </div>
-  </header>
+
+    <div class="drawer-footer-contact">
+      <div class="drawer-contact-item">
+        <span>📞</span> +91 81235 02007
+      </div>
+      <div class="drawer-contact-item">
+        <span>✉️</span> admin@malviganomac.live
+      </div>
+    </div>
+  </aside>
 
   <!-- Info Strip -->
   <div class="info-strip">
@@ -900,27 +1016,36 @@
       }
     });
 
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    // Drawer Controls
+    const drawerOpenBtn = document.getElementById('drawerOpenBtn');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
 
-    function toggleMenu() {
-      if (mobileMenu) {
-        const isOpen = mobileMenu.classList.toggle('open');
-        hamburgerBtn.setAttribute('aria-expanded', isOpen);
-        
-        // Swap between burger and close (X) icon
-        if (isOpen) {
-          hamburgerIcon.innerHTML = '<path d="M18 6L6 18M6 6l12 12"/>';
-        } else {
-          hamburgerIcon.innerHTML = '<path d="M3 12h18M3 6h18M3 18h18"/>';
-        }
+    function openDrawer() {
+      sideDrawer.classList.add('open');
+      drawerBackdrop.classList.add('open');
+      document.body.classList.add('drawer-open');
+      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+      sideDrawer.classList.remove('open');
+      drawerBackdrop.classList.remove('open');
+      document.body.classList.remove('drawer-open');
+      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (drawerOpenBtn) drawerOpenBtn.addEventListener('click', openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+    // Escape Key Support
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sideDrawer.classList.contains('open')) {
+        closeDrawer();
       }
-    }
-
-    if (hamburgerBtn) {
-      hamburgerBtn.addEventListener('click', toggleMenu);
-    }
+    });
   </script>
 
   <!-- Auth and Cart Integration -->
