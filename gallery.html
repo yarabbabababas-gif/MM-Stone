@@ -6,7 +6,7 @@
   <title>All Collection / Gallery | MalviganoMac Stone</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
 
-    <!-- Favicon for Google & Web Browsers -->
+  <!-- Favicon for Google & Web Browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,6 +96,13 @@
       color: var(--brand-slate);
     }
     .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+    
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .btn-nav-quote {
       background: var(--brand-navy);
       color: #ffffff !important;
@@ -104,6 +111,7 @@
       font-size: 13px;
       font-weight: 700;
       transition: var(--transition);
+      white-space: nowrap;
     }
     .btn-nav-quote:hover { background: var(--brand-navy-dark); }
     .nav-hamburger {
@@ -135,6 +143,19 @@
       background: #f8fafc;
     }
     .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
+
+    /* Modal Backdrop for Auth */
+    .modal-backdrop { 
+      position: fixed; 
+      inset: 0; 
+      background: rgba(0,0,0,0.55); 
+      z-index: 2000; 
+      display: none; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 16px; 
+    }
+    .modal-backdrop.open { display: flex; }
 
     /* Gallery Content */
     .gallery-hero {
@@ -227,7 +248,7 @@
     .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
 
     @media (max-width: 980px) {
-      .nav-links, .btn-nav-quote { display: none; }
+      .nav-links { display: none; }
       .nav-hamburger { display: block; }
     }
     @media (max-width: 768px) {
@@ -256,14 +277,20 @@
         <a href="/granite-marble">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
-      <div>
+      
+      <!-- Desktop Actions with Auth Slot -->
+      <div class="nav-actions">
+        <div class="auth-nav-slot"></div>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
+
+    <!-- Mobile Drawer with Auth Slot -->
     <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
       <a href="/gallery">All Collection / Gallery</a>
       <a href="/granite-marble">Granite & Marble</a>
@@ -388,5 +415,9 @@
       });
     }
   </script>
+
+  <!-- Auth and Cart Integration -->
+  <script src="auth.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
