@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones." />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -44,14 +44,63 @@
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
+    .info-strip {
+      background: #4a5968;
+      color: #e2e8f0;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
+    }
+    .info-strip-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .strip-contacts {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .strip-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e2e8f0;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .strip-separator { color: rgba(255,255,255,0.5); font-size: 11px; }
+    .strip-badge-wrap { display: flex; align-items: center; }
+    .strip-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      color: var(--brand-gold-light);
+      background: rgba(197, 160, 89, 0.18);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      display: inline-block;
+      text-align: center;
+      line-height: 1.4;
+    }
+
     .nav-bar {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
+      z-index: 999;
+      background: rgba(255,255,255,0.98);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
     }
     .nav-container {
       max-width: 1240px;
@@ -69,7 +118,7 @@
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       flex-shrink: 0;
       background-color: #ffffff;
     }
@@ -88,6 +137,7 @@
       color: var(--text-muted);
       font-weight: 600;
     }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -154,7 +204,7 @@
     }
 
     .nav-hamburger {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       background: none;
@@ -301,7 +351,6 @@
       display: flex;
       opacity: 1;
     }
-
     .auth-modal {
       background: #ffffff;
       width: 100%;
@@ -394,50 +443,6 @@
     .btn-submit-auth:hover {
       background: var(--brand-navy-dark);
       box-shadow: 0 6px 18px rgba(0, 51, 102, 0.25);
-    }
-
-    .info-strip {
-      background: var(--brand-slate);
-      color: #cbd5e1;
-      font-size: 13px;
-      padding: 10px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      width: 100%;
-    }
-    .info-strip-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .strip-contacts { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .strip-contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #e2e8f0;
-      font-weight: 500;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-    .strip-separator { color: rgba(255,255,255,0.35); font-size:11px; }
-    .strip-badge-wrap { display: flex; align-items: center; }
-    .strip-badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-weight: 700;
-      color: var(--brand-gold-light);
-      background: rgba(197, 160, 89, 0.18);
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(197, 160, 89, 0.35);
-      display: inline-block;
-      text-align: center;
-      line-height: 1.4;
     }
 
     .hero-banner {
@@ -766,18 +771,15 @@
           +91 81235 02007
         </a>
         <span class="strip-separator">•</span>
-
         <a href="tel:+17575059172" class="strip-contact-link">
           <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
           +1 (757) 505-9172
         </a>
         <span class="strip-separator">•</span>
-
         <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
           <span>✉️</span> admin@malviganomac.live
         </a>
       </div>
-
       <div class="strip-badge-wrap">
         <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
       </div>
@@ -806,7 +808,6 @@
           <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
-
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M3 12h18M3 6h18M3 18h18"/>
@@ -862,12 +863,10 @@
         <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
         <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
       </div>
-
       <div class="drawer-contact-item">
         <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
         <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
       </div>
-
       <div class="drawer-contact-item">
         <span>✉️</span>
         <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
@@ -881,7 +880,6 @@
         <h3 id="authModalTitle">Create Customer Account</h3>
         <button type="button" class="modal-close-btn" id="authModalClose" aria-label="Close dialog">&times;</button>
       </div>
-
       <div class="auth-modal-body">
         <p class="auth-desc">Verify your credentials to place live slab bookings and export inquiries.</p>
         <form id="customerAccountForm" onsubmit="handleAccountSubmit(event)">
@@ -1155,9 +1153,7 @@
       });
     });
 
-    if (authModalClose) {
-      authModalClose.addEventListener('click', closeAuthModal);
-    }
+    if (authModalClose) authModalClose.addEventListener('click', closeAuthModal);
 
     if (authModalBackdrop) {
       authModalBackdrop.addEventListener('click', function(e) {
@@ -1179,7 +1175,7 @@
 
     function handleAccountSubmit(event) {
       event.preventDefault();
-      console.log('Sending OTPs for customer registration...');
+      console.log('Sending OTPs...');
       alert('Verification OTPs dispatched. Please check your Email and Mobile.');
       closeAuthModal();
     }
