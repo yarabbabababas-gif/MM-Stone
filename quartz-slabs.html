@@ -6,7 +6,7 @@
   <title>Quartz, Porcelain & Thick Monuments | Per Piece | MalviganoMac</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
   
-    <!-- Favicon for Google & Web Browsers -->
+  <!-- Favicon for Google & Web Browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -292,7 +292,10 @@
         </button>
       </div>
     </div>
+    
+    <!-- Mobile Drawer with Auth Slot -->
     <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
       <a href="/gallery">Gallery</a>
       <a href="/granite-marble">Granite & Marble</a>
@@ -388,9 +391,6 @@
     </div>
   </div>
 
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="auth.js"></script>
-  <script src="cart.js"></script>
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -398,5 +398,10 @@
       hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     }
   </script>
+
+  <!-- Scripts -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="auth.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
