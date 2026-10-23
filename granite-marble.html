@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Granite & Marble | E-Commerce Slabs | MalviganoMac</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
 
+  <!-- Favicon for Google & Web Browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +16,9 @@
     :root {
       --brand-navy: #003366;
       --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
       --brand-gold-light: #dfbe7d;
-      --brand-accent: #b32d2d;
       --text-main: #1f2937;
       --text-muted: #64748b;
       --bg-cream: #fbfbfd;
@@ -30,110 +29,18 @@
       --transition: all 0.25s ease-in-out;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text-main); background: var(--bg-cream); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    }
-    .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .nav-bar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+    .nav-container { max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
-      background-color: #ffffff;
-    }
-    .brand-logo-img.footer-logo { width: 42px; height: 42px; }
-    .brand-title {
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--brand-navy);
-      line-height: 1.1;
-    }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--brand-slate);
-    }
-    .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-
-    /* Unified Button Styles */
-    .btn-nav-quote {
-      background: var(--brand-navy);
-      color: #ffffff !important;
-      padding: 8px 16px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
-      font-weight: 700;
-      border: 1.5px solid var(--brand-navy);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      white-space: nowrap;
-      min-height: 38px;
-    }
-    .btn-nav-quote:hover { background: var(--brand-navy-dark); border-color: var(--brand-navy-dark); }
-    .btn-nav-cart {
-      background: #f8fafc;
-      color: var(--brand-navy);
-      border: 1.5px solid var(--card-border);
-      padding: 8px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      white-space: nowrap;
-      min-height: 38px;
-    }
-    .btn-nav-cart:hover {
-      border-color: var(--brand-navy);
-      background: #ffffff;
-    }
+    .brand-logo-img { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-gold); }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--brand-navy); }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
     .nav-hamburger {
       display: none;
       background: none;
@@ -147,7 +54,7 @@
     .mobile-menu {
       display: none;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       padding: 16px 20px 24px 20px;
       background: #ffffff;
       border-top: 1px solid var(--card-border);
@@ -162,226 +69,33 @@
       color: var(--brand-slate);
       background: #f8fafc;
     }
-    .mobile-menu a:hover, .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
-
-    /* Page Header */
-    .catalog-header {
-      max-width: 1240px;
-      margin: 40px auto 20px auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .catalog-header h1 { font-size: clamp(24px, 4vw, 32px); color: var(--brand-navy); font-weight: 800; }
-    .policy-pill {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      color: #065f46;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    /* Grid layout */
-    .grid-container {
-      max-width: 1240px;
-      margin: 0 auto 80px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 2.3fr 1fr;
-      gap: 32px;
-    }
-    .products-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-soft);
-    }
-    .card-img { width: 100%; height: 210px; object-fit: cover; }
-    .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-    .card-title { font-size: 18px; color: var(--brand-navy); font-weight: 800; margin-bottom: 4px; }
-    .dimen-tag {
-      font-size: 11.5px;
-      background: #f1f5f9;
-      padding: 4px 10px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      color: var(--brand-slate);
-    }
+    
+    .grid-container { max-width: 1240px; margin: 40px auto 80px auto; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
+    .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .card { background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
+    .card-img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
     .price-box { font-size: 22px; font-weight: 800; color: var(--brand-navy); margin: 8px 0; }
-    .price-unit { font-size: 13px; font-weight: 500; color: var(--text-muted); }
-    .card-ctrl { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
-    .sqft-input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-    }
-    .btn-add {
-      background: var(--brand-navy);
-      color: #ffffff;
-      padding: 11px 16px;
-      border-radius: var(--radius-sm);
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-      min-height: 42px;
-    }
-    .btn-add:hover { background: var(--brand-navy-dark); }
+    .card-ctrl { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
+    .sqft-input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); }
+    .btn-add { background: var(--brand-navy); color: #fff; padding: 10px; border-radius: var(--radius-sm); border: none; font-weight: 700; cursor: pointer; }
 
-    /* Cart Sidebar */
-    .cart-box {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      position: sticky;
-      top: 90px;
-      height: fit-content;
-      box-shadow: var(--shadow-soft);
-    }
-    .cart-box h3 {
-      font-size: 20px;
-      color: var(--brand-navy);
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
-    .cart-items { max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
-    .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; }
-    .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 20px; }
-    .split-row { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
+    .cart-box { background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 90px; height: fit-content; }
+    .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; margin-bottom: 8px; }
+    .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin: 16px 0; }
+    .split-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
     .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
+    
+    .btn-pay-online { width: 100%; background: #003366; color: #fff; padding: 13px; border: none; border-radius: var(--radius-sm); font-weight: 800; cursor: pointer; margin-bottom: 10px; font-size: 14px; }
+    .btn-checkout { width: 100%; background: #25d366; color: #fff; padding: 12px; border: none; border-radius: var(--radius-sm); font-weight: 800; cursor: pointer; margin-bottom: 10px; }
 
-    .btn-pay-online {
-      width: 100%;
-      background: var(--brand-navy);
-      color: #ffffff;
-      padding: 13px;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      margin-bottom: 10px;
-      min-height: 44px;
-      transition: var(--transition);
-    }
-    .btn-pay-online:hover { background: var(--brand-navy-dark); }
-    .btn-checkout {
-      width: 100%;
-      background: #25d366;
-      color: #ffffff;
-      padding: 12px;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      transition: var(--transition);
-      min-height: 44px;
-    }
-    .btn-checkout:hover { background: #1ebc59; }
-
-    /* Footer Unified Styles */
-    .site-footer {
-      background: #ffffff;
-      border-top: 1px dashed #cbd5e1;
-      padding: 50px 20px 40px 20px;
-    }
-    .footer-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 32px;
-    }
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--brand-slate);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .footer-col p { font-size: 13.5px; color: #64748b; margin-bottom: 10px; line-height: 1.6; }
-    .contact-line { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #334155; margin-bottom: 10px; }
-
-    .social-links-list { display: flex; flex-direction: column; gap: 10px; }
-    .social-link-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13.5px;
-      color: #334155;
-      font-weight: 600;
-      transition: var(--transition);
-      padding: 3px 0;
-    }
-    .social-link-item:hover { color: var(--brand-navy); transform: translateX(3px); }
-    .social-icon-box {
-      width: 28px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 7px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-    .social-icon-box svg { width: 16px; height: 16px; fill: #ffffff; display: block; }
-    .icon-wa { background-color: #25D366; }
-    .icon-li { background-color: #0A66C2; }
-    .icon-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-
-    .bottom-bar {
-      width: 100%;
-      background: var(--brand-slate);
-      color: #94a3b8;
-      font-size: 12.5px;
-      padding: 18px 20px;
-    }
-    .bottom-bar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .modal-backdrop.open { display: flex; }
 
     @media (max-width: 980px) {
       .grid-container { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .nav-hamburger { display: block; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .products-list { grid-template-columns: 1fr; }
-      .cart-box { position: static; }
-      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -394,13 +108,12 @@
         <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
-          <div class="brand-sub">Stone & Slabs</div>
         </div>
       </a>
       <nav class="nav-links">
         <a href="/">Home</a>
-        <a href="/gallery">All Collection / Gallery</a>
-        <a href="/granite-marble" class="active-link">Granite & Marble</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/granite-marble" style="color:var(--brand-navy); font-weight:700;">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
       <div class="nav-actions">
@@ -408,7 +121,6 @@
         <button class="btn-nav-cart" onclick="document.getElementById('cartBox').scrollIntoView({behavior:'smooth'})">
           🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
         </button>
-        <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
@@ -419,22 +131,12 @@
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
-      <a href="/gallery">All Collection / Gallery</a>
+      <a href="/gallery">Gallery</a>
       <a href="/granite-marble">Granite & Marble</a>
       <a href="/quartz-slabs">Quartz & Slabs</a>
       <a href="/quote">Get a Quote</a>
     </div>
   </header>
-
-  <div class="catalog-header">
-    <div>
-      <h1>Natural Granite & Marble Slabs</h1>
-      <p style="color:var(--text-muted); font-size:14px;">Gangsaw cut, mirror-polished architectural surfaces priced per square foot.</p>
-    </div>
-    <div class="policy-pill">
-      🔒 Booking Policy: 70% Advance Confirmation | 30% Balance On Delivery
-    </div>
-  </div>
 
   <div class="grid-container">
     <!-- Products Catalog -->
@@ -442,13 +144,12 @@
       <div class="card">
         <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Absolute Black Granite">
         <div class="card-body">
-          <div class="card-title">Absolute Black Premium Granite</div>
-          <span class="dimen-tag">Thickness: 18mm / 20mm Gangsaw</span>
-          <p style="font-size:12.5px; color:#64748b;">Uniform high density gangsaw slab for countertops and interior cladding.</p>
-          <div class="price-box">₹185 <span class="price-unit">/ sq.ft.</span></div>
+          <h3>Absolute Black Premium Granite</h3>
+          <p style="font-size:12.5px; color:#64748b;">Uniform high density gangsaw slab.</p>
+          <div class="price-box">₹185 <span style="font-size:13px; color:#64748b;">/ sq.ft.</span></div>
           <div class="card-ctrl">
-            <input type="number" id="qty_1" class="sqft-input" placeholder="Sq. Ft. Required" min="50" value="500">
-            <button class="btn-add" onclick="addItemToCart('Absolute Black Granite', 185, 'sq.ft', document.getElementById('qty_1').value)">Add Slabs To Cart</button>
+            <input type="number" id="qty_1" class="sqft-input" placeholder="Sq. Ft." value="500">
+            <button class="btn-add" onclick="addItemToCart('Absolute Black Granite', 185, 'sq.ft', document.getElementById('qty_1').value)">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -456,13 +157,12 @@
       <div class="card">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Statuario Marble">
         <div class="card-body">
-          <div class="card-title">Statuario White Luxury Marble</div>
-          <span class="dimen-tag">Thickness: 18mm Book-Match Lot</span>
-          <p style="font-size:12.5px; color:#64748b;">Premium Italian metamorphic lot with distinct dynamic diagonal gray veining.</p>
-          <div class="price-box">₹420 <span class="price-unit">/ sq.ft.</span></div>
+          <h3>Statuario White Luxury Marble</h3>
+          <p style="font-size:12.5px; color:#64748b;">Italian metamorphic veined lot.</p>
+          <div class="price-box">₹420 <span style="font-size:13px; color:#64748b;">/ sq.ft.</span></div>
           <div class="card-ctrl">
-            <input type="number" id="qty_2" class="sqft-input" placeholder="Sq. Ft. Required" min="50" value="800">
-            <button class="btn-add" onclick="addItemToCart('Statuario White Marble', 420, 'sq.ft', document.getElementById('qty_2').value)">Add Slabs To Cart</button>
+            <input type="number" id="qty_2" class="sqft-input" placeholder="Sq. Ft." value="800">
+            <button class="btn-add" onclick="addItemToCart('Statuario White Marble', 420, 'sq.ft', document.getElementById('qty_2').value)">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -470,111 +170,18 @@
 
     <!-- Persistent Checkout Box -->
     <div class="cart-box" id="cartBox">
-      <h3>E-Commerce Order Summary</h3>
-      <div id="cartItems" class="cart-items">
-        <p style="font-size:13px; color:#94a3b8;">No slabs added yet. Select quantities above.</p>
-      </div>
+      <h3>E-Commerce Order Cart</h3>
+      <div id="cartItems" style="margin-top:14px; max-height:260px; overflow-y:auto;"></div>
 
       <div class="split-bill">
         <div class="split-row"><span>Total Gross:</span><span id="grossTotal">₹0</span></div>
         <div class="split-row adv"><span>70% Advance Payable:</span><span id="advTotal">₹0</span></div>
-        <div class="split-row" style="color:#64748b;"><span>30% Balance on Delivery:</span><span id="balTotal">₹0</span></div>
+        <div class="split-row"><span>30% Balance on Delivery:</span><span id="balTotal">₹0</span></div>
       </div>
 
       <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance (UPI / Cards / NetBanking)</button>
-      <button class="btn-checkout" onclick="triggerCheckout('whatsapp')">Place Booking via WhatsApp</button>
-      <button class="btn-add" style="width:100%; margin-top:10px; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
-      <p style="font-size:11.5px; color:#64748b; text-align:center; margin-top:10px;">ISPM-15 export wooden crating included for container loads.</p>
-    </div>
-  </div>
-
-  <!-- Standardized Site Footer -->
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <div class="brand-logo-wrap" style="margin-bottom: 14px;">
-          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
-          <div>
-            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
-            <div class="brand-sub">Stone & Slabs</div>
-          </div>
-        </div>
-        <p>Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>📍 Corporate Address</h4>
-        <p>We operate all over from India</p>
-        <div class="contact-line">
-          <span>Bangalore - 560041, Karnataka, India</span>
-        </div>
-        <div class="contact-line">
-          <span style="font-size:12.5px; color:#64748b;">Processing Hubs: Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Plants</span>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>💬 Export Inquiries</h4>
-        <div class="contact-line">
-          <a href="tel:+918123502007" style="display: inline-flex; align-items: center; gap: 8px;">
-            <img src="https://flagcdn.com/w40/in.png" width="20" height="15" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
-            +91 81235 02007
-          </a>
-        </div>
-        <div class="contact-line">
-          <a href="tel:+17575059172" style="display: inline-flex; align-items: center; gap: 8px;">
-            <img src="https://flagcdn.com/w40/us.png" width="20" height="15" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
-            +1 (757) 505-9172
-          </a>
-        </div>
-        <div class="contact-line">
-          <a href="mailto:admin@malviganomac.live" style="display: inline-flex; align-items: center; gap: 8px; word-break: break-all;">
-            <span style="font-size: 15px;">✉️</span>
-            admin@malviganomac.live
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>🌐 Follow Us</h4>
-        <div class="social-links-list">
-          <a href="https://wa.me/918123502007" target="_blank" rel="noopener noreferrer" class="social-link-item">
-            <span class="social-icon-box icon-wa">
-              <svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
-            <span>WhatsApp (🇮🇳 India)</span>
-          </a>
-
-          <a href="https://wa.me/17575059172" target="_blank" rel="noopener noreferrer" class="social-link-item">
-            <span class="social-icon-box icon-wa">
-              <svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
-            <span>WhatsApp (🇺🇸 USA)</span>
-          </a>
-
-          <a href="https://www.linkedin.com/company/malviganomac" target="_blank" rel="noopener noreferrer" class="social-link-item">
-            <span class="social-icon-box icon-li">
-              <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.53-1.53A1.53 1.53 0 0 0 6.46 5.7a1.53 1.53 0 0 0-1.53 1.53c0 .85.68 1.53 1.53 1.53m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
-            </span>
-            <span>LinkedIn Page</span>
-          </a>
-
-          <a href="https://www.instagram.com/malvigano_mac?stkn=MXM4a3A3emZiZmY4dg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link-item">
-            <span class="social-icon-box icon-ig">
-              <svg viewBox="0 0 24 24" role="img" aria-label="Instagram"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </span>
-            <span>Instagram</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bottom Bar -->
-  <div class="bottom-bar">
-    <div class="bottom-bar-inner">
-      <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
-      <div>Powered by <strong>Yarab Baba</strong></div>
+      <button class="btn-checkout" onclick="triggerCheckout('whatsapp')">Order via WhatsApp</button>
+      <button class="btn-add" style="width:100%; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
     </div>
   </div>
 
