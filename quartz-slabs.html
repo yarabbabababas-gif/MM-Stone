@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quartz, Porcelain & Thick Monuments | Per Piece | MalviganoMac</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
-  
-  <!-- Favicon for Google & Web Browsers -->
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai & Kishangarh.">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +14,8 @@
     :root {
       --brand-navy: #003366;
       --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
-      --brand-gold-light: #dfbe7d;
-      --brand-accent: #b32d2d;
       --text-main: #1f2937;
       --text-muted: #64748b;
       --bg-cream: #fbfbfd;
@@ -31,231 +26,47 @@
       --transition: all 0.25s ease-in-out;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text-main); background: var(--bg-cream); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    }
-    .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .nav-bar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+    .nav-container { max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
-      background-color: #ffffff;
-    }
-    .brand-title {
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--brand-navy);
-      line-height: 1.1;
-    }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--brand-slate);
-    }
-    .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .brand-logo-img { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-gold); background:#fff; }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--brand-navy); }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
     .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--brand-navy); }
 
-    /* Mobile Drawer */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 16px 20px 24px 20px;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
+    .mobile-menu { display: none; flex-direction: column; gap: 6px; padding: 16px 20px 24px; background: #fff; border-top: 1px solid var(--card-border); }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
-    }
+    .mobile-menu a { font-size: 15px; font-weight: 700; padding: 12px 14px; border-radius: var(--radius-sm); color: var(--brand-slate); background: #f8fafc; }
 
-    /* Catalog Content */
-    .catalog-header {
-      max-width: 1240px;
-      margin: 40px auto 20px auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+    .catalog-header { max-width: 1240px; margin: 40px auto 20px; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
     .catalog-header h1 { font-size: clamp(24px, 4vw, 32px); color: var(--brand-navy); font-weight: 800; }
-    .policy-pill {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      color: #065f46;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
+    .policy-pill { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; }
 
-    .grid-container {
-      max-width: 1240px;
-      margin: 0 auto 80px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 2.3fr 1fr;
-      gap: 32px;
-    }
-    .products-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-soft);
-    }
+    .grid-container { max-width: 1240px; margin: 0 auto 80px; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
+    .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .card { background: #ffffff; border: 1px solid var(--card-border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
     .card-img { width: 100%; height: 210px; object-fit: cover; }
     .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
     .card-title { font-size: 18px; color: var(--brand-navy); font-weight: 800; margin-bottom: 4px; }
-    .dimen-tag {
-      font-size: 11.5px;
-      background: #f1f5f9;
-      padding: 4px 10px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      color: var(--brand-slate);
-    }
+    .dimen-tag { font-size: 11.5px; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 8px; font-weight: 700; color: var(--brand-slate); }
     .price-box { font-size: 22px; font-weight: 800; color: #003366; margin: 8px 0; }
-    .price-unit { font-size: 13px; font-weight: 500; color: var(--text-muted); }
     
     .card-ctrl { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
-    .sqft-input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-    }
-    .btn-add {
-      background: var(--brand-navy);
-      color: #ffffff;
-      padding: 11px 16px;
-      border-radius: var(--radius-sm);
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .btn-add:hover { background: var(--brand-navy-dark); }
+    .sqft-input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; }
+    .btn-add { background: var(--brand-navy); color: #fff; padding: 11px 16px; border-radius: var(--radius-sm); border: none; font-weight: 700; cursor: pointer; }
 
-    /* Cart Box */
-    .cart-box {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      position: sticky;
-      top: 90px;
-      height: fit-content;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-    .cart-box h3 {
-      font-size: 20px;
-      color: var(--brand-navy);
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
-    .cart-items { max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
-    .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; }
+    .cart-box { background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 90px; height: fit-content; }
     .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 20px; }
     .split-row { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px; }
     .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
-    .btn-pay-online {
-      width: 100%;
-      background: #003366;
-      color: #ffffff;
-      padding: 13px;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      margin-bottom: 10px;
-    }
-    .btn-checkout {
-      width: 100%;
-      background: #25d366;
-      color: #ffffff;
-      padding: 12px;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
-    .modal-backdrop.open { display: flex; }
+    .btn-pay-online { width: 100%; background: #003366; color: #fff; padding: 13px; border: none; border-radius: var(--radius-sm); font-weight: 800; font-size: 14px; cursor: pointer; margin-bottom: 10px; }
+    .btn-checkout { width: 100%; background: #25d366; color: #fff; padding: 12px; border: none; border-radius: var(--radius-sm); font-weight: 800; font-size: 14px; cursor: pointer; }
 
     @media (max-width: 980px) {
       .grid-container { grid-template-columns: 1fr; }
@@ -266,34 +77,31 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
         <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
-          <div class="brand-sub">Stone & Slabs</div>
         </div>
       </a>
       <nav class="nav-links">
         <a href="/">Home</a>
         <a href="/gallery">Gallery</a>
         <a href="/granite-marble">Granite & Marble</a>
-        <a href="/quartz-slabs" class="active-link">Quartz & Slabs</a>
+        <a href="/quartz-slabs" style="color:var(--brand-navy); font-weight:700;">Quartz & Slabs</a>
       </nav>
       <div class="nav-actions">
         <div class="auth-nav-slot"></div>
-        <button class="btn-nav-cart" onclick="document.getElementById('cartBox').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-nav-cart" onclick="openCartDrawer()">
           🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
         </button>
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
     
-    <!-- Mobile Drawer with Auth Slot -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
@@ -307,99 +115,80 @@
   <div class="catalog-header">
     <div>
       <h1>Quartz, Porcelain & Heavy Slabs</h1>
-      <p style="color:var(--text-muted); font-size:14px;">Unit calibrated cuts. Standard piece size: <strong>40cm × 40cm</strong> & custom dimensions.</p>
+      <p style="color:var(--text-muted); font-size:14px;">Calibrated architectural cuts. Standard sizes: <strong>40cm × 40cm</strong> & custom container specifications[cite: 6].</p>
     </div>
     <div class="policy-pill">
-      🔒 Booking Policy: 70% Advance Confirmation | 30% Balance On Delivery
+      🔒 70% Advance Booking Policy | 30% Balance On Delivery[cite: 6]
     </div>
   </div>
 
   <div class="grid-container">
     <div class="products-list">
-      <!-- Item 1 -->
       <div class="card">
         <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Calacatta Quartz">
         <div class="card-body">
           <div class="card-title">Calacatta Gold Engineered Quartz</div>
           <span class="dimen-tag">Size: 40cm × 40cm (20mm)</span>
-          <p style="font-size:12.5px; color:#64748b;">Non-porous, stain & scratch proof surface.</p>
-          <div class="price-box">₹450 <span class="price-unit">/ piece</span></div>
+          <p style="font-size:12.5px; color:#64748b;">Non-porous, stain & scratch proof surface[cite: 6].</p>
+          <div class="price-box">₹450 <span style="font-size:13px; color:#64748b;">/ piece</span></div>
           <div class="card-ctrl">
-            <input type="number" id="qty_p1" placeholder="Quantity (Pieces)" class="sqft-input" min="10" value="50">
+            <input type="number" id="qty_p1" placeholder="Quantity (Pieces)" class="sqft-input" min="5" value="25">
             <button class="btn-add" onclick="addItemToCart('Calacatta Gold Quartz (40x40)', 450, 'piece', document.getElementById('qty_p1').value)">Add Pieces To Cart</button>
           </div>
         </div>
       </div>
 
-      <!-- Item 2 -->
       <div class="card">
         <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Porcelain Slabs">
         <div class="card-body">
           <div class="card-title">Sintered Porcelain Exterior Tile</div>
           <span class="dimen-tag">Size: 40cm × 40cm (12mm)</span>
-          <p style="font-size:12.5px; color:#64748b;">Ultra high-pressure sintered tile, 100% heat & frost proof.</p>
-          <div class="price-box">₹320 <span class="price-unit">/ piece</span></div>
+          <p style="font-size:12.5px; color:#64748b;">Ultra high-pressure sintered tile, 100% heat & frost proof[cite: 6].</p>
+          <div class="price-box">₹320 <span style="font-size:13px; color:#64748b;">/ piece</span></div>
           <div class="card-ctrl">
-            <input type="number" id="qty_p2" placeholder="Quantity (Pieces)" class="sqft-input" min="10" value="100">
+            <input type="number" id="qty_p2" placeholder="Quantity (Pieces)" class="sqft-input" min="10" value="50">
             <button class="btn-add" onclick="addItemToCart('Porcelain Sintered Tile (40x40)', 320, 'piece', document.getElementById('qty_p2').value)">Add Pieces To Cart</button>
           </div>
         </div>
       </div>
 
-      <!-- Item 3 -->
       <div class="card">
         <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Thick Monument Slab">
         <div class="card-body">
           <div class="card-title">Thick Granite Monument Keystone</div>
           <span class="dimen-tag">Size: 40cm × 40cm (100mm Thick)</span>
-          <p style="font-size:12.5px; color:#64748b;">Solid monumental stone cut with multi-wire saw.</p>
-          <div class="price-box">₹1,850 <span class="price-unit">/ piece</span></div>
+          <p style="font-size:12.5px; color:#64748b;">Solid monumental stone cut with multi-wire saw[cite: 6].</p>
+          <div class="price-box">₹1,850 <span style="font-size:13px; color:#64748b;">/ piece</span></div>
           <div class="card-ctrl">
-            <input type="number" id="qty_p3" placeholder="Quantity (Pieces)" class="sqft-input" min="5" value="10">
+            <input type="number" id="qty_p3" placeholder="Quantity (Pieces)" class="sqft-input" min="1" value="5">
             <button class="btn-add" onclick="addItemToCart('Thick Monument Keystone 100mm', 1850, 'piece', document.getElementById('qty_p3').value)">Add Pieces To Cart</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Booking Cart -->
     <div class="cart-box" id="cartBox">
       <h3>Booking Order Summary</h3>
-      <div class="cart-items" id="cartItems">
-        <p style="font-size:13px; color:#94a3b8;">No pieces added yet. Select quantities to compute balance.</p>
-      </div>
+      <div id="cartItems" style="margin-top:14px; max-height:260px; overflow-y:auto;"></div>
 
       <div class="split-bill">
-        <div class="split-row">
-          <span>Gross Total:</span>
-          <span id="grossTotal">₹0</span>
-        </div>
-        <div class="split-row adv">
-          <span>Advance Payable (70%):</span>
-          <span id="advTotal">₹0</span>
-        </div>
-        <div class="split-row" style="color:#64748b;">
-          <span>Balance On Delivery (30%):</span>
-          <span id="balTotal">₹0</span>
-        </div>
+        <div class="split-row"><span>Gross Total:</span><span id="grossTotal">₹0</span></div>
+        <div class="split-row adv"><span>70% Advance Payable:</span><span id="advTotal">₹0</span></div>
+        <div class="split-row" style="color:#64748b;"><span>30% Balance On Delivery:</span><span id="balTotal">₹0</span></div>
       </div>
 
-      <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance (UPI / Cards / NetBanking)</button>
+      <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance Online</button>
       <button class="btn-checkout" onclick="triggerCheckout('whatsapp')">Place Booking via WhatsApp</button>
       <button class="btn-add" style="width:100%; margin-top:10px; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
-      <p style="font-size:11.5px; color:#64748b; text-align:center; margin-top:10px;">ISPM-15 export wooden crating included for container loads.</p>
     </div>
   </div>
 
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (hamburgerBtn) {
-      hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   </script>
 
-  <!-- Scripts -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="auth.js"></script>
   <script src="cart.js"></script>
