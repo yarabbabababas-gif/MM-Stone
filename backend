@@ -1,1 +1,4 @@
-
+mkdir malvigano-auth-backend
+cd malvigano-auth-backend
+npm init -y
+npm install express cors dotenv nodemailer twilio
