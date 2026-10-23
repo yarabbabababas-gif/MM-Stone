@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
-
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -759,6 +758,32 @@
 </head>
 <body>
 
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="strip-contacts">
+        <a href="tel:+918123502007" class="strip-contact-link">
+          <img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
+          +91 81235 02007
+        </a>
+        <span class="strip-separator">•</span>
+
+        <a href="tel:+17575059172" class="strip-contact-link">
+          <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
+          +1 (757) 505-9172
+        </a>
+        <span class="strip-separator">•</span>
+
+        <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
+          <span>✉️</span> admin@malviganomac.live
+        </a>
+      </div>
+
+      <div class="strip-badge-wrap">
+        <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
+      </div>
+    </div>
+  </div>
+
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
@@ -833,8 +858,20 @@
     </div>
 
     <div class="drawer-footer-contact">
-      <div class="drawer-contact-item"><span>📞</span> +91 81235 02007</div>
-      <div class="drawer-contact-item"><span>✉️</span> admin@malviganomac.live</div>
+      <div class="drawer-contact-item">
+        <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
+      </div>
+
+      <div class="drawer-contact-item">
+        <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
+      </div>
+
+      <div class="drawer-contact-item">
+        <span>✉️</span>
+        <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
+      </div>
     </div>
   </aside>
 
@@ -844,6 +881,7 @@
         <h3 id="authModalTitle">Create Customer Account</h3>
         <button type="button" class="modal-close-btn" id="authModalClose" aria-label="Close dialog">&times;</button>
       </div>
+
       <div class="auth-modal-body">
         <p class="auth-desc">Verify your credentials to place live slab bookings and export inquiries.</p>
         <form id="customerAccountForm" onsubmit="handleAccountSubmit(event)">
@@ -861,29 +899,6 @@
           </div>
           <button type="submit" class="btn-submit-auth">Send Email & SMS OTPs</button>
         </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="info-strip">
-    <div class="info-strip-inner">
-      <div class="strip-contacts">
-        <a href="tel:+918123502007" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
-          +91 81235 02007
-        </a>
-        <span class="strip-separator">•</span>
-        <a href="tel:+17575059172" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
-          +1 (757) 505-9172
-        </a>
-        <span class="strip-separator">•</span>
-        <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
-          <span>✉️</span> admin@malviganomac.live
-        </a>
-      </div>
-      <div class="strip-badge-wrap">
-        <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
       </div>
     </div>
   </div>
@@ -1097,15 +1112,15 @@
     const drawerBackdrop = document.getElementById('drawerBackdrop');
 
     function openDrawer() {
-      sideDrawer.classList.add('open');
-      drawerBackdrop.classList.add('open');
+      if (sideDrawer) sideDrawer.classList.add('open');
+      if (drawerBackdrop) drawerBackdrop.classList.add('open');
       document.body.classList.add('drawer-open');
       if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'true');
     }
 
     function closeDrawer() {
-      sideDrawer.classList.remove('open');
-      drawerBackdrop.classList.remove('open');
+      if (sideDrawer) sideDrawer.classList.remove('open');
+      if (drawerBackdrop) drawerBackdrop.classList.remove('open');
       document.body.classList.remove('drawer-open');
       if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'false');
     }
