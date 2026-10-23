@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Stone Quote | MalviganoMac</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
-  
-    <!-- Favicon for Google & Web Browsers -->
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai & Kishangarh.">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +13,6 @@
     :root {
       --brand-navy: #003366;
       --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
       --brand-gold-light: #dfbe7d;
@@ -40,12 +35,10 @@
       color: var(--text-main);
       background-color: var(--bg-cream);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
     .nav-bar {
       position: sticky;
       top: 0;
@@ -70,11 +63,8 @@
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
       background-color: #ffffff;
     }
-    .brand-logo-img.footer-logo { width: 42px; height: 42px; }
     .brand-title {
       font-family: 'Cinzel', serif;
       font-size: 20px;
@@ -82,42 +72,21 @@
       color: var(--brand-navy);
       line-height: 1.1;
     }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--brand-slate);
-    }
+    .brand-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; color: var(--brand-slate); }
     .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .btn-nav-quote {
       background: var(--brand-navy);
       color: #ffffff !important;
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: var(--radius-sm);
       font-size: 13px;
       font-weight: 700;
       transition: var(--transition);
     }
-    .btn-nav-quote:hover { background: var(--brand-navy-dark); }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--brand-navy); }
 
-    /* Mobile Drawer */
     .mobile-menu {
       display: none;
       flex-direction: column;
@@ -125,75 +94,11 @@
       padding: 16px 20px 24px 20px;
       background: #ffffff;
       border-top: 1px solid var(--card-border);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
     }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
-    }
-    .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
+    .mobile-menu a { font-size: 15px; font-weight: 700; padding: 12px 14px; border-radius: var(--radius-sm); color: var(--brand-slate); background: #f8fafc; }
 
-    /* Info Strip */
-    .info-strip {
-      background: var(--brand-slate);
-      color: #cbd5e1;
-      font-size: 13px;
-      padding: 10px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      width: 100%;
-    }
-    .info-strip-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .strip-contacts {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .strip-contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #e2e8f0;
-      font-weight: 500;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-    .strip-separator { color: rgba(255, 255, 255, 0.35); font-size: 11px; }
-    .strip-badge-wrap { display: flex; align-items: center; }
-    .strip-badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-weight: 700;
-      color: var(--brand-gold-light);
-      background: rgba(197, 160, 89, 0.18);
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(197, 160, 89, 0.35);
-      display: inline-block;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    /* Form Container */
-    .page-wrap {
-      max-width: 880px;
-      margin: 40px auto 80px auto;
-      padding: 0 16px;
-    }
+    .page-wrap { max-width: 880px; margin: 40px auto 80px auto; padding: 0 16px; }
     .quote-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -202,41 +107,12 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
     .quote-card h2 { font-size: clamp(22px, 4vw, 30px); color: var(--brand-navy); font-weight: 800; }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 24px;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; }
     .full-width { grid-column: 1 / -1; }
-    .field-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--brand-slate);
-      margin-bottom: 6px;
-    }
-    .form-control {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
-      font-size: 14px;
-      font-family: inherit;
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--brand-navy);
-      box-shadow: 0 0 0 3px rgba(0,51,102,0.1);
-    }
-    .actions-row {
-      display: flex;
-      justify-content: flex-end;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
+    .field-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--brand-slate); margin-bottom: 6px; }
+    .form-control { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; }
+    .actions-row { display: flex; justify-content: flex-end; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+    
     .btn-primary, .btn-whatsapp {
       padding: 14px 28px;
       border-radius: var(--radius-sm);
@@ -251,71 +127,26 @@
       transition: var(--transition);
     }
     .btn-primary { background: var(--brand-navy); color: #fff; }
-    .btn-primary:hover { background: var(--brand-navy-dark); }
     .btn-whatsapp { background: #25d366; color: #fff; }
-    .btn-whatsapp:hover { background: #1eb855; }
 
-    /* Footer - Gallery Matching */
-    .site-footer {
-      background: #ffffff;
-      border-top: 1px dashed #cbd5e1;
-      padding: 40px 20px;
-      width: 100%;
-    }
-    .footer-inner { max-width: 1240px; margin: 0 auto; }
-    .footer-brand { max-width: 600px; }
-    .footer-desc {
-      font-size: 13.5px;
-      color: #64748b;
-      margin-top: 12px;
-      line-height: 1.6;
-    }
-
-    .bottom-bar {
-      width: 100%;
-      background: var(--brand-slate);
-      color: #94a3b8;
-      font-size: 13px;
-      padding: 16px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .bottom-bar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .modal-backdrop.open { display: flex; }
 
     @media (max-width: 980px) {
-      .nav-links, .btn-nav-quote { display: none; }
+      .nav-links { display: none; }
       .nav-hamburger { display: block; }
     }
     @media (max-width: 768px) {
-      .info-strip { padding: 10px 12px; }
-      .info-strip-inner { flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 8px; }
-      .strip-contacts { justify-content: center; gap: 10px 14px; font-size: 12px; }
-      .strip-contact-link { font-size: 12px; }
-      .strip-badge-wrap { width: 100%; justify-content: center; }
-      .strip-badge { font-size: 10px; padding: 5px 10px; border-radius: 6px; width: 100%; max-width: 440px; white-space: normal; }
       .form-grid { grid-template-columns: 1fr; }
       .quote-card { padding: 24px 18px; }
       .actions-row { flex-direction: column; }
       .btn-primary, .btn-whatsapp { width: 100%; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; gap: 8px; }
-    }
-    @media (max-width: 480px) {
-      .strip-contacts { flex-direction: column; gap: 4px; }
-      .strip-separator { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
@@ -331,7 +162,8 @@
         <a href="/granite-marble">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
-      <div>
+      <div class="nav-actions">
+        <div class="auth-nav-slot"></div>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -339,6 +171,7 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
       <a href="/gallery">All Collection / Gallery</a>
       <a href="/granite-marble">Granite & Marble</a>
@@ -347,36 +180,14 @@
     </div>
   </header>
 
-  <!-- Info Strip -->
-  <div class="info-strip">
-    <div class="info-strip-inner">
-      <div class="strip-contacts">
-        <a href="tel:+918123502007" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius: 2px; vertical-align: middle;">
-          +91 81235 02007
-        </a>
-        <span class="strip-separator">•</span>
-        <a href="tel:+17575059172" class="strip-contact-link">
-          <img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius: 2px; vertical-align: middle;">
-          +1 (757) 505-9172
-        </a>
-        <span class="strip-separator">•</span>
-        <a href="mailto:admin@malviganomac.live" class="strip-contact-link">
-          <span>✉️</span> admin@malviganomac.live
-        </a>
-      </div>
-      <div class="strip-badge-wrap">
-        <span class="strip-badge">Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Export Units (All over India)</span>
-      </div>
-    </div>
-  </div>
-
   <div class="page-wrap">
     <div class="quote-card">
       <h2>Factory Stone Quotation Request</h2>
-      <p style="color:var(--text-muted); font-size:14px; margin-top:6px;">Specify your slab dimensions, finish preference, and delivery port. Our Chennai (Tamil Nadu) & Kishangarh (Rajasthan) export desk responds within 24 hours.</p>
+      <p style="color:var(--text-muted); font-size:14px; margin-top:6px;">
+        All submissions require dual OTP (Email & Mobile) verification before dispatch to <strong>admin@malviganomac.live</strong>.
+      </p>
 
-      <form id="quoteForm" onsubmit="submitEmail(event)">
+      <form id="quoteForm" onsubmit="processQuoteSubmit(event)">
         <div class="form-grid">
           <div class="field-group">
             <label for="name">Your Name *</label>
@@ -384,7 +195,7 @@
           </div>
           <div class="field-group">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" required class="form-control" placeholder="admin@example.com">
+            <input type="email" id="email" required class="form-control" placeholder="client@example.com">
           </div>
           <div class="field-group">
             <label for="phone">Phone / WhatsApp *</label>
@@ -419,44 +230,23 @@
           </div>
           <div class="field-group full-width">
             <label for="message">Project Requirements / Notes</label>
-            <textarea id="message" rows="4" class="form-control" placeholder="Finish (Polished, Flamed, Leathered), color requirements..."></textarea>
+            <textarea id="message" rows="4" class="form-control" placeholder="Specify finish, polished surface, or specific block vein..."></textarea>
           </div>
         </div>
 
         <div class="actions-row">
-          <button type="button" class="btn-whatsapp" onclick="submitWhatsApp()">Inquire via WhatsApp</button>
-          <button type="submit" class="btn-primary">Submit Official Inquiry</button>
+          <button type="button" class="btn-whatsapp" onclick="submitWhatsAppQuote()">Inquire via WhatsApp</button>
+          <button type="submit" class="btn-primary">Verify & Submit Inquiry to Admin</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Upper Footer -->
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="brand-logo-wrap">
-          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
-          <div>
-            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
-            <div class="brand-sub">Stone & Slabs</div>
-          </div>
-        </div>
-        <p class="footer-desc">
-          Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
-        </p>
-      </div>
-    </div>
+  <footer style="background:#ffffff; border-top:1px dashed #cbd5e1; padding:30px 20px; text-align:center; font-size:13px; color:#64748b;">
+    <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | Inquiries routed to <strong>admin@malviganomac.live</strong></div>
   </footer>
 
-  <!-- Blue Bottom Banner -->
-  <div class="bottom-bar">
-    <div class="bottom-bar-inner">
-      <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
-      <div>Powered by <strong>Yarab Baba</strong></div>
-    </div>
-  </div>
-
+  <script src="auth.js"></script>
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -464,7 +254,17 @@
       hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     }
 
-    function getFormData() {
+    // Auto-fill logged-in client credentials
+    document.addEventListener('DOMContentLoaded', () => {
+      const u = getCurrentUser();
+      if (u) {
+        if (u.name) document.getElementById('name').value = u.name;
+        if (u.email) document.getElementById('email').value = u.email;
+        if (u.phone) document.getElementById('phone').value = u.phone;
+      }
+    });
+
+    function getQuotePayload() {
       return {
         name: document.getElementById('name').value.trim(),
         email: document.getElementById('email').value.trim(),
@@ -476,17 +276,61 @@
         notes: document.getElementById('message').value.trim()
       };
     }
-    function submitEmail(e) {
+
+    function processQuoteSubmit(e) {
       e.preventDefault();
-      const d = getFormData();
-      const body = encodeURIComponent(`Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nStone: ${d.cat}\nThickness: ${d.thick}\nQuantity: ${d.qty}\nPort: ${d.port}\nNotes: ${d.notes}`);
-      window.location.href = `mailto:admin@malviganomac.live?subject=Quote Inquiry - ${d.name}&body=${body}`;
+      const user = getCurrentUser();
+      const payload = getQuotePayload();
+
+      // Check if user is authenticated with matching verified info
+      if (!user || user.email !== payload.email.toLowerCase() || user.phone !== payload.phone) {
+        alert('You must verify both your Email and Mobile via OTP before the quotation request can be dispatched.');
+        
+        // Seed auth modal with form inputs
+        openAuthModal('signup');
+        document.getElementById('authName').value = payload.name;
+        document.getElementById('authEmail').value = payload.email;
+        document.getElementById('authPhone').value = payload.phone;
+
+        // Hook callback to complete submission once verified
+        window.onAuthSuccess = function() {
+          sendFinalQuoteEmail(payload);
+        };
+        return;
+      }
+
+      sendFinalQuoteEmail(payload);
     }
-    function submitWhatsApp() {
-      const d = getFormData();
-      if(!d.name) { alert('Please enter your name'); return; }
-      const text = encodeURIComponent(`Hello MalviganoMac,\nQuote Request:\n• Name: ${d.name}\n• Category: ${d.cat}\n• Thickness: ${d.thick}\n• Qty: ${d.qty || 'TBD'}\n• Port: ${d.port || 'TBD'}`);
-      window.open(`https://wa.me/918123502007?text=${text}`, '_blank');
+
+    function sendFinalQuoteEmail(d) {
+      const subject = `[Verified Factory Quote] ${d.cat} - ${d.name}`;
+      const body = 
+        `VERIFIED QUOTATION SUBMISSION\n` +
+        `-----------------------------------------\n` +
+        `Client Name: ${d.name}\n` +
+        `Verified Email: ${d.email}\n` +
+        `Verified Phone: ${d.phone}\n` +
+        `Category: ${d.cat}\n` +
+        `Thickness: ${d.thick}\n` +
+        `Volume/Quantity: ${d.qty || 'Not Specified'}\n` +
+        `Destination Port: ${d.port || 'Not Specified'}\n` +
+        `Notes: ${d.notes || 'None'}\n` +
+        `-----------------------------------------\n` +
+        `Authentication: Dual OTP (Email & Mobile) Validated`;
+
+      // Trigger client mailto and open direct WhatsApp ping
+      window.location.href = `mailto:admin@malviganomac.live?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      alert('Quotation details verified. Your email client will now dispatch this inquiry to admin@malviganomac.live.');
+    }
+
+    function submitWhatsAppQuote() {
+      const d = getQuotePayload();
+      if (!d.name || !d.phone) {
+        alert('Please fill in your name and phone number.');
+        return;
+      }
+      const text = `*Verified Quote Inquiry - MalviganoMac*\nName: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nStone: ${d.cat} (${d.thick})\nQty: ${d.qty}\nPort: ${d.port}`;
+      window.open(`https://wa.me/918123502007?text=${encodeURIComponent(text)}`, '_blank');
     }
   </script>
 </body>
