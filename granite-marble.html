@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Granite & Marble | E-Commerce Slabs | MalviganoMac</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
 
-  <!-- Favicon for Google & Web Browsers -->
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +16,6 @@
       --brand-navy-dark: #002244;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
-      --brand-gold-light: #dfbe7d;
       --text-main: #1f2937;
       --text-muted: #64748b;
       --bg-cream: #fbfbfd;
@@ -36,41 +33,18 @@
     .nav-bar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
     .nav-container { max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-img { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-gold); }
+    .brand-logo-img { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-gold); background:#fff; }
     .brand-title { font-size: 20px; font-weight: 800; color: var(--brand-navy); }
     .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
     .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--brand-navy); }
 
-    /* Mobile Drawer */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 16px 20px 24px 20px;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
+    .mobile-menu { display: none; flex-direction: column; gap: 6px; padding: 16px 20px 24px; background: #fff; border-top: 1px solid var(--card-border); }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
-    }
+    .mobile-menu a { font-size: 15px; font-weight: 700; padding: 12px 14px; border-radius: var(--radius-sm); color: var(--brand-slate); background: #f8fafc; }
     
-    .grid-container { max-width: 1240px; margin: 40px auto 80px auto; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
+    .grid-container { max-width: 1240px; margin: 40px auto 80px; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
     .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
     .card { background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
     .card-img { width: 100%; height: 200px; object-fit: cover; }
@@ -81,7 +55,6 @@
     .btn-add { background: var(--brand-navy); color: #fff; padding: 10px; border-radius: var(--radius-sm); border: none; font-weight: 700; cursor: pointer; }
 
     .cart-box { background: #fff; border: 1px solid var(--card-border); border-radius: var(--radius-md); padding: 24px; position: sticky; top: 90px; height: fit-content; }
-    .cart-item { display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; margin-bottom: 8px; }
     .split-bill { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 14px; margin: 16px 0; }
     .split-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
     .split-row.adv { font-weight: 800; color: #047857; font-size: 15px; }
@@ -101,7 +74,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
@@ -118,16 +90,15 @@
       </nav>
       <div class="nav-actions">
         <div class="auth-nav-slot"></div>
-        <button class="btn-nav-cart" onclick="document.getElementById('cartBox').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-nav-cart" onclick="openCartDrawer()">
           🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
         </button>
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer with Auth Slot -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
@@ -139,13 +110,12 @@
   </header>
 
   <div class="grid-container">
-    <!-- Products Catalog -->
     <div class="products-list">
       <div class="card">
         <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Absolute Black Granite">
         <div class="card-body">
           <h3>Absolute Black Premium Granite</h3>
-          <p style="font-size:12.5px; color:#64748b;">Uniform high density gangsaw slab.</p>
+          <p style="font-size:12.5px; color:#64748b;">Uniform high density gangsaw slab lot[cite: 4].</p>
           <div class="price-box">₹185 <span style="font-size:13px; color:#64748b;">/ sq.ft.</span></div>
           <div class="card-ctrl">
             <input type="number" id="qty_1" class="sqft-input" placeholder="Sq. Ft." value="500">
@@ -158,7 +128,7 @@
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80" class="card-img" alt="Statuario Marble">
         <div class="card-body">
           <h3>Statuario White Luxury Marble</h3>
-          <p style="font-size:12.5px; color:#64748b;">Italian metamorphic veined lot.</p>
+          <p style="font-size:12.5px; color:#64748b;">Hand-selected Italian veined metamorphic lot[cite: 4].</p>
           <div class="price-box">₹420 <span style="font-size:13px; color:#64748b;">/ sq.ft.</span></div>
           <div class="card-ctrl">
             <input type="number" id="qty_2" class="sqft-input" placeholder="Sq. Ft." value="800">
@@ -168,9 +138,8 @@
       </div>
     </div>
 
-    <!-- Persistent Checkout Box -->
     <div class="cart-box" id="cartBox">
-      <h3>E-Commerce Order Cart</h3>
+      <h3>Order Cart Summary</h3>
       <div id="cartItems" style="margin-top:14px; max-height:260px; overflow-y:auto;"></div>
 
       <div class="split-bill">
@@ -179,7 +148,7 @@
         <div class="split-row"><span>30% Balance on Delivery:</span><span id="balTotal">₹0</span></div>
       </div>
 
-      <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance (UPI / Cards / NetBanking)</button>
+      <button class="btn-pay-online" onclick="initiateOnlinePayment()">💳 Pay 70% Advance Online</button>
       <button class="btn-checkout" onclick="triggerCheckout('whatsapp')">Order via WhatsApp</button>
       <button class="btn-add" style="width:100%; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
     </div>
@@ -188,14 +157,9 @@
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (hamburgerBtn) {
-      hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-      });
-    }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   </script>
 
-  <!-- Gateway & Application Scripts -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="auth.js"></script>
   <script src="cart.js"></script>
