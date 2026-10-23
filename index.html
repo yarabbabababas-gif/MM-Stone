@@ -6,9 +6,7 @@
   <title>MalviganoMac Stone | Natural Stone, Granite, Marble & Quartz Exporters</title>
   <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
 
-  <!-- Favicon for Google & Web Browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -43,13 +41,10 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    body.drawer-open, body.modal-open {
-      overflow: hidden;
-    }
+    body.drawer-open, body.modal-open { overflow: hidden; }
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
     .nav-bar {
       position: sticky;
       top: 0;
@@ -69,7 +64,6 @@
       gap: 16px;
     }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-
     .brand-logo-img {
       width: 46px;
       height: 46px;
@@ -80,11 +74,7 @@
       flex-shrink: 0;
       background-color: #ffffff;
     }
-    .brand-logo-img.footer-logo {
-      width: 42px;
-      height: 42px;
-    }
-
+    .brand-logo-img.footer-logo { width: 42px; height: 42px; }
     .brand-title {
       font-family: 'Cinzel', serif;
       font-size: 20px;
@@ -107,19 +97,15 @@
       font-size: 14px;
       color: var(--brand-slate);
     }
-    .nav-links a {
-      transition: var(--transition);
-      padding: 6px 0;
-    }
+    .nav-links a { transition: var(--transition); padding: 6px 0; }
     .nav-links a:hover { color: var(--brand-navy); }
-    
+
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    /* Standardized Buttons */
     .btn-action-solid,
     .btn-action-outline,
     .auth-nav-slot button,
@@ -168,7 +154,6 @@
       color: var(--brand-navy) !important;
     }
 
-    /* Hamburger Button */
     .nav-hamburger {
       display: flex;
       align-items: center;
@@ -182,11 +167,8 @@
       line-height: 0;
       transition: var(--transition);
     }
-    .nav-hamburger:hover {
-      background: rgba(0, 51, 102, 0.05);
-    }
+    .nav-hamburger:hover { background: rgba(0, 51, 102, 0.05); }
 
-    /* Slide-Over Side Popup Drawer */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
@@ -218,9 +200,7 @@
       flex-direction: column;
       overflow-y: auto;
     }
-    .side-drawer.open {
-      transform: translateX(0);
-    }
+    .side-drawer.open { transform: translateX(0); }
 
     .drawer-header {
       display: flex;
@@ -280,8 +260,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .drawer-nav-link:hover,
-    .drawer-nav-link:active {
+    .drawer-nav-link:hover, .drawer-nav-link:active {
       background: var(--brand-navy);
       color: #ffffff;
       transform: translateX(4px);
@@ -306,7 +285,6 @@
       font-weight: 600;
     }
 
-    /* Auth Modal Popup */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -336,9 +314,7 @@
       transform: scale(0.95);
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .modal-backdrop.open .auth-modal {
-      transform: scale(1);
-    }
+    .modal-backdrop.open .auth-modal { transform: scale(1); }
 
     .auth-modal-header {
       display: flex;
@@ -370,19 +346,14 @@
       background: #fee2e2;
     }
 
-    .auth-modal-body {
-      padding: 24px;
-    }
+    .auth-modal-body { padding: 24px; }
     .auth-modal-body .auth-desc {
       font-size: 13.5px;
       color: var(--text-muted);
       margin-bottom: 20px;
       line-height: 1.5;
     }
-    .auth-form-group {
-      margin-bottom: 16px;
-      text-align: left;
-    }
+    .auth-form-group { margin-bottom: 16px; text-align: left; }
     .auth-form-group label {
       display: block;
       font-size: 13px;
@@ -426,7 +397,6 @@
       box-shadow: 0 6px 18px rgba(0, 51, 102, 0.25);
     }
 
-    /* Info Strip */
     .info-strip {
       background: var(--brand-slate);
       color: #cbd5e1;
@@ -444,12 +414,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-    .strip-contacts {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .strip-contacts { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .strip-contact-link {
       display: inline-flex;
       align-items: center;
@@ -459,14 +424,8 @@
       font-size: 13px;
       white-space: nowrap;
     }
-    .strip-separator {
-      color: rgba(255, 255, 255, 0.35);
-      font-size: 11px;
-    }
-    .strip-badge-wrap {
-      display: flex;
-      align-items: center;
-    }
+    .strip-separator { color: rgba(255,255,255,0.35); font-size:11px; }
+    .strip-badge-wrap { display: flex; align-items: center; }
     .strip-badge {
       font-size: 11px;
       text-transform: uppercase;
@@ -482,7 +441,6 @@
       line-height: 1.4;
     }
 
-    /* Hero Banner */
     .hero-banner {
       position: relative;
       min-height: 580px;
@@ -508,7 +466,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.45) 85%);
+      background: radial-gradient(circle at center, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.45) 85%);
       z-index: 2;
     }
     .hero-content {
@@ -524,7 +482,7 @@
       color: var(--brand-navy);
       line-height: 1.15;
       margin-bottom: 12px;
-      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 2px 12px rgba(255,255,255,0.8);
     }
     .hero-tagline-blue {
       font-size: clamp(15px, 3.5vw, 24px);
@@ -532,7 +490,7 @@
       font-weight: 700;
       max-width: 680px;
       margin: 0 auto 26px auto;
-      text-shadow: 0 1px 8px rgba(255, 255, 255, 0.7);
+      text-shadow: 0 1px 8px rgba(255,255,255,0.7);
     }
     .hero-actions {
       display: flex;
@@ -561,14 +519,13 @@
       transform: translateY(-1px);
     }
 
-    /* Category Cards */
     .category-quick-nav {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
     .quick-card {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255,255,255,0.95);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
       padding: 18px;
@@ -601,7 +558,6 @@
       text-transform: uppercase;
     }
 
-    /* Profile Section */
     .section-wrap {
       max-width: 1240px;
       margin: 0 auto;
@@ -664,7 +620,6 @@
     .metric-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin: 6px 0; }
     .metric-desc { font-size: 12px; color: #64748b; line-height: 1.35; }
 
-    /* Footer */
     .site-footer {
       background: #ffffff;
       border-top: 1px dashed #cbd5e1;
@@ -728,8 +683,8 @@
     }
     .icon-wa { background-color: #25D366; }
     .icon-li { background-color: #0A66C2; }
-    .icon-ig { 
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+    .icon-ig {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
 
     .bottom-bar {
@@ -750,7 +705,6 @@
       gap: 12px;
     }
 
-    /* Breakpoint adjustments */
     @media (max-width: 980px) {
       .nav-links { display: none; }
       .who-we-are-grid { grid-template-columns: 1fr; }
@@ -793,10 +747,7 @@
 
     @media (max-width: 480px) {
       .drawer-actions-grid { grid-template-columns: 1fr; }
-      .strip-contacts {
-        flex-direction: column;
-        gap: 4px;
-      }
+      .strip-contacts { flex-direction: column; gap: 4px; }
       .strip-separator { display: none; }
       .hero-banner { min-height: 480px; padding: 36px 12px; }
       .btn-hero-primary { width: 100%; padding: 13px 18px; }
@@ -808,7 +759,6 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
@@ -819,7 +769,6 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="nav-links">
         <a href="/">Home</a>
         <a href="/gallery">All Collection / Gallery</a>
@@ -827,13 +776,12 @@
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
 
-      <!-- Desktop Actions -->
       <div class="nav-actions">
         <div class="auth-nav-slot">
           <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
-        
+
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M3 12h18M3 6h18M3 18h18"/>
@@ -843,10 +791,8 @@
     </div>
   </header>
 
-  <!-- Side Popup Backdrop Overlay -->
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-  <!-- Slide-Over Side Popup Drawer (Desktop + Mobile) -->
   <aside class="side-drawer" id="sideDrawer" aria-label="Side Navigation Drawer">
     <div class="drawer-header">
       <div class="brand-logo-wrap">
@@ -861,7 +807,6 @@
     </div>
 
     <div class="drawer-body">
-      <!-- Buttons in Side Popup -->
       <div class="drawer-actions-grid">
         <div class="mobile-auth-slot">
           <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
@@ -869,7 +814,6 @@
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <!-- Navigation links in Side Popup -->
       <a href="/" class="drawer-nav-link" onclick="closeDrawer()">
         <span>Home</span>
         <span>&rarr;</span>
@@ -889,16 +833,11 @@
     </div>
 
     <div class="drawer-footer-contact">
-      <div class="drawer-contact-item">
-        <span>📞</span> +91 81235 02007
-      </div>
-      <div class="drawer-contact-item">
-        <span>✉️</span> admin@malviganomac.live
-      </div>
+      <div class="drawer-contact-item"><span>📞</span> +91 81235 02007</div>
+      <div class="drawer-contact-item"><span>✉️</span> admin@malviganomac.live</div>
     </div>
   </aside>
 
-  <!-- Customer Account Registration / Login Modal -->
   <div class="modal-backdrop" id="authModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
     <div class="auth-modal" id="authModalContainer">
       <div class="auth-modal-header">
@@ -926,7 +865,6 @@
     </div>
   </div>
 
-  <!-- Info Strip -->
   <div class="info-strip">
     <div class="info-strip-inner">
       <div class="strip-contacts">
@@ -950,7 +888,6 @@
     </div>
   </div>
 
-  <!-- Hero Banner -->
   <section class="hero-banner" id="hero">
     <div class="slider-viewport" id="sliderViewport">
       <div class="slider-frame active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85');"></div>
@@ -972,7 +909,6 @@
         </a>
       </div>
 
-      <!-- Quick Navigation Cards -->
       <div class="category-quick-nav">
         <a href="/granite-marble" class="quick-card">
           <div>
@@ -999,7 +935,6 @@
     </div>
   </section>
 
-  <!-- Corporate Profile -->
   <section class="section-wrap" id="who-we-are">
     <div class="section-header-banner">
       <div class="section-header-left">
@@ -1051,7 +986,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="footer-inner">
       <div class="footer-col">
@@ -1068,12 +1002,8 @@
       <div class="footer-col">
         <h4>📍 Corporate Address</h4>
         <p>We operate all over from India</p>
-        <div class="contact-line">
-          <span>Bangalore - 560041, Karnataka, India</span>
-        </div>
-        <div class="contact-line">
-          <span style="font-size:12.5px; color:#64748b;">Processing Hubs: Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Plants</span>
-        </div>
+        <div class="contact-line"><span>Bangalore - 560041, Karnataka, India</span></div>
+        <div class="contact-line"><span style="font-size:12.5px; color:#64748b;">Processing Hubs: Chennai (Tamil Nadu) & Kishangarh (Rajasthan) Plants</span></div>
       </div>
 
       <div class="footer-col">
@@ -1098,7 +1028,6 @@
         </div>
       </div>
 
-      <!-- Follow Us Column -->
       <div class="footer-col">
         <h4>🌐 Follow Us</h4>
         <div class="social-links-list">
@@ -1142,7 +1071,6 @@
     </div>
   </footer>
 
-  <!-- Bottom Bar -->
   <div class="bottom-bar">
     <div class="bottom-bar-inner">
       <div>Copyright &copy; 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
@@ -1152,7 +1080,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Hero Slider Setup
       const slides = document.querySelectorAll('#sliderViewport .slider-frame');
       let activeIndex = 0;
       if (slides.length > 1) {
@@ -1164,7 +1091,6 @@
       }
     });
 
-    // Side Drawer Controls
     const drawerOpenBtn = document.getElementById('drawerOpenBtn');
     const drawerCloseBtn = document.getElementById('drawerCloseBtn');
     const sideDrawer = document.getElementById('sideDrawer');
@@ -1188,13 +1114,12 @@
     if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
     if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
-    // Auth Popup Modal Controls
     const authModalBackdrop = document.getElementById('authModalBackdrop');
     const authModalClose = document.getElementById('authModalClose');
     const authTriggers = document.querySelectorAll('.auth-open-trigger');
 
     function openAuthModal() {
-      closeDrawer(); // Close side drawer if it was open
+      closeDrawer();
       if (authModalBackdrop) {
         authModalBackdrop.classList.add('open');
         document.body.classList.add('modal-open');
@@ -1227,7 +1152,6 @@
       });
     }
 
-    // Escape Key Support for both Drawer and Modal
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         if (authModalBackdrop && authModalBackdrop.classList.contains('open')) {
@@ -1238,17 +1162,14 @@
       }
     });
 
-    // Form Submission Handler
     function handleAccountSubmit(event) {
       event.preventDefault();
-      // If auth.js is present, it will capture or extend this.
       console.log('Sending OTPs for customer registration...');
       alert('Verification OTPs dispatched. Please check your Email and Mobile.');
       closeAuthModal();
     }
   </script>
 
-  <!-- External Auth & Cart integrations -->
   <script src="auth.js"></script>
   <script src="cart.js"></script>
 </body>
