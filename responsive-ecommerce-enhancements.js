@@ -1,6 +1,5 @@
 // Add this to the end of each HTML page after auth.js and cart.js
 // Keeps the same design but improves mobile ecommerce behavior
-
 document.addEventListener('DOMContentLoaded', function () {
   // Keep mobile drawer working smoothly
   const drawerOpenBtn = document.getElementById('drawerOpenBtn');
