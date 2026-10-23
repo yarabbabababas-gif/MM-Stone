@@ -413,10 +413,6 @@
       .nav-hamburger { display: block; }
       .nav-actions .auth-nav-slot { display: none; }
     }
-
-    @media (max-width: 768px) {
-      .button-wrap { width: 100%; }
-    }
   </style>
 </head>
 <body>
@@ -439,9 +435,7 @@
       </nav>
 
       <div class="nav-actions">
-        <div class="auth-nav-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
-        </div>
+        <div class="auth-nav-slot"></div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
 
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
@@ -470,28 +464,14 @@
 
     <div class="drawer-body">
       <div class="drawer-actions-grid">
-        <div class="mobile-auth-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
-        </div>
+        <div class="mobile-auth-slot"></div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <a href="/" class="drawer-nav-link">
-        <span>Home</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/gallery" class="drawer-nav-link">
-        <span>All Collection / Gallery</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/granite-marble" class="drawer-nav-link">
-        <span>Granite & Marble</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/quartz-slabs" class="drawer-nav-link">
-        <span>Quartz & Slabs</span>
-        <span>&rarr;</span>
-      </a>
+      <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
+      <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
+      <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
+      <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
     </div>
 
     <div class="drawer-footer-contact">
