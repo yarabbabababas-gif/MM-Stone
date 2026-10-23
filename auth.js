@@ -1,6 +1,5 @@
 // File: auth.js
 // Dual-Channel (Email + Mobile) OTP Authentication & Verification Engine
-
 const AUTH_CONFIG = {
   storageKey: 'malvigano_user_session',
   // Configure with EmailJS or your serverless API endpoint
