@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Granite & Marble | E-Commerce Slabs | MalviganoMac</title>
 
-    <!-- Favicon for Google & Web Browsers -->
+  <!-- Favicon for Google & Web Browsers -->
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +41,34 @@
     .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; }
     .nav-actions { display: flex; align-items: center; gap: 12px; }
     .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--brand-navy);
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 20px 24px 20px;
+      background: #ffffff;
+      border-top: 1px solid var(--card-border);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--brand-slate);
+      background: #f8fafc;
+    }
     
     .grid-container { max-width: 1240px; margin: 40px auto 80px auto; padding: 0 20px; display: grid; grid-template-columns: 2.3fr 1fr; gap: 32px; }
     .products-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
@@ -68,6 +95,7 @@
     @media (max-width: 980px) {
       .grid-container { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-hamburger { display: block; }
     }
   </style>
 </head>
@@ -85,7 +113,7 @@
       <nav class="nav-links">
         <a href="/">Home</a>
         <a href="/gallery">Gallery</a>
-        <a href="/granite-marble">Granite & Marble</a>
+        <a href="/granite-marble" style="color:var(--brand-navy); font-weight:700;">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
       <div class="nav-actions">
@@ -93,7 +121,20 @@
         <button class="btn-nav-cart" onclick="document.getElementById('cartBox').scrollIntoView({behavior:'smooth'})">
           🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
         </button>
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer with Auth Slot -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
+      <a href="/">Home</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/granite-marble">Granite & Marble</a>
+      <a href="/quartz-slabs">Quartz & Slabs</a>
+      <a href="/quote">Get a Quote</a>
     </div>
   </header>
 
@@ -143,6 +184,16 @@
       <button class="btn-add" style="width:100%; background:var(--brand-slate);" onclick="triggerCheckout('email')">Request Proforma Invoice</button>
     </div>
   </div>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+      });
+    }
+  </script>
 
   <!-- Gateway & Application Scripts -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
