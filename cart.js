@@ -2,9 +2,7 @@
 // Persistent Stone E-Commerce Cart & Payment Gateway Manager
 
 const CART_KEY = 'malvigano_ecom_cart';
-
-// Replace with your Live or Test Key ID from Razorpay Dashboard (e.g., 'rzp_test_xxxxxx' or 'rzp_live_xxxxxx')
-const RAZORPAY_KEY_ID = 'rzp_test_placeholder'; 
+const RAZORPAY_KEY_ID = 'rzp_test_placeholder'; // Replace with live ID when deploying
 
 function getCart() {
   const data = localStorage.getItem(CART_KEY);
@@ -19,8 +17,8 @@ function saveCart(cart) {
 function addItemToCart(title, rate, unit, quantity) {
   const user = getCurrentUser();
   if (!user) {
-    alert('Please log in with your mobile/email and verify OTP before adding items to your order.');
-    openAuthModal();
+    alert('Please authenticate your email and mobile before adding stone lots to your order.');
+    openAuthModal('login');
     return;
   }
 
@@ -75,7 +73,7 @@ function syncCartUI() {
 
   if (cartContainer) {
     if (cart.length === 0) {
-      cartContainer.innerHTML = '<p style="font-size:13px; color:#94a3b8; padding: 12px 0;">Your cart is empty. Add items above.</p>';
+      cartContainer.innerHTML = '<p style="font-size:13px; color:#94a3b8; padding: 12px 0;">No slabs added. Select quantities above.</p>';
       return;
     }
     cartContainer.innerHTML = '';
@@ -97,12 +95,11 @@ function syncCartUI() {
   }
 }
 
-// Online Gateway / Instant Payment
 function initiateOnlinePayment() {
   const user = getCurrentUser();
   if (!user) {
-    alert('Please log in with mobile/email and verify OTP prior to paying.');
-    openAuthModal();
+    alert('Please verify your email & mobile OTP prior to checkout.');
+    openAuthModal('login');
     return;
   }
 
@@ -114,33 +111,30 @@ function initiateOnlinePayment() {
 
   let totalSum = 0;
   cart.forEach(item => totalSum += item.total);
-  const advanceAmount = Math.round(totalSum * 0.70); // 70% advance payable
+  const advanceAmount = Math.round(totalSum * 0.70);
 
   if (typeof Razorpay === 'undefined') {
-    alert('Payment Gateway is loading. Please check your internet connection.');
+    alert('Payment Gateway is loading. Check your internet connection.');
     return;
   }
 
   const options = {
     key: RAZORPAY_KEY_ID,
-    amount: advanceAmount * 100, // Amount in paise
+    amount: advanceAmount * 100,
     currency: "INR",
     name: "MalviganoMac Pvt Ltd",
     description: "70% Advance Stone Order Booking",
     image: "Logo.png",
     prefill: {
-      name: user.identifier.split('@')[0],
-      email: user.identifier.includes('@') ? user.identifier : "client@malviganomac.live",
-      contact: !user.identifier.includes('@') ? user.identifier : ""
+      name: user.name,
+      email: user.email,
+      contact: user.phone
     },
-    theme: {
-      color: "#003366"
-    },
+    theme: { color: "#003366" },
     handler: function (response) {
-      alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}\nYour booking order is confirmed.`);
+      alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}\nOrder verified.`);
       
-      // Notify WhatsApp with confirmation receipt
-      let confMessage = `*PAID BOOKING ORDER - MalviganoMac*\nPayment ID: ${response.razorpay_payment_id}\nAdvance Paid: ₹${advanceAmount.toLocaleString('en-IN')}\nCustomer: ${user.identifier}\n\n`;
+      let confMessage = `*PAID BOOKING ORDER - MalviganoMac*\nPayment ID: ${response.razorpay_payment_id}\nAdvance Paid: ₹${advanceAmount.toLocaleString('en-IN')}\nCustomer: ${user.name} (${user.email}, ${user.phone})\n\n`;
       cart.forEach(i => confMessage += `• ${i.title} (${i.quantity} ${i.unit})\n`);
       confMessage += `\nPlease initiate slab inspection and factory loading.`;
 
@@ -150,28 +144,25 @@ function initiateOnlinePayment() {
   };
 
   const rzp = new Razorpay(options);
-  rzp.on('payment.failed', function (response) {
-    alert(`Payment could not be completed: ${response.error.description}`);
-  });
   rzp.open();
 }
 
 function triggerCheckout(method) {
   const user = getCurrentUser();
   if (!user) {
-    alert('Please log in with mobile/email and verify OTP prior to booking.');
-    openAuthModal();
+    alert('Please authenticate your phone and email before booking.');
+    openAuthModal('login');
     return;
   }
 
   const cart = getCart();
   if (cart.length === 0) {
-    alert('Cart is empty.');
+    alert('Your cart is empty.');
     return;
   }
 
   let totalSum = 0;
-  let orderDetails = `*MalviganoMac Verified Stone Order*\nCustomer: ${user.identifier}\n\n`;
+  let orderDetails = `*MalviganoMac Verified Stone Order*\nVerified Customer: ${user.name}\nEmail: ${user.email}\nPhone: ${user.phone}\n\n`;
   cart.forEach(item => {
     totalSum += item.total;
     orderDetails += `• ${item.title}: ${item.quantity} ${item.unit} @ ₹${item.rate} = ₹${Math.round(item.total).toLocaleString('en-IN')}\n`;
@@ -186,7 +177,7 @@ function triggerCheckout(method) {
   if (method === 'whatsapp') {
     window.open(`https://wa.me/918123502007?text=${encodeURIComponent(orderDetails)}`, '_blank');
   } else {
-    window.location.href = `mailto:admin@malviganomac.live?subject=Confirmed Stone Order - ${user.identifier}&body=${encodeURIComponent(orderDetails)}`;
+    window.location.href = `mailto:admin@malviganomac.live?subject=Verified Stone Order - ${encodeURIComponent(user.name)}&body=${encodeURIComponent(orderDetails)}`;
   }
 }
 
