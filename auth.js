@@ -1,8 +1,6 @@
 // auth.js
-// Clean login/register flow using localStorage
-// Saves user accounts and current session
-// Prevents duplicate email/phone registration
-// Keeps logged-in user across later visits
+// Shared login/register flow for all pages
+// Works across Home, Gallery, Granite & Marble, Quartz/Slab, and Quote pages
 
 const AUTH_CONFIG = {
   storageKey: 'malvigano_user_session',
@@ -60,7 +58,7 @@ function updateNavAuthUI() {
   const mobileMenus = document.querySelectorAll('.mobile-auth-slot');
 
   const renderDesktop = (slot) => {
-    const buttonStyles = `
+    const btnStyles = `
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -81,14 +79,14 @@ function updateNavAuthUI() {
           <span style="font-size:12.5px; font-weight:700; color:var(--brand-navy); background:#f1f5f9; padding:6px 12px; border-radius:6px; border:1px solid #cbd5e1;">
             👤 ${getUserDisplayName(user)}
           </span>
-          <button type="button" onclick="handleLogout()" style="${buttonStyles} background:#fee2e2; color:#b91c1c; border:1px solid #fecaca;">
+          <button type="button" onclick="handleLogout()" style="${btnStyles} background:#fee2e2; color:#b91c1c; border:1px solid #fecaca;">
             Logout
           </button>
         </div>
       `;
     } else {
       slot.innerHTML = `
-        <button type="button" onclick="openAuthModal('login')" style="${buttonStyles}; background:transparent; border:1.5px solid var(--brand-navy); color:var(--brand-navy);">
+        <button type="button" onclick="openAuthModal('login')" style="${btnStyles}; background:transparent; border:1.5px solid var(--brand-navy); color:var(--brand-navy);">
           Login / Register
         </button>
       `;
@@ -140,13 +138,13 @@ function openAuthModal(mode = 'login') {
     modal = document.getElementById('authModal');
   }
 
-  const modalBackdrop = document.getElementById('authModal');
-  if (modalBackdrop) {
-    modalBackdrop.classList.add('open');
-    document.body.classList.add('modal-open');
-  }
-
   if (modal) {
+    const modalBackdrop = document.getElementById('authModal');
+    if (modalBackdrop) {
+      modalBackdrop.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+
     const title = document.getElementById('authModalTitle');
     const loginView = document.getElementById('authLoginView');
     const registerView = document.getElementById('authRegisterView');
@@ -173,8 +171,9 @@ function openAuthModal(mode = 'login') {
 
 function closeAuthModal() {
   const modal = document.getElementById('authModal');
-  if (modal) modal.classList.remove('open');
-
+  if (modal) {
+    modal.classList.remove('open');
+  }
   document.body.classList.remove('modal-open');
 }
 
@@ -404,10 +403,28 @@ function injectAuthModal() {
   `;
 
   document.body.appendChild(backdrop);
+
+  const modalObj = document.getElementById('authModal');
+  if (modalObj) {
+    modalObj.addEventListener('click', function (e) {
+      if (e.target === modalObj) {
+        closeAuthModal();
+      }
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   injectAuthModal();
   bindAuthButtons();
   updateNavAuthUI();
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      const authModal = document.getElementById('authModal');
+      if (authModal && authModal.classList.contains('open')) {
+        closeAuthModal();
+      }
+    }
+  });
 });
