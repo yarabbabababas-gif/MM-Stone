@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quartz, Porcelain & Thick Monuments | Per Piece | MalviganoMac</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones.">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,7 @@
       --shadow-soft: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
       --transition: all 0.25s ease-in-out;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       width: 100%;
@@ -38,6 +39,7 @@
       -webkit-font-smoothing: antialiased;
     }
     body.modal-open { overflow: hidden; }
+    body.drawer-open { overflow: hidden; }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
@@ -50,6 +52,7 @@
       border-bottom: 1px solid var(--card-border);
       box-shadow: 0 4px 14px rgba(0,0,0,0.03);
     }
+
     .nav-container {
       max-width: 1240px;
       margin: 0 auto;
@@ -57,6 +60,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
     .brand-logo-img {
@@ -83,6 +87,7 @@
       color: var(--text-muted);
       font-weight: 600;
     }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -92,16 +97,8 @@
       color: var(--brand-slate);
     }
     .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+
     .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
 
     .btn-action-outline,
     .auth-nav-slot button,
@@ -130,6 +127,38 @@
       background: rgba(197, 160, 89, 0.12);
       border-color: var(--brand-navy);
       color: var(--brand-navy) !important;
+    }
+
+    .btn-action-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      padding: 0 18px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition: var(--transition);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+      line-height: 1;
+      background: var(--brand-navy);
+      color: #ffffff !important;
+      border: 1.5px solid var(--brand-navy);
+    }
+    .btn-action-solid:hover { background: var(--brand-navy-dark); }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--brand-navy);
     }
 
     .drawer-backdrop {
@@ -434,12 +463,8 @@
         <a href="/quartz-slabs" class="active-link">Quartz & Slabs</a>
       </nav>
       <div class="nav-actions">
-        <div class="auth-nav-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
-        </div>
-        <button class="btn-nav-cart" onclick="document.getElementById('cartBox').scrollIntoView({behavior:'smooth'})">
-          🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
-        </button>
+        <div class="auth-nav-slot"></div>
+        <a href="/quote" class="btn-action-solid">Get a Quote</a>
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
@@ -464,28 +489,14 @@
 
     <div class="drawer-body">
       <div class="drawer-actions-grid">
-        <div class="mobile-auth-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
-        </div>
+        <div class="mobile-auth-slot"></div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <a href="/" class="drawer-nav-link">
-        <span>Home</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/gallery" class="drawer-nav-link">
-        <span>All Collection / Gallery</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/granite-marble" class="drawer-nav-link">
-        <span>Granite & Marble</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/quartz-slabs" class="drawer-nav-link">
-        <span>Quartz & Slabs</span>
-        <span>&rarr;</span>
-      </a>
+      <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
+      <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
+      <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
+      <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
     </div>
 
     <div class="drawer-footer-contact">
