@@ -111,6 +111,47 @@
     .full-width { grid-column: 1 / -1; }
     .field-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--brand-slate); margin-bottom: 6px; }
     .form-control { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 14px; font-family: inherit; }
+    
+    /* Phone input combo */
+    .phone-input-group {
+      display: flex;
+      gap: 8px;
+    }
+    .phone-code-select {
+      width: 140px;
+      flex-shrink: 0;
+      padding: 12px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      background-color: #fff;
+    }
+
+    /* Location input combo */
+    .location-input-group {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-geo {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: var(--brand-slate);
+      padding: 0 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .btn-geo:hover {
+      background: #e2e8f0;
+      color: var(--brand-navy);
+    }
+
     .actions-row { display: flex; justify-content: flex-end; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
     
     .btn-primary, .btn-whatsapp {
@@ -141,6 +182,8 @@
       .quote-card { padding: 24px 18px; }
       .actions-row { flex-direction: column; }
       .btn-primary, .btn-whatsapp { width: 100%; }
+      .location-input-group { flex-direction: column; }
+      .btn-geo { padding: 10px; justify-content: center; }
     }
   </style>
 </head>
@@ -197,10 +240,35 @@
             <label for="email">Email Address *</label>
             <input type="email" id="email" required class="form-control" placeholder="client@example.com">
           </div>
-          <div class="field-group">
-            <label for="phone">Phone / WhatsApp *</label>
-            <input type="text" id="phone" required class="form-control" placeholder="+91 / +1 ...">
+          
+          <!-- Country Code + Phone Number Group -->
+          <div class="field-group full-width">
+            <label for="phone">Phone Number *</label>
+            <div class="phone-input-group">
+              <select id="countryCode" class="phone-code-select" aria-label="Country Code">
+                <option value="+91" selected>🇮🇳 India (+91)</option>
+                <option value="+1">🇺🇸/🇨🇦 USA/CA (+1)</option>
+                <option value="+971">🇦🇪 UAE (+971)</option>
+                <option value="+44">🇬🇧 UK (+44)</option>
+                <option value="+61">🇦🇺 Australia (+61)</option>
+                <option value="+65">🇸🇬 Singapore (+65)</option>
+                <option value="+49">🇩🇪 Germany (+49)</option>
+                <option value="+33">🇫🇷 France (+33)</option>
+                <option value="+39">🇮🇹 Italy (+39)</option>
+                <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                <option value="+974">🇶🇦 Qatar (+974)</option>
+                <option value="+965">🇰🇼 Kuwait (+965)</option>
+                <option value="+968">🇴🇲 Oman (+968)</option>
+                <option value="+27">🇿🇦 South Africa (+27)</option>
+                <option value="+60">🇲🇾 Malaysia (+60)</option>
+                <option value="+81">🇯🇵 Japan (+81)</option>
+                <option value="+82">🇰🇷 South Korea (+82)</option>
+                <option value="+86">🇨🇳 China (+86)</option>
+              </select>
+              <input type="tel" id="phone" required class="form-control" placeholder="Mobile / Landline Number" pattern="[0-9\s-]{6,15}">
+            </div>
           </div>
+
           <div class="field-group">
             <label for="stoneCategory">Stone Category *</label>
             <select id="stoneCategory" class="form-control">
@@ -220,14 +288,23 @@
               <option value="50mm - 250mm">50mm - 250mm (Monument)</option>
             </select>
           </div>
-          <div class="field-group">
+          <div class="field-group full-width">
             <label for="quantity">Quantity / Area</label>
             <input type="text" id="quantity" class="form-control" placeholder="e.g. 5,000 sq ft or 2 Containers">
           </div>
+          
+          <!-- Delivery Port / Destination City with Geolocation option -->
           <div class="field-group full-width">
             <label for="port">Delivery Port / Destination City</label>
-            <input type="text" id="port" class="form-control" placeholder="e.g., Chennai, Houston, Jebel Ali">
+            <div class="location-input-group">
+              <input type="text" id="port" class="form-control" placeholder="Type port/city (e.g. Chennai, Houston, Jebel Ali) or detect">
+              <button type="button" class="btn-geo" id="btnDetectLocation" onclick="detectCurrentLocation()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                <span>Use Current Location</span>
+              </button>
+            </div>
           </div>
+
           <div class="field-group full-width">
             <label for="message">Project Requirements / Notes</label>
             <textarea id="message" rows="4" class="form-control" placeholder="Specify finish, polished surface, or specific block vein..."></textarea>
@@ -256,19 +333,93 @@
 
     // Auto-fill logged-in client credentials
     document.addEventListener('DOMContentLoaded', () => {
-      const u = getCurrentUser();
+      const u = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
       if (u) {
         if (u.name) document.getElementById('name').value = u.name;
         if (u.email) document.getElementById('email').value = u.email;
-        if (u.phone) document.getElementById('phone').value = u.phone;
+        if (u.phone) {
+          // Parse potential country code if saved together
+          parseAndSetPhone(u.phone);
+        }
       }
     });
 
+    function parseAndSetPhone(fullPhone) {
+      const codeSelect = document.getElementById('countryCode');
+      const phoneInput = document.getElementById('phone');
+      let matched = false;
+
+      for (let i = 0; i < codeSelect.options.length; i++) {
+        const code = codeSelect.options[i].value;
+        if (fullPhone.startsWith(code)) {
+          codeSelect.value = code;
+          phoneInput.value = fullPhone.slice(code.length).trim();
+          matched = true;
+          break;
+        }
+      }
+      if (!matched) {
+        phoneInput.value = fullPhone;
+      }
+    }
+
+    // Geolocation detection with reverse geocoding fallback
+    function detectCurrentLocation() {
+      const portInput = document.getElementById('port');
+      const geoBtn = document.getElementById('btnDetectLocation');
+
+      if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your current browser.');
+        return;
+      }
+
+      const originalBtnText = geoBtn.innerHTML;
+      geoBtn.innerText = 'Detecting...';
+      geoBtn.disabled = true;
+
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          try {
+            // Free OpenStreetMap reverse-geocoding endpoint
+            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+            const data = await res.json();
+            
+            const city = data.address.city || data.address.town || data.address.state_district || data.address.state || '';
+            const country = data.address.country || '';
+            const locationStr = [city, country].filter(Boolean).join(', ');
+
+            portInput.value = locationStr || `Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`;
+          } catch (err) {
+            // Fallback to coordinates if reverse geocode fails
+            portInput.value = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
+          } finally {
+            geoBtn.innerHTML = originalBtnText;
+            geoBtn.disabled = false;
+          }
+        },
+        (error) => {
+          alert('Unable to retrieve location: ' + error.message);
+          geoBtn.innerHTML = originalBtnText;
+          geoBtn.disabled = false;
+        },
+        { timeout: 10000 }
+      );
+    }
+
     function getQuotePayload() {
+      const rawNumber = document.getElementById('phone').value.trim();
+      const countryCode = document.getElementById('countryCode').value;
+      const combinedPhone = rawNumber ? `${countryCode} ${rawNumber}` : '';
+
       return {
         name: document.getElementById('name').value.trim(),
         email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
+        phone: combinedPhone,
+        countryCode: countryCode,
+        localPhone: rawNumber,
         cat: document.getElementById('stoneCategory').value,
         thick: document.getElementById('thickness').value,
         qty: document.getElementById('quantity').value.trim(),
@@ -279,23 +430,26 @@
 
     function processQuoteSubmit(e) {
       e.preventDefault();
-      const user = getCurrentUser();
+      const user = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
       const payload = getQuotePayload();
 
       // Check if user is authenticated with matching verified info
-      if (!user || user.email !== payload.email.toLowerCase() || user.phone !== payload.phone) {
+      if (!user || user.email !== payload.email.toLowerCase() || (user.phone && !user.phone.includes(payload.localPhone))) {
         alert('You must verify both your Email and Mobile via OTP before the quotation request can be dispatched.');
         
-        // Seed auth modal with form inputs
-        openAuthModal('signup');
-        document.getElementById('authName').value = payload.name;
-        document.getElementById('authEmail').value = payload.email;
-        document.getElementById('authPhone').value = payload.phone;
+        if (typeof openAuthModal === 'function') {
+          openAuthModal('signup');
+          const authName = document.getElementById('authName');
+          const authEmail = document.getElementById('authEmail');
+          const authPhone = document.getElementById('authPhone');
+          if (authName) authName.value = payload.name;
+          if (authEmail) authEmail.value = payload.email;
+          if (authPhone) authPhone.value = payload.phone;
 
-        // Hook callback to complete submission once verified
-        window.onAuthSuccess = function() {
-          sendFinalQuoteEmail(payload);
-        };
+          window.onAuthSuccess = function() {
+            sendFinalQuoteEmail(payload);
+          };
+        }
         return;
       }
 
@@ -313,23 +467,22 @@
         `Category: ${d.cat}\n` +
         `Thickness: ${d.thick}\n` +
         `Volume/Quantity: ${d.qty || 'Not Specified'}\n` +
-        `Destination Port: ${d.port || 'Not Specified'}\n` +
+        `Destination Port / Location: ${d.port || 'Not Specified'}\n` +
         `Notes: ${d.notes || 'None'}\n` +
         `-----------------------------------------\n` +
         `Authentication: Dual OTP (Email & Mobile) Validated`;
 
-      // Trigger client mailto and open direct WhatsApp ping
       window.location.href = `mailto:admin@malviganomac.live?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       alert('Quotation details verified. Your email client will now dispatch this inquiry to admin@malviganomac.live.');
     }
 
     function submitWhatsAppQuote() {
       const d = getQuotePayload();
-      if (!d.name || !d.phone) {
+      if (!d.name || !d.localPhone) {
         alert('Please fill in your name and phone number.');
         return;
       }
-      const text = `*Verified Quote Inquiry - MalviganoMac*\nName: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nStone: ${d.cat} (${d.thick})\nQty: ${d.qty}\nPort: ${d.port}`;
+      const text = `*Verified Quote Inquiry - MalviganoMac*\nName: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nStone: ${d.cat} (${d.thick})\nQty: ${d.qty}\nPort/Location: ${d.port}`;
       window.open(`https://wa.me/918123502007?text=${encodeURIComponent(text)}`, '_blank');
     }
   </script>
