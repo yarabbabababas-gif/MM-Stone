@@ -1,7 +1,4 @@
-// Add this to the end of each HTML page after auth.js and cart.js
-// Keeps the same design but improves mobile ecommerce behavior
 document.addEventListener('DOMContentLoaded', function () {
-  // Keep mobile drawer working smoothly
   const drawerOpenBtn = document.getElementById('drawerOpenBtn');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
   const sideDrawer = document.getElementById('sideDrawer');
@@ -35,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Make product and cart areas feel more ecommerce-like on mobile
   const cartBox = document.getElementById('cartBox');
   if (window.innerWidth <= 768 && cartBox) {
     cartBox.style.position = 'sticky';
@@ -44,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     cartBox.style.zIndex = '10';
   }
 
-  // Keep nav auth slot synchronized across all pages
   if (typeof updateNavAuthUI === 'function') {
     updateNavAuthUI();
   }
