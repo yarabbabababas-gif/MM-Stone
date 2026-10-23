@@ -1,7 +1,9 @@
-// File: cart.js
-// Snipcart-powered Stone E-Commerce Cart + Local Fallback
+// cart.js
+// Persistent cart + checkout logic
+// Works with auth.js login/register flow
+
 const CART_KEY = 'malvigano_ecom_cart';
-const SNIPCART_PUBLIC_KEY = 'ZTljNThhZjEtMzEyMS00YjU3LWFlMWUtOTg1ZjRhY2RiYWI1NjM5MjcyMzk2ODgwNTgwNjYy';
+const RAZORPAY_KEY_ID = 'rzp_test_placeholder';
 
 function safeParseJSON(data, fallback) {
   try {
@@ -21,41 +23,17 @@ function saveCart(cart) {
   syncCartUI();
 }
 
-function getSnipcartItemId(title, unit) {
-  return (title + '-' + unit)
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
 function addItemToCart(title, rate, unit, quantity) {
-  const qty = Number(quantity);
-  if (!qty || qty <= 0) {
-    alert('Please enter a valid quantity.');
+  const user = getCurrentUser();
+  if (!user) {
+    alert('Please login/register before adding stone lots to your order.');
+    openAuthModal('login');
     return;
   }
 
-  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
-    const item = {
-      id: getSnipcartItemId(title, unit),
-      name: title,
-      price: Number(rate),
-      quantity: qty,
-      url: window.location.href
-    };
-
-    try {
-      window.Snipcart.api.items.add(item);
-      return;
-    } catch (err) {
-      console.warn('Snipcart add failed, falling back:', err);
-    }
-  }
-
-  const user = getCurrentUser();
-  if (!user) {
-    alert('Please authenticate your email and mobile before adding stone lots to your order.');
-    openAuthModal('login');
+  const qty = Number(quantity);
+  if (!qty || qty <= 0) {
+    alert('Please enter a valid quantity.');
     return;
   }
 
@@ -146,14 +124,9 @@ function syncCartUI() {
 }
 
 function initiateOnlinePayment() {
-  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
-    window.Snipcart.api.theme.cart.open();
-    return;
-  }
-
   const user = getCurrentUser();
   if (!user) {
-    alert('Please verify your email & mobile OTP prior to checkout.');
+    alert('Please login/register before checkout.');
     openAuthModal('login');
     return;
   }
@@ -168,23 +141,23 @@ function initiateOnlinePayment() {
   const advanceAmount = Math.round(totalSum * 0.70);
 
   if (typeof Razorpay === 'undefined') {
-    alert('Payment Gateway is loading. Check your internet connection.');
+    alert('Payment gateway is loading. Please check your connection and try again.');
     return;
   }
 
   const options = {
-    key: 'rzp_test_placeholder',
+    key: RAZORPAY_KEY_ID,
     amount: advanceAmount * 100,
-    currency: "INR",
-    name: "MalviganoMac Pvt Ltd",
-    description: "70% Advance Stone Order Booking",
-    image: "Logo.png",
+    currency: 'INR',
+    name: 'MalviganoMac Pvt Ltd',
+    description: '70% Advance Stone Order Booking',
+    image: 'Logo.png',
     prefill: {
       name: user.name || 'Valued Client',
       email: user.email,
       contact: user.phone
     },
-    theme: { color: "#003366" },
+    theme: { color: '#003366' },
     handler: function (response) {
       alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}\nOrder verified.`);
 
@@ -202,14 +175,9 @@ function initiateOnlinePayment() {
 }
 
 function triggerCheckout(method) {
-  if (window.Snipcart && typeof window.Snipcart.api !== 'undefined') {
-    window.Snipcart.api.theme.cart.open();
-    return;
-  }
-
   const user = getCurrentUser();
   if (!user) {
-    alert('Please authenticate your phone and email before booking.');
+    alert('Please login/register before booking.');
     openAuthModal('login');
     return;
   }
