@@ -117,16 +117,121 @@
       color: var(--brand-navy) !important;
     }
 
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 16px 20px 24px 20px;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 26, 43, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 2100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 15px; font-weight: 700; padding: 12px 14px; border-radius: var(--radius-sm); color: var(--brand-slate); background: #f8fafc; }
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 360px;
+      background: #ffffff;
+      z-index: 2200;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .side-drawer.open { transform: translateX(0); }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .drawer-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      line-height: 0;
+      transition: var(--transition);
+    }
+    .drawer-close:hover {
+      color: var(--brand-navy);
+      background: #f1f5f9;
+    }
+
+    .drawer-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .drawer-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .drawer-actions-grid .btn-action-solid,
+    .drawer-actions-grid .btn-action-outline,
+    .mobile-auth-slot button,
+    .mobile-auth-slot a {
+      width: 100%;
+      height: 42px;
+    }
+
+    .drawer-nav-link {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      color: var(--brand-slate);
+      background: #f8fafc;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-nav-link:hover, .drawer-nav-link:active {
+      background: var(--brand-navy);
+      color: #ffffff;
+      transform: translateX(4px);
+    }
+
+    .drawer-footer-contact {
+      margin-top: auto;
+      padding: 18px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--card-border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .drawer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand-slate);
+      font-weight: 600;
+    }
 
     .page-wrap { max-width: 880px; margin: 40px auto 80px auto; padding: 0 16px; }
     .quote-card {
@@ -322,6 +427,40 @@
       box-shadow: 0 6px 18px rgba(0, 51, 102, 0.25);
     }
 
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px dashed #cbd5e1;
+      padding: 40px 20px;
+      width: 100%;
+    }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-brand { max-width: 600px; }
+    .footer-desc {
+      font-size: 13.5px;
+      color: #64748b;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background: var(--brand-slate);
+      color: #94a3b8;
+      font-size: 13px;
+      padding: 16px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .bottom-bar-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
+
     @media (max-width: 980px) {
       .nav-links { display: none; }
       .nav-hamburger { display: block; }
@@ -348,34 +487,87 @@
           <div class="brand-sub">Stone & Slabs</div>
         </div>
       </a>
+
       <nav class="nav-links">
         <a href="/">Home</a>
         <a href="/gallery">All Collection / Gallery</a>
         <a href="/granite-marble">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
+
       <div class="nav-actions">
         <div class="auth-nav-slot">
           <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
         </div>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+
+        <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
         </button>
       </div>
     </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-auth-slot" style="margin-bottom:8px;">
-        <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
-      </div>
-      <a href="/">Home</a>
-      <a href="/gallery">All Collection / Gallery</a>
-      <a href="/granite-marble">Granite & Marble</a>
-      <a href="/quartz-slabs">Quartz & Slabs</a>
-      <a href="/quote">Get a Quote</a>
-    </div>
   </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <aside class="side-drawer" id="sideDrawer" aria-label="Side Navigation Drawer">
+    <div class="drawer-header">
+      <div class="brand-logo-wrap">
+        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img" style="width:36px;height:36px;">
+        <span class="brand-title" style="font-size:16px;">MalviganoMac</span>
+      </div>
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation Drawer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-actions-grid">
+        <div class="mobile-auth-slot">
+          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
+        </div>
+        <a href="/quote" class="btn-action-solid">Get a Quote</a>
+      </div>
+
+      <a href="/" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Home</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/gallery" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>All Collection / Gallery</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/granite-marble" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Granite & Marble</span>
+        <span>&rarr;</span>
+      </a>
+      <a href="/quartz-slabs" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Quartz & Slabs</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+
+    <div class="drawer-footer-contact">
+      <div class="drawer-contact-item">
+        <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
+      </div>
+
+      <div class="drawer-contact-item">
+        <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
+      </div>
+
+      <div class="drawer-contact-item">
+        <span>✉️</span>
+        <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
+      </div>
+    </div>
+  </aside>
 
   <div class="modal-backdrop" id="authModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
     <div class="auth-modal" id="authModalContainer">
@@ -502,9 +694,29 @@
     </div>
   </div>
 
-  <footer style="background:#ffffff; border-top:1px dashed #cbd5e1; padding:30px 20px; text-align:center; font-size:13px; color:#64748b;">
-    <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | Inquiries routed to <strong>admin@malviganomac.live</strong></div>
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-logo-wrap">
+          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
+          <div>
+            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
+            <div class="brand-sub">Stone & Slabs</div>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
+        </p>
+      </div>
+    </div>
   </footer>
+
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
+      <div>Powered by <strong>Yarab Baba</strong></div>
+    </div>
+  </div>
 
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -513,11 +725,35 @@
       hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     }
 
+    const drawerOpenBtn = document.getElementById('drawerOpenBtn');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const drawerBackdrop = document.getElementById('drawerBackdrop');
+
+    function openDrawer() {
+      sideDrawer.classList.add('open');
+      drawerBackdrop.classList.add('open');
+      document.body.classList.add('drawer-open');
+      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+      sideDrawer.classList.remove('open');
+      drawerBackdrop.classList.remove('open');
+      document.body.classList.remove('drawer-open');
+      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (drawerOpenBtn) drawerOpenBtn.addEventListener('click', openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
     const authModalBackdrop = document.getElementById('authModalBackdrop');
     const authModalClose = document.getElementById('authModalClose');
     const authTriggers = document.querySelectorAll('.auth-open-trigger');
 
     function openAuthModal() {
+      closeDrawer();
       if (authModalBackdrop) {
         authModalBackdrop.classList.add('open');
         document.body.classList.add('modal-open');
@@ -546,7 +782,25 @@
       });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (authModalBackdrop && authModalBackdrop.classList.contains('open')) {
+          closeAuthModal();
+        } else if (sideDrawer && sideDrawer.classList.contains('open')) {
+          closeDrawer();
+        }
+      }
+    });
+
+    function handleAccountSubmit(event) {
+      event.preventDefault();
+      alert('Verification OTPs dispatched. Please check your Email and Mobile.');
+      closeAuthModal();
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
       const u = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
       if (u) {
         if (u.name) document.getElementById('name').value = u.name;
@@ -723,12 +977,6 @@
       }
       const text = `*Verified Quote Inquiry - MalviganoMac*\nName: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nStone: ${d.cat} (${d.thick})\nQty: ${d.qty}\nPort/Location: ${d.port}`;
       window.open(`https://wa.me/918123502007?text=${encodeURIComponent(text)}`, '_blank');
-    }
-
-    function handleAccountSubmit(event) {
-      event.preventDefault();
-      alert('Verification OTPs dispatched. Please check your Email and Mobile.');
-      closeAuthModal();
     }
   </script>
 
