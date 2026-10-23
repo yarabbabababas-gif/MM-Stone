@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Collection / Gallery | MalviganoMac Stone</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
-
-  <!-- Favicon for Google & Web Browsers -->
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <title>All Collection / Visual Gallery | MalviganoMac Stone</title>
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai & Kishangarh.">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --brand-navy: #003366;
       --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
-      --brand-gold-light: #dfbe7d;
-      --brand-accent: #b32d2d;
       --text-main: #1f2937;
       --text-muted: #64748b;
       --bg-cream: #fbfbfd;
@@ -31,244 +27,60 @@
       --transition: all 0.25s ease-in-out;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text-main); background: var(--bg-cream); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    }
-    .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .nav-bar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+    .nav-container { max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      flex-shrink: 0;
-      background-color: #ffffff;
-    }
-    .brand-logo-img.footer-logo { width: 42px; height: 42px; }
-    .brand-title {
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--brand-navy);
-      line-height: 1.1;
-    }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--brand-slate);
-    }
+    .brand-logo-img { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-gold); background:#fff; }
+    .brand-title { font-size: 20px; font-weight: 800; color: var(--brand-navy); }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-weight: 600; font-size: 14px; }
     .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
-    
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn-nav-cart { background: #f1f5f9; color: var(--brand-navy); border: 1px solid var(--card-border); padding: 8px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
+    .btn-nav-quote { background: var(--brand-navy); color: #fff !important; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--brand-navy); }
 
-    .btn-nav-quote {
-      background: var(--brand-navy);
-      color: #ffffff !important;
-      padding: 9px 18px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
-      font-weight: 700;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .btn-nav-quote:hover { background: var(--brand-navy-dark); }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
-
-    /* Mobile Drawer */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      padding: 16px 20px 24px 20px;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
+    .mobile-menu { display: none; flex-direction: column; gap: 6px; padding: 16px 20px 24px; background: #fff; border-top: 1px solid var(--card-border); }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
-    }
-    .mobile-menu a:active { background: var(--brand-navy); color: #ffffff; }
+    .mobile-menu a { font-size: 15px; font-weight: 700; padding: 12px 14px; border-radius: var(--radius-sm); color: var(--brand-slate); background: #f8fafc; }
 
-    /* Modal Backdrop for Auth */
-    .modal-backdrop { 
-      position: fixed; 
-      inset: 0; 
-      background: rgba(0,0,0,0.55); 
-      z-index: 2000; 
-      display: none; 
-      align-items: center; 
-      justify-content: center; 
-      padding: 16px; 
-    }
-    .modal-backdrop.open { display: flex; }
+    .gallery-hero { text-align: center; padding: 50px 20px 30px; background: #fff; border-bottom: 1px solid var(--card-border); }
+    .gallery-hero h1 { font-size: clamp(26px, 5vw, 38px); color: var(--brand-navy); margin-bottom: 10px; font-weight: 800; }
+    .filter-tabs { display: flex; justify-content: center; gap: 10px; margin: 24px 0 10px; flex-wrap: wrap; }
+    .filter-btn { background: #fff; border: 1px solid #cbd5e1; padding: 8px 18px; border-radius: 999px; font-weight: 700; font-size: 13px; cursor: pointer; }
+    .filter-btn.active { background: var(--brand-navy); color: #fff; border-color: var(--brand-navy); }
 
-    /* Gallery Content */
-    .gallery-hero {
-      text-align: center;
-      padding: 50px 20px 30px 20px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .gallery-hero h1 { font-size: clamp(26px, 5vw, 40px); color: var(--brand-navy); margin-bottom: 10px; font-weight: 800; }
-    .gallery-hero p { color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 14.5px; }
-
-    .filter-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 24px 0 10px 0;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-      transition: var(--transition);
-      min-height: 42px;
-    }
-    .filter-btn.active {
-      background: var(--brand-navy);
-      color: #ffffff;
-      border-color: var(--brand-navy);
-    }
-
-    .gallery-grid {
-      max-width: 1240px;
-      margin: 30px auto 80px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .gallery-card {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-    }
-    .gallery-img { width: 100%; height: 230px; object-fit: cover; }
-    .gallery-body { padding: 20px; flex-grow: 1; }
+    .gallery-grid { max-width: 1240px; margin: 30px auto 80px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .gallery-card { background: #fff; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--card-border); box-shadow: var(--shadow-soft); display: flex; flex-direction: column; }
+    .gallery-img { width: 100%; height: 220px; object-fit: cover; }
+    .gallery-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
     .gallery-tag { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--brand-gold); }
-    .gallery-name { font-size: 18px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
+    .gallery-name { font-size: 17px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
+    .price-tag { font-size: 18px; font-weight: 800; color: #003366; margin: 8px 0; }
+    
+    .card-actions { margin-top: auto; display: flex; gap: 8px; }
+    .qty-box { width: 90px; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 13px; }
+    .btn-cart-add { flex-grow: 1; background: var(--brand-navy); color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 700; font-size: 13px; cursor: pointer; }
 
-    .site-footer {
-      background: #ffffff;
-      border-top: 1px dashed #cbd5e1;
-      padding: 40px 20px;
-      width: 100%;
-    }
-    .footer-inner { max-width: 1240px; margin: 0 auto; }
-    .footer-brand { max-width: 600px; }
-    .footer-desc {
-      font-size: 13.5px;
-      color: #64748b;
-      margin-top: 12px;
-      line-height: 1.6;
-    }
-
-    .bottom-bar {
-      width: 100%;
-      background: var(--brand-slate);
-      color: #94a3b8;
-      font-size: 13px;
-      padding: 16px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .bottom-bar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
+    .bottom-bar { background: var(--brand-slate); color: #94a3b8; font-size: 13px; padding: 16px 20px; text-align: center; }
 
     @media (max-width: 980px) {
-      .nav-links { display: none; }
+      .nav-links, .btn-nav-quote { display: none; }
       .nav-hamburger { display: block; }
-    }
-    @media (max-width: 768px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-      .filter-btn { white-space: nowrap; flex-shrink: 0; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; gap: 8px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Navigation -->
   <header class="nav-bar">
     <div class="nav-container">
       <a href="/" class="brand-logo-wrap">
         <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
         <div>
           <div class="brand-title">MalviganoMac</div>
-          <div class="brand-sub">Stone & Slabs</div>
         </div>
       </a>
       <nav class="nav-links">
@@ -277,18 +89,17 @@
         <a href="/granite-marble">Granite & Marble</a>
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
-      
-      <!-- Desktop Actions with Auth Slot -->
       <div class="nav-actions">
         <div class="auth-nav-slot"></div>
+        <button class="btn-nav-cart" onclick="openCartDrawer()">
+          🛒 (<span class="cart-count">0</span>) <span class="cart-total-value">₹0</span>
+        </button>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
-        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Navigation">
+        <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Drawer with Auth Slot -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
@@ -299,10 +110,9 @@
     </div>
   </header>
 
-  <!-- Gallery Header -->
   <div class="gallery-hero">
     <h1>All Collection / Visual Gallery</h1>
-    <p>Explore real gangsaw slab lots, book-match marble patterns, and calibrated quartz processed across our Chennai (Tamil Nadu) & Kishangarh (Rajasthan) yards.</p>
+    <p style="color:var(--text-muted); max-width:680px; margin:0 auto; font-size:14px;">Select Gangsaw lots or standard calibrated formats[cite: 3]. Add desired quantities directly to your order cart.</p>
     <div class="filter-tabs">
       <button class="filter-btn active" onclick="filterGallery('all', this)">All Stones</button>
       <button class="filter-btn" onclick="filterGallery('granite', this)">Granite</button>
@@ -311,112 +121,105 @@
     </div>
   </div>
 
-  <!-- Stone Grid -->
   <div class="gallery-grid" id="galleryGrid">
     <div class="gallery-card" data-cat="granite">
       <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Absolute Black Granite">
       <div class="gallery-body">
-        <span class="gallery-tag">Granite</span>
-        <div class="gallery-name">Absolute Black Granite Slabs</div>
-        <p style="font-size:13px; color:#64748b;">Fine-grained, deep carbon hue suitable for premium kitchen tops and facades.</p>
+        <span class="gallery-tag">Granite Gangsaw</span>
+        <div class="gallery-name">Absolute Black Premium Granite</div>
+        <div class="price-tag">₹185 <span style="font-size:12px; color:#64748b;">/ sq.ft.</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q1" class="qty-box" value="500" min="50" step="50" placeholder="Sq Ft">
+          <button class="btn-cart-add" onclick="addItemToCart('Absolute Black Granite', 185, 'sq.ft', document.getElementById('gal_q1').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="marble">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Statuary Veined Marble">
       <div class="gallery-body">
-        <span class="gallery-tag">Marble</span>
+        <span class="gallery-tag">Marble Slab Lot</span>
         <div class="gallery-name">Statuary White Bookmatch Marble</div>
-        <p style="font-size:13px; color:#64748b;">Continuous grey diagonal veins on crisp white marble matrix.</p>
+        <div class="price-tag">₹420 <span style="font-size:12px; color:#64748b;">/ sq.ft.</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q2" class="qty-box" value="400" min="50" step="50" placeholder="Sq Ft">
+          <button class="btn-cart-add" onclick="addItemToCart('Statuary White Marble', 420, 'sq.ft', document.getElementById('gal_q2').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="granite">
       <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Tan Brown Granite">
       <div class="gallery-body">
-        <span class="gallery-tag">Granite</span>
+        <span class="gallery-tag">Granite Gangsaw</span>
         <div class="gallery-name">Tan Brown / Steel Grey Gangsaw</div>
-        <p style="font-size:13px; color:#64748b;">High compressive strength for commercial entrance lobbies and flooring.</p>
+        <div class="price-tag">₹145 <span style="font-size:12px; color:#64748b;">/ sq.ft.</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q3" class="qty-box" value="500" min="50" step="50" placeholder="Sq Ft">
+          <button class="btn-cart-add" onclick="addItemToCart('Tan Brown Granite', 145, 'sq.ft', document.getElementById('gal_q3').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="quartz">
       <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Calacatta Quartz">
       <div class="gallery-body">
-        <span class="gallery-tag">Quartz</span>
+        <span class="gallery-tag">Engineered Quartz (40x40)</span>
         <div class="gallery-name">Calacatta Gold Engineered Quartz</div>
-        <p style="font-size:13px; color:#64748b;">Non-porous, stain-resistant resin matrix designed for food prep areas.</p>
+        <div class="price-tag">₹450 <span style="font-size:12px; color:#64748b;">/ piece</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q4" class="qty-box" value="25" min="5" placeholder="Pieces">
+          <button class="btn-cart-add" onclick="addItemToCart('Calacatta Gold Quartz (40x40)', 450, 'piece', document.getElementById('gal_q4').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="marble">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Green Onyx & Marble">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Green Marble">
       <div class="gallery-body">
-        <span class="gallery-tag">Marble</span>
+        <span class="gallery-tag">Exotic Marble</span>
         <div class="gallery-name">Emerald Verde Metamorphic Marble</div>
-        <p style="font-size:13px; color:#64748b;">Rich mineral swirls hand-selected for feature walls and fireplace mantels.</p>
+        <div class="price-tag">₹380 <span style="font-size:12px; color:#64748b;">/ sq.ft.</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q5" class="qty-box" value="300" min="50" placeholder="Sq Ft">
+          <button class="btn-cart-add" onclick="addItemToCart('Emerald Verde Marble', 380, 'sq.ft', document.getElementById('gal_q5').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="quartz">
-      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Sintered Porcelain Slab">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Porcelain Slab">
       <div class="gallery-body">
-        <span class="gallery-tag">Porcelain</span>
-        <div class="gallery-name">Sintered Porcelain Large-Format Sheet</div>
-        <p style="font-size:13px; color:#64748b;">12mm heatproof and UV-resistant architectural outdoor facade panels.</p>
+        <span class="gallery-tag">Porcelain Sheet (40x40)</span>
+        <div class="gallery-name">Sintered Porcelain Large Sheet</div>
+        <div class="price-tag">₹320 <span style="font-size:12px; color:#64748b;">/ piece</span></div>
+        <div class="card-actions">
+          <input type="number" id="gal_q6" class="qty-box" value="50" min="10" placeholder="Pieces">
+          <button class="btn-cart-add" onclick="addItemToCart('Porcelain Sintered Tile (40x40)', 320, 'piece', document.getElementById('gal_q6').value)">+ Add to Cart</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Upper Footer -->
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="brand-logo-wrap">
-          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img footer-logo">
-          <div>
-            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
-            <div class="brand-sub">Stone & Slabs</div>
-          </div>
-        </div>
-        <p class="footer-desc">
-          Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Blue Bottom Banner -->
   <div class="bottom-bar">
-    <div class="bottom-bar-inner">
-      <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
-      <div>Powered by <strong>Yarab Baba</strong></div>
-    </div>
+    Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved[cite: 3]
   </div>
 
   <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (hamburgerBtn && mobileMenu) {
-      hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-      });
-    }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 
     function filterGallery(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.querySelectorAll('.gallery-card').forEach(c => {
-        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
-          c.style.display = 'flex';
-        } else {
-          c.style.display = 'none';
-        }
+        c.style.display = (cat === 'all' || c.getAttribute('data-cat') === cat) ? 'flex' : 'none';
       });
     }
   </script>
 
-  <!-- Auth and Cart Integration -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="auth.js"></script>
   <script src="cart.js"></script>
 </body>
