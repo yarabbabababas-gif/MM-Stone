@@ -43,7 +43,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    body.drawer-open {
+    body.drawer-open, body.modal-open {
       overflow: hidden;
     }
     h1, h2, h3, .font-serif { font-family: 'Cinzel', Georgia, serif; }
@@ -119,7 +119,7 @@
       gap: 10px;
     }
 
-    /* Standardized Buttons (Solid & Outline) */
+    /* Standardized Buttons */
     .btn-action-solid,
     .btn-action-outline,
     .auth-nav-slot button,
@@ -163,12 +163,12 @@
     .btn-action-outline:hover,
     .auth-nav-slot button:hover,
     .auth-nav-slot a:hover {
-      background: rgba(197, 160, 89, 0.1);
+      background: rgba(197, 160, 89, 0.12);
       border-color: var(--brand-navy);
       color: var(--brand-navy) !important;
     }
 
-    /* Hamburger Button (Available everywhere) */
+    /* Hamburger Button */
     .nav-hamburger {
       display: flex;
       align-items: center;
@@ -304,6 +304,126 @@
       gap: 8px;
       color: var(--brand-slate);
       font-weight: 600;
+    }
+
+    /* Auth Modal Popup */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 26, 43, 0.65);
+      backdrop-filter: blur(5px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .modal-backdrop.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .auth-modal {
+      background: #ffffff;
+      width: 100%;
+      max-width: 480px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 50px -12px rgba(0, 34, 68, 0.35);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.open .auth-modal {
+      transform: scale(1);
+    }
+
+    .auth-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--card-border);
+      background: #fdfdfd;
+    }
+    .auth-modal-header h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--brand-navy);
+      font-family: 'Cinzel', serif;
+    }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .modal-close-btn:hover {
+      color: var(--brand-accent);
+      background: #fee2e2;
+    }
+
+    .auth-modal-body {
+      padding: 24px;
+    }
+    .auth-modal-body .auth-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .auth-form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .auth-form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-slate);
+      margin-bottom: 6px;
+    }
+    .auth-form-group input {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--card-border);
+      background: #f8fafc;
+      font-size: 14px;
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition);
+    }
+    .auth-form-group input:focus {
+      border-color: var(--brand-navy);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.12);
+    }
+    .btn-submit-auth {
+      width: 100%;
+      height: 46px;
+      background: var(--brand-navy);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: var(--transition);
+    }
+    .btn-submit-auth:hover {
+      background: var(--brand-navy-dark);
+      box-shadow: 0 6px 18px rgba(0, 51, 102, 0.25);
     }
 
     /* Info Strip */
@@ -707,10 +827,10 @@
         <a href="/quartz-slabs">Quartz & Slabs</a>
       </nav>
 
-      <!-- Actions & 3-Line Menu Trigger -->
+      <!-- Desktop Actions -->
       <div class="nav-actions">
         <div class="auth-nav-slot">
-          <a href="/login" class="btn-action-outline">Login / Register</a>
+          <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
         
@@ -744,7 +864,7 @@
       <!-- Buttons in Side Popup -->
       <div class="drawer-actions-grid">
         <div class="mobile-auth-slot">
-          <a href="/login" class="btn-action-outline">Login / Register</a>
+          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
         </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
@@ -777,6 +897,34 @@
       </div>
     </div>
   </aside>
+
+  <!-- Customer Account Registration / Login Modal -->
+  <div class="modal-backdrop" id="authModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="auth-modal" id="authModalContainer">
+      <div class="auth-modal-header">
+        <h3 id="authModalTitle">Create Customer Account</h3>
+        <button type="button" class="modal-close-btn" id="authModalClose" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="auth-modal-body">
+        <p class="auth-desc">Verify your credentials to place live slab bookings and export inquiries.</p>
+        <form id="customerAccountForm" onsubmit="handleAccountSubmit(event)">
+          <div class="auth-form-group">
+            <label for="authFullName">Full Name *</label>
+            <input type="text" id="authFullName" name="fullName" placeholder="e.g. John Doe" required autocomplete="name">
+          </div>
+          <div class="auth-form-group">
+            <label for="authEmail">Email Address *</label>
+            <input type="email" id="authEmail" name="email" placeholder="name@domain.com" required autocomplete="email">
+          </div>
+          <div class="auth-form-group">
+            <label for="authPhone">Mobile / WhatsApp *</label>
+            <input type="tel" id="authPhone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+          </div>
+          <button type="submit" class="btn-submit-auth">Send Email & SMS OTPs</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Info Strip -->
   <div class="info-strip">
@@ -1016,7 +1164,7 @@
       }
     });
 
-    // Drawer Controls
+    // Side Drawer Controls
     const drawerOpenBtn = document.getElementById('drawerOpenBtn');
     const drawerCloseBtn = document.getElementById('drawerCloseBtn');
     const sideDrawer = document.getElementById('sideDrawer');
@@ -1040,15 +1188,67 @@
     if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
     if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
-    // Escape Key Support
+    // Auth Popup Modal Controls
+    const authModalBackdrop = document.getElementById('authModalBackdrop');
+    const authModalClose = document.getElementById('authModalClose');
+    const authTriggers = document.querySelectorAll('.auth-open-trigger');
+
+    function openAuthModal() {
+      closeDrawer(); // Close side drawer if it was open
+      if (authModalBackdrop) {
+        authModalBackdrop.classList.add('open');
+        document.body.classList.add('modal-open');
+      }
+    }
+
+    function closeAuthModal() {
+      if (authModalBackdrop) {
+        authModalBackdrop.classList.remove('open');
+        document.body.classList.remove('modal-open');
+      }
+    }
+
+    authTriggers.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openAuthModal();
+      });
+    });
+
+    if (authModalClose) {
+      authModalClose.addEventListener('click', closeAuthModal);
+    }
+
+    if (authModalBackdrop) {
+      authModalBackdrop.addEventListener('click', function(e) {
+        if (e.target === authModalBackdrop) {
+          closeAuthModal();
+        }
+      });
+    }
+
+    // Escape Key Support for both Drawer and Modal
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && sideDrawer.classList.contains('open')) {
-        closeDrawer();
+      if (e.key === 'Escape') {
+        if (authModalBackdrop && authModalBackdrop.classList.contains('open')) {
+          closeAuthModal();
+        } else if (sideDrawer && sideDrawer.classList.contains('open')) {
+          closeDrawer();
+        }
       }
     });
+
+    // Form Submission Handler
+    function handleAccountSubmit(event) {
+      event.preventDefault();
+      // If auth.js is present, it will capture or extend this.
+      console.log('Sending OTPs for customer registration...');
+      alert('Verification OTPs dispatched. Please check your Email and Mobile.');
+      closeAuthModal();
+    }
   </script>
 
-  <!-- Auth and Cart Integration -->
+  <!-- External Auth & Cart integrations -->
   <script src="auth.js"></script>
   <script src="cart.js"></script>
 </body>
