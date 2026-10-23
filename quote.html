@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -235,7 +234,7 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-auth-slot"></div>
+      <div class="mobile-auth-slot" style="margin-bottom:8px;"></div>
       <a href="/">Home</a>
       <a href="/gallery">All Collection / Gallery</a>
       <a href="/granite-marble">Granite & Marble</a>
@@ -285,7 +284,7 @@
                 <option value="+82">🇰🇷 South Korea (+82)</option>
                 <option value="+86">🇨🇳 China (+86)</option>
               </select>
-              <input type="tel" id="phone" required class="form-control" placeholder="Mobile Number" pattern="[0-9\s-]{6,15}">
+              <input type="tel" id="phone" required class="form-control" placeholder="Mobile / Landline Number" pattern="[0-9\s-]{6,15}">
             </div>
           </div>
 
@@ -352,7 +351,7 @@
       hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     }
 
-    // Auto-fill logged-in customer details
+    // Auto-fill logged-in client credentials
     document.addEventListener('DOMContentLoaded', () => {
       const u = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
       if (u) {
@@ -424,9 +423,9 @@
     }
 
     function getQuotePayload() {
-      const rawNumber = document.getElementById('phone').value.trim().replace(/^0+/, '');
+      const rawNumber = document.getElementById('phone').value.trim();
       const countryCode = document.getElementById('countryCode').value;
-      const combinedPhone = rawNumber ? `${countryCode}${rawNumber}` : '';
+      const combinedPhone = rawNumber ? `${countryCode} ${rawNumber}` : '';
 
       return {
         name: document.getElementById('name').value.trim(),
@@ -447,12 +446,9 @@
       const user = typeof getCurrentUser === 'function' ? getCurrentUser() : null;
       const payload = getQuotePayload();
 
-      // Check if user is authenticated with matching verified credentials
-      const userPhoneClean = user && user.phone ? user.phone.replace(/[^0-9]/g, '') : '';
-      const payloadPhoneClean = payload.phone.replace(/[^0-9]/g, '');
-
-      if (!user || user.email.toLowerCase() !== payload.email.toLowerCase() || userPhoneClean !== payloadPhoneClean) {
-        alert('Dual OTP verification is required prior to transmitting this stone quote to factory management.');
+      // Check if user is authenticated with matching verified info
+      if (!user || user.email !== payload.email.toLowerCase() || (user.phone && !user.phone.includes(payload.localPhone))) {
+        alert('You must verify both your Email and Mobile via OTP before the quotation request can be dispatched.');
         
         if (typeof openAuthModal === 'function') {
           openAuthModal('signup');
@@ -473,6 +469,7 @@
       sendFinalQuoteDirectly(payload);
     }
 
+    // Direct background sending via API (without launching Outlook/Mail clients)
     async function sendFinalQuoteDirectly(d) {
       const submitBtn = document.getElementById('submitBtn');
       const statusMsg = document.getElementById('submitStatusMsg');
@@ -483,6 +480,8 @@
       statusMsg.style.display = 'none';
 
       const emailData = {
+        // You can obtain an access key instantly from web3forms.com
+        // or replace this endpoint with your Node/PHP/Python backend route
         access_key: "1271bf65-5731-4dc5-8f9d-26efb93630a2",
         to_email: "admin@malviganomac.live",
         subject: `[Verified Stone Quote] ${d.cat} - ${d.name}`,
@@ -496,7 +495,7 @@
         quantity: d.qty || "Not specified",
         destination_location: d.port || "Not specified",
         requirements: d.notes || "None",
-        auth_verification: "Dual OTP (Nodemailer & Twilio) Validated"
+        auth_verification: "Dual OTP (Email & Mobile) Validated"
       };
 
       try {
