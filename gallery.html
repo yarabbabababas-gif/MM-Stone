@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Collection / Gallery | MalviganoMac Stone</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones. Units in Chennai (Tamil Nadu) & Kishangarh (Rajasthan).">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones.">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --brand-navy: #003366;
@@ -68,7 +67,7 @@
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       flex-shrink: 0;
       background-color: #ffffff;
     }
@@ -86,6 +85,7 @@
       color: var(--text-muted);
       font-weight: 600;
     }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -94,12 +94,15 @@
       font-size: 14px;
       color: var(--brand-slate);
     }
+    .nav-links a { transition: var(--transition); padding: 6px 0; }
     .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+
     .btn-nav-quote {
       background: var(--brand-navy);
       color: #ffffff !important;
@@ -399,9 +402,7 @@
       </nav>
 
       <div class="nav-actions">
-        <div class="auth-nav-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
-        </div>
+        <div class="auth-nav-slot"></div>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -427,28 +428,14 @@
 
     <div class="drawer-body">
       <div class="drawer-actions-grid">
-        <div class="mobile-auth-slot">
-          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
-        </div>
+        <div class="mobile-auth-slot"></div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <a href="/" class="drawer-nav-link">
-        <span>Home</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/gallery" class="drawer-nav-link">
-        <span>All Collection / Gallery</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/granite-marble" class="drawer-nav-link">
-        <span>Granite & Marble</span>
-        <span>&rarr;</span>
-      </a>
-      <a href="/quartz-slabs" class="drawer-nav-link">
-        <span>Quartz & Slabs</span>
-        <span>&rarr;</span>
-      </a>
+      <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
+      <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
+      <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
+      <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
     </div>
 
     <div class="drawer-footer-contact">
