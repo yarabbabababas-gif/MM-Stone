@@ -1,597 +1,75 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Collection / Gallery | MalviganoMac Stone</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones.">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --brand-navy: #003366;
-      --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
-      --brand-slate: #2b3a4a;
-      --brand-gold: #c5a059;
-      --brand-gold-light: #dfbe7d;
-      --brand-accent: #b32d2d;
-      --text-main: #1f2937;
-      --text-muted: #64748b;
-      --bg-cream: #fbfbfd;
-      --card-border: #e2e8f0;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --shadow-soft: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
-      --transition: all 0.25s ease-in-out;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--text-main);
-      background-color: var(--bg-cream);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    body.modal-open, body.drawer-open { overflow: hidden; }
-    h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
-    a { text-decoration: none; color: inherit; }
-
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-    }
-    .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--brand-gold);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      flex-shrink: 0;
-      background-color: #ffffff;
-    }
-    .brand-title {
-      font-family: 'Cinzel', serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--brand-navy);
-      line-height: 1.1;
-    }
-    .brand-sub {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--brand-slate);
-    }
-    .nav-links a { transition: var(--transition); padding: 6px 0; }
-    .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn-nav-quote {
-      background: var(--brand-navy);
-      color: #ffffff !important;
-      padding: 9px 18px;
-      border-radius: var(--radius-sm);
-      font-size: 13px;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .btn-nav-quote:hover { background: var(--brand-navy-dark); }
-
-    .btn-action-outline,
-    .auth-nav-slot button,
-    .auth-nav-slot a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      padding: 0 18px;
-      border-radius: var(--radius-sm);
-      font-size: 13.5px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-      transition: var(--transition);
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      box-sizing: border-box;
-      line-height: 1;
-      background: #ffffff;
-      color: var(--brand-navy) !important;
-      border: 1.5px solid var(--brand-gold);
-    }
-    .btn-action-outline:hover,
-    .auth-nav-slot button:hover,
-    .auth-nav-slot a:hover {
-      background: rgba(197, 160, 89, 0.12);
-      border-color: var(--brand-navy);
-      color: var(--brand-navy) !important;
-    }
-
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--brand-navy);
-    }
-
-    .drawer-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(11, 26, 43, 0.5);
-      backdrop-filter: blur(4px);
-      z-index: 2100;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .drawer-backdrop.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .side-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      max-width: 360px;
-      background: #ffffff;
-      z-index: 2200;
-      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
-      transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-    }
-    .side-drawer.open { transform: translateX(0); }
-
-    .drawer-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .drawer-close {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      color: var(--text-muted);
-      border-radius: var(--radius-sm);
-      line-height: 0;
-      transition: var(--transition);
-    }
-    .drawer-close:hover {
-      color: var(--brand-navy);
-      background: #f1f5f9;
-    }
-
-    .drawer-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .drawer-actions-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .drawer-actions-grid .btn-action-solid,
-    .drawer-actions-grid .btn-action-outline,
-    .mobile-auth-slot button,
-    .mobile-auth-slot a {
-      width: 100%;
-      height: 42px;
-    }
-
-    .drawer-nav-link {
-      font-size: 15px;
-      font-weight: 700;
-      padding: 13px 16px;
-      border-radius: var(--radius-sm);
-      color: var(--brand-slate);
-      background: #f8fafc;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .drawer-nav-link:hover, .drawer-nav-link:active {
-      background: var(--brand-navy);
-      color: #ffffff;
-      transform: translateX(4px);
-    }
-
-    .drawer-footer-contact {
-      margin-top: auto;
-      padding: 18px 20px;
-      background: #f8fafc;
-      border-top: 1px solid var(--card-border);
-      font-size: 13px;
-      color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .drawer-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--brand-slate);
-      font-weight: 600;
-    }
-
-    .gallery-hero {
-      text-align: center;
-      padding: 50px 20px 30px 20px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .gallery-hero h1 {
-      font-size: clamp(26px, 5vw, 40px);
-      color: var(--brand-navy);
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-    .gallery-hero p {
-      color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 14.5px;
-    }
-
-    .filter-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 24px 0 10px 0;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-      transition: var(--transition);
-      min-height: 42px;
-    }
-    .filter-btn.active {
-      background: var(--brand-navy);
-      color: #ffffff;
-      border-color: var(--brand-navy);
-    }
-
-    .gallery-grid {
-      max-width: 1240px;
-      margin: 30px auto 80px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .gallery-card {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-    }
-    .gallery-img { width: 100%; height: 230px; object-fit: cover; }
-    .gallery-body { padding: 20px; flex-grow: 1; }
-    .gallery-tag { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--brand-gold); }
-    .gallery-name { font-size: 18px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
-
-    .site-footer {
-      background: #ffffff;
-      border-top: 1px dashed #cbd5e1;
-      padding: 40px 20px;
-      width: 100%;
-    }
-    .footer-inner { max-width: 1240px; margin: 0 auto; }
-    .footer-brand { max-width: 600px; }
-    .footer-desc {
-      font-size: 13.5px;
-      color: #64748b;
-      margin-top: 12px;
-      line-height: 1.6;
-    }
-
-    .bottom-bar {
-      width: 100%;
-      background: var(--brand-slate);
-      color: #94a3b8;
-      font-size: 13px;
-      padding: 16px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .bottom-bar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
-
-    @media (max-width: 980px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: block; }
-      .nav-actions .auth-nav-slot, .nav-actions .btn-nav-quote { display: none; }
-    }
-    @media (max-width: 768px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-      .filter-btn { white-space: nowrap; flex-shrink: 0; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; gap: 8px; }
-    }
-  </style>
-</head>
-<body>
-
-  <header class="nav-bar">
-    <div class="nav-container">
-      <a href="/" class="brand-logo-wrap">
-        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
-        <div>
-          <div class="brand-title">MalviganoMac</div>
-          <div class="brand-sub">Stone & Slabs</div>
-        </div>
-      </a>
-
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/gallery" class="active-link">All Collection / Gallery</a>
-        <a href="/granite-marble">Granite & Marble</a>
-        <a href="/quartz-slabs">Quartz & Slabs</a>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="auth-nav-slot"></div>
-        <a href="/quote" class="btn-nav-quote">Get a Quote</a>
-        <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        </button>
+<header class="nav-bar">
+  <div class="nav-container">
+    <a href="/" class="brand-logo-wrap">
+      <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
+      <div>
+        <div class="brand-title">MalviganoMac</div>
+        <div class="brand-sub">Stone & Slabs</div>
       </div>
-    </div>
-  </header>
+    </a>
 
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/gallery" class="active-link">All Collection / Gallery</a>
+      <a href="/granite-marble">Granite & Marble</a>
+      <a href="/quartz-slabs">Quartz & Slabs</a>
+    </nav>
 
-  <aside class="side-drawer" id="sideDrawer" aria-label="Side Navigation Drawer">
-    <div class="drawer-header">
-      <div class="brand-logo-wrap">
-        <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img" style="width:36px;height:36px;">
-        <span class="brand-title" style="font-size:16px;">MalviganoMac</span>
+    <div class="nav-actions">
+      <div class="auth-nav-slot">
+        <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
       </div>
-      <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation Drawer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M18 6L6 18M6 6l12 12"/>
-        </svg>
+      <a href="/quote" class="btn-nav-quote">Get a Quote</a>
+      <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
       </button>
     </div>
+  </div>
+</header>
 
-    <div class="drawer-body">
-      <div class="drawer-actions-grid">
-        <div class="mobile-auth-slot"></div>
-        <a href="/quote" class="btn-action-solid">Get a Quote</a>
-      </div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-      <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
-      <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
-      <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
-      <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
+<aside class="side-drawer" id="sideDrawer" aria-label="Side Navigation Drawer">
+  <div class="drawer-header">
+    <div class="brand-logo-wrap">
+      <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img" style="width:36px;height:36px;">
+      <span class="brand-title" style="font-size:16px;">MalviganoMac</span>
     </div>
-
-    <div class="drawer-footer-contact">
-      <div class="drawer-contact-item">
-        <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
-        <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
-      </div>
-
-      <div class="drawer-contact-item">
-        <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
-        <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
-      </div>
-
-      <div class="drawer-contact-item">
-        <span>✉️</span>
-        <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
-      </div>
-    </div>
-  </aside>
-
-  <div class="gallery-hero">
-    <h1>All Collection / Visual Gallery</h1>
-    <p>Explore real gangsaw slab lots, book-match marble patterns, and calibrated quartz processed across our Chennai (Tamil Nadu) & Kishangarh (Rajasthan) yards.</p>
-    <div class="filter-tabs">
-      <button class="filter-btn active" onclick="filterGallery('all', this)">All Stones</button>
-      <button class="filter-btn" onclick="filterGallery('granite', this)">Granite</button>
-      <button class="filter-btn" onclick="filterGallery('marble', this)">Marble</button>
-      <button class="filter-btn" onclick="filterGallery('quartz', this)">Quartz & Porcelain</button>
-    </div>
+    <button class="drawer-close" id="drawerCloseBtn" aria-label="Close Navigation Drawer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
   </div>
 
-  <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-card" data-cat="granite">
-      <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Absolute Black Granite">
-      <div class="gallery-body">
-        <span class="gallery-tag">Granite</span>
-        <div class="gallery-name">Absolute Black Granite Slabs</div>
-        <p style="font-size:13px; color:#64748b;">Fine-grained, deep carbon hue suitable for premium kitchen tops and facades.</p>
+  <div class="drawer-body">
+    <div class="drawer-actions-grid">
+      <div class="mobile-auth-slot">
+        <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
       </div>
+      <a href="/quote" class="btn-action-solid">Get a Quote</a>
     </div>
 
-    <div class="gallery-card" data-cat="marble">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Statuary Veined Marble">
-      <div class="gallery-body">
-        <span class="gallery-tag">Marble</span>
-        <div class="gallery-name">Statuary White Bookmatch Marble</div>
-        <p style="font-size:13px; color:#64748b;">Continuous grey diagonal veins on crisp white marble matrix.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card" data-cat="granite">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Tan Brown Granite">
-      <div class="gallery-body">
-        <span class="gallery-tag">Granite</span>
-        <div class="gallery-name">Tan Brown / Steel Grey Gangsaw</div>
-        <p style="font-size:13px; color:#64748b;">High compressive strength for commercial entrance lobbies and flooring.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card" data-cat="quartz">
-      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Calacatta Quartz">
-      <div class="gallery-body">
-        <span class="gallery-tag">Quartz</span>
-        <div class="gallery-name">Calacatta Gold Engineered Quartz</div>
-        <p style="font-size:13px; color:#64748b;">Non-porous, stain-resistant resin matrix designed for food prep areas.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card" data-cat="marble">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Green Onyx & Marble">
-      <div class="gallery-body">
-        <span class="gallery-tag">Marble</span>
-        <div class="gallery-name">Emerald Verde Metamorphic Marble</div>
-        <p style="font-size:13px; color:#64748b;">Rich mineral swirls hand-selected for feature walls and fireplace mantels.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card" data-cat="quartz">
-      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Sintered Porcelain Slab">
-      <div class="gallery-body">
-        <span class="gallery-tag">Porcelain</span>
-        <div class="gallery-name">Sintered Porcelain Large-Format Sheet</div>
-        <p style="font-size:13px; color:#64748b;">12mm heatproof and UV-resistant architectural outdoor facade panels.</p>
-      </div>
-    </div>
+    <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
+    <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
+    <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
+    <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
   </div>
 
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="brand-logo-wrap">
-          <img src="Logo.png" alt="MalviganoMac Logo" class="brand-logo-img">
-          <div>
-            <div class="brand-title" style="font-size:18px;">MalviganoMac</div>
-            <div class="brand-sub">Stone & Slabs</div>
-          </div>
-        </div>
-        <p class="footer-desc">
-          Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
-        </p>
-      </div>
+  <div class="drawer-footer-contact">
+    <div class="drawer-contact-item">
+      <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
+      <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
     </div>
-  </footer>
 
-  <div class="bottom-bar">
-    <div class="bottom-bar-inner">
-      <div>Copyright © 2026 <strong>MalviganoMac Pvt Ltd</strong> | All Rights Reserved</div>
-      <div>Powered by <strong>Yarab Baba</strong></div>
+    <div class="drawer-contact-item">
+      <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
+      <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
+    </div>
+
+    <div class="drawer-contact-item">
+      <span>✉️</span>
+      <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
     </div>
   </div>
-
-  <script>
-    const drawerOpenBtn = document.getElementById('drawerOpenBtn');
-    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
-    const sideDrawer = document.getElementById('sideDrawer');
-    const drawerBackdrop = document.getElementById('drawerBackdrop');
-
-    function openDrawer() {
-      if (sideDrawer) sideDrawer.classList.add('open');
-      if (drawerBackdrop) drawerBackdrop.classList.add('open');
-      document.body.classList.add('drawer-open');
-      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeDrawer() {
-      if (sideDrawer) sideDrawer.classList.remove('open');
-      if (drawerBackdrop) drawerBackdrop.classList.remove('open');
-      document.body.classList.remove('drawer-open');
-      if (drawerOpenBtn) drawerOpenBtn.setAttribute('aria-expanded', 'false');
-    }
-
-    if (drawerOpenBtn) drawerOpenBtn.addEventListener('click', openDrawer);
-    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
-    if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        if (sideDrawer && sideDrawer.classList.contains('open')) {
-          closeDrawer();
-        }
-      }
-    });
-
-    function filterGallery(cat, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.gallery-card').forEach(c => {
-        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
-          c.style.display = 'flex';
-        } else {
-          c.style.display = 'none';
-        }
-      });
-    }
-  </script>
-
-  <script src="auth.js"></script>
-</body>
-</html>
+</aside>
