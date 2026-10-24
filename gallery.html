@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Collection / Gallery | MalviganoMac Stone</title>
-  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones.">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <meta name="description" content="Malvigano Mac Pvt. Ltd. - Specialists in processing and export of premium granite, marble, engineered quartz, porcelain slabs, and monumental stones." />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
     :root {
       --brand-navy: #003366;
       --brand-navy-dark: #002244;
-      --brand-navy-deep: #0b1a2b;
       --brand-slate: #2b3a4a;
       --brand-gold: #c5a059;
       --brand-gold-light: #dfbe7d;
@@ -34,11 +33,12 @@
       overflow-x: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       color: var(--text-main);
-      background-color: var(--bg-cream);
+      background: var(--bg-cream);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    body.modal-open, body.drawer-open { overflow: hidden; }
+
+    body.drawer-open, body.modal-open { overflow: hidden; }
     h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; }
     a { text-decoration: none; color: inherit; }
 
@@ -51,6 +51,7 @@
       border-bottom: 1px solid var(--card-border);
       box-shadow: 0 4px 14px rgba(0,0,0,0.03);
     }
+
     .nav-container {
       max-width: 1240px;
       margin: 0 auto;
@@ -60,17 +61,18 @@
       align-items: center;
       gap: 16px;
     }
+
     .brand-logo-wrap { display: flex; align-items: center; gap: 12px; }
     .brand-logo-img {
-      width: 46px;
-      height: 46px;
+      width: 46px; height: 46px;
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--brand-gold);
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       flex-shrink: 0;
-      background-color: #ffffff;
+      background: #fff;
     }
+
     .brand-title {
       font-family: 'Cinzel', serif;
       font-size: 20px;
@@ -78,6 +80,7 @@
       color: var(--brand-navy);
       line-height: 1.1;
     }
+
     .brand-sub {
       font-size: 11px;
       text-transform: uppercase;
@@ -94,8 +97,12 @@
       font-size: 14px;
       color: var(--brand-slate);
     }
+
     .nav-links a { transition: var(--transition); padding: 6px 0; }
-    .nav-links a:hover, .nav-links a.active-link { color: var(--brand-navy); font-weight: 700; }
+    .nav-links a:hover, .nav-links a.active-link {
+      color: var(--brand-navy);
+      font-weight: 700;
+    }
 
     .nav-actions {
       display: flex;
@@ -112,7 +119,10 @@
       font-weight: 700;
       transition: var(--transition);
     }
-    .btn-nav-quote:hover { background: var(--brand-navy-dark); }
+
+    .btn-nav-quote:hover {
+      background: var(--brand-navy-dark);
+    }
 
     .btn-action-outline,
     .auth-nav-slot button,
@@ -137,6 +147,7 @@
       color: var(--brand-navy) !important;
       border: 1.5px solid var(--brand-gold);
     }
+
     .btn-action-outline:hover,
     .auth-nav-slot button:hover,
     .auth-nav-slot a:hover {
@@ -164,6 +175,7 @@
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
+
     .drawer-backdrop.open {
       opacity: 1;
       visibility: visible;
@@ -185,6 +197,7 @@
       flex-direction: column;
       overflow-y: auto;
     }
+
     .side-drawer.open { transform: translateX(0); }
 
     .drawer-header {
@@ -194,6 +207,7 @@
       padding: 18px 20px;
       border-bottom: 1px solid var(--card-border);
     }
+
     .drawer-close {
       background: none;
       border: none;
@@ -204,6 +218,7 @@
       line-height: 0;
       transition: var(--transition);
     }
+
     .drawer-close:hover {
       color: var(--brand-navy);
       background: #f1f5f9;
@@ -225,6 +240,7 @@
       padding-bottom: 16px;
       border-bottom: 1px solid var(--card-border);
     }
+
     .drawer-actions-grid .btn-action-solid,
     .drawer-actions-grid .btn-action-outline,
     .mobile-auth-slot button,
@@ -245,6 +261,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .drawer-nav-link:hover, .drawer-nav-link:active {
       background: var(--brand-navy);
       color: #ffffff;
@@ -262,6 +279,7 @@
       flex-direction: column;
       gap: 8px;
     }
+
     .drawer-contact-item {
       display: flex;
       align-items: center;
@@ -271,31 +289,34 @@
     }
 
     .gallery-hero {
-      text-align: center;
       padding: 50px 20px 30px 20px;
       background: #ffffff;
       border-bottom: 1px solid var(--card-border);
+      text-align: center;
     }
+
     .gallery-hero h1 {
       font-size: clamp(26px, 5vw, 40px);
       color: var(--brand-navy);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: 800;
     }
+
     .gallery-hero p {
       color: var(--text-muted);
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto;
       font-size: 14.5px;
     }
 
     .filter-tabs {
+      margin: 24px auto 10px auto;
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin: 24px 0 10px 0;
       flex-wrap: wrap;
     }
+
     .filter-btn {
       background: #ffffff;
       border: 1px solid #cbd5e1;
@@ -307,6 +328,7 @@
       transition: var(--transition);
       min-height: 42px;
     }
+
     .filter-btn.active {
       background: var(--brand-navy);
       color: #ffffff;
@@ -321,6 +343,7 @@
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 24px;
     }
+
     .gallery-card {
       background: #ffffff;
       border-radius: var(--radius-md);
@@ -330,10 +353,31 @@
       display: flex;
       flex-direction: column;
     }
-    .gallery-img { width: 100%; height: 230px; object-fit: cover; }
-    .gallery-body { padding: 20px; flex-grow: 1; }
-    .gallery-tag { font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--brand-gold); }
-    .gallery-name { font-size: 18px; color: var(--brand-navy); margin: 6px 0; font-weight: 800; }
+
+    .gallery-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .gallery-body {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .gallery-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--brand-gold);
+    }
+
+    .gallery-name {
+      font-size: 18px;
+      color: var(--brand-navy);
+      margin: 6px 0;
+      font-weight: 800;
+    }
 
     .site-footer {
       background: #ffffff;
@@ -341,6 +385,7 @@
       padding: 40px 20px;
       width: 100%;
     }
+
     .footer-inner { max-width: 1240px; margin: 0 auto; }
     .footer-brand { max-width: 600px; }
     .footer-desc {
@@ -356,8 +401,9 @@
       color: #94a3b8;
       font-size: 13px;
       padding: 16px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
+
     .bottom-bar-inner {
       max-width: 1240px;
       margin: 0 auto;
@@ -367,18 +413,20 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
     .bottom-bar strong { color: #e2e8f0; font-weight: 700; }
 
     @media (max-width: 980px) {
       .nav-links { display: none; }
       .nav-hamburger { display: block; }
-      .nav-actions .auth-nav-slot, .nav-actions .btn-nav-quote { display: none; }
+      .nav-actions .auth-nav-slot { display: none; }
     }
+
     @media (max-width: 768px) {
       .gallery-grid { grid-template-columns: 1fr; }
       .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
       .filter-btn { white-space: nowrap; flex-shrink: 0; }
-      .bottom-bar-inner { flex-direction: column; text-align: center; gap: 8px; }
+      .bottom-bar-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -402,12 +450,14 @@
       </nav>
 
       <div class="nav-actions">
-<div class="auth-nav-slot">
-  <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
-</div>
+        <div class="auth-nav-slot">
+          <button type="button" class="btn-action-outline auth-open-trigger">Login / Register</button>
+        </div>
         <a href="/quote" class="btn-nav-quote">Get a Quote</a>
         <button class="nav-hamburger" id="drawerOpenBtn" aria-label="Open Navigation Drawer" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -430,29 +480,39 @@
 
     <div class="drawer-body">
       <div class="drawer-actions-grid">
-<div class="mobile-auth-slot">
-  <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
-</div>
+        <div class="mobile-auth-slot">
+          <button type="button" class="btn-action-outline auth-open-trigger" style="width:100%;">Login / Register</button>
+        </div>
         <a href="/quote" class="btn-action-solid">Get a Quote</a>
       </div>
 
-      <a href="/" class="drawer-nav-link"><span>Home</span><span>&rarr;</span></a>
-      <a href="/gallery" class="drawer-nav-link"><span>All Collection / Gallery</span><span>&rarr;</span></a>
-      <a href="/granite-marble" class="drawer-nav-link"><span>Granite & Marble</span><span>&rarr;</span></a>
-      <a href="/quartz-slabs" class="drawer-nav-link"><span>Quartz & Slabs</span><span>&rarr;</span></a>
+      <a href="/" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Home</span>
+        <span>→</span>
+      </a>
+      <a href="/gallery" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>All Collection / Gallery</span>
+        <span>→</span>
+      </a>
+      <a href="/granite-marble" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Granite & Marble</span>
+        <span>→</span>
+      </a>
+      <a href="/quartz-slabs" class="drawer-nav-link" onclick="closeDrawer()">
+        <span>Quartz & Slabs</span>
+        <span>→</span>
+      </a>
     </div>
 
     <div class="drawer-footer-contact">
       <div class="drawer-contact-item">
-        <span><img src="https://flagcdn.com/w40/in.png" width="16" height="11" alt="India Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <span>📞</span>
         <a href="tel:+918123502007" style="color:var(--brand-slate); font-weight:600;">+91 81235 02007</a>
       </div>
-
       <div class="drawer-contact-item">
-        <span><img src="https://flagcdn.com/w40/us.png" width="16" height="11" alt="USA Flag" style="border-radius:2px; vertical-align:middle;"></span>
+        <span>📞</span>
         <a href="tel:+17575059172" style="color:var(--brand-slate); font-weight:600;">+1 (757) 505-9172</a>
       </div>
-
       <div class="drawer-contact-item">
         <span>✉️</span>
         <a href="mailto:admin@malviganomac.live" style="color:var(--brand-slate); font-weight:600;">admin@malviganomac.live</a>
@@ -460,16 +520,16 @@
     </div>
   </aside>
 
-  <div class="gallery-hero">
+  <section class="gallery-hero">
     <h1>All Collection / Visual Gallery</h1>
-    <p>Explore real gangsaw slab lots, book-match marble patterns, and calibrated quartz processed across our Chennai (Tamil Nadu) & Kishangarh (Rajasthan) yards.</p>
+    <p>Explore premium granite, marble, quartz and architectural stone options carefully selected for homes, projects and export orders.</p>
     <div class="filter-tabs">
       <button class="filter-btn active" onclick="filterGallery('all', this)">All Stones</button>
       <button class="filter-btn" onclick="filterGallery('granite', this)">Granite</button>
       <button class="filter-btn" onclick="filterGallery('marble', this)">Marble</button>
       <button class="filter-btn" onclick="filterGallery('quartz', this)">Quartz & Porcelain</button>
     </div>
-  </div>
+  </section>
 
   <div class="gallery-grid" id="galleryGrid">
     <div class="gallery-card" data-cat="granite">
@@ -477,7 +537,7 @@
       <div class="gallery-body">
         <span class="gallery-tag">Granite</span>
         <div class="gallery-name">Absolute Black Granite Slabs</div>
-        <p style="font-size:13px; color:#64748b;">Fine-grained, deep carbon hue suitable for premium kitchen tops and facades.</p>
+        <p style="font-size:13px; color:#64748b;">Fine-grained, deep carbon hue suitable for premium kitchens and facades.</p>
       </div>
     </div>
 
@@ -486,7 +546,7 @@
       <div class="gallery-body">
         <span class="gallery-tag">Marble</span>
         <div class="gallery-name">Statuary White Bookmatch Marble</div>
-        <p style="font-size:13px; color:#64748b;">Continuous grey diagonal veins on crisp white marble matrix.</p>
+        <p style="font-size:13px; color:#64748b;">Elegant veining for luxury walls, lobbies and feature living spaces.</p>
       </div>
     </div>
 
@@ -494,35 +554,35 @@
       <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Tan Brown Granite">
       <div class="gallery-body">
         <span class="gallery-tag">Granite</span>
-        <div class="gallery-name">Tan Brown / Steel Grey Gangsaw</div>
-        <p style="font-size:13px; color:#64748b;">High compressive strength for commercial entrance lobbies and flooring.</p>
+        <div class="gallery-name">Tan Brown Granite</div>
+        <p style="font-size:13px; color:#64748b;">Classic earthy tones for commercial flooring and entrance spaces.</p>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="quartz">
-      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80" class="gallery-img" alt="Calacatta Quartz">
+      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Calacatta Quartz">
       <div class="gallery-body">
         <span class="gallery-tag">Quartz</span>
         <div class="gallery-name">Calacatta Gold Engineered Quartz</div>
-        <p style="font-size:13px; color:#64748b;">Non-porous, stain-resistant resin matrix designed for food prep areas.</p>
+        <p style="font-size:13px; color:#64748b;">Elegant, non-porous, stain-resistant quartz for kitchen worktops.</p>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="marble">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Green Onyx & Marble">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Green Marble">
       <div class="gallery-body">
         <span class="gallery-tag">Marble</span>
-        <div class="gallery-name">Emerald Verde Metamorphic Marble</div>
-        <p style="font-size:13px; color:#64748b;">Rich mineral swirls hand-selected for feature walls and fireplace mantels.</p>
+        <div class="gallery-name">Emerald Verde Marble</div>
+        <p style="font-size:13px; color:#64748b;">Rich green veining and strong character for luxury feature walls.</p>
       </div>
     </div>
 
     <div class="gallery-card" data-cat="quartz">
-      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Sintered Porcelain Slab">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Porcelain Slabs">
       <div class="gallery-body">
         <span class="gallery-tag">Porcelain</span>
-        <div class="gallery-name">Sintered Porcelain Large-Format Sheet</div>
-        <p style="font-size:13px; color:#64748b;">12mm heatproof and UV-resistant architectural outdoor facade panels.</p>
+        <div class="gallery-name">Sintered Porcelain Large-Format Sheets</div>
+        <p style="font-size:13px; color:#64748b;">Durable, elegant and modern for facades and commercial interiors.</p>
       </div>
     </div>
   </div>
@@ -538,7 +598,7 @@
           </div>
         </div>
         <p class="footer-desc">
-          Malvigano Mac Pvt. Ltd. processes and supplies granites, marbles, quartz, and heavy monumental slabs globally.
+          Malvigano Mac Pvt. Ltd. processes and supplies premium granite, marble, quartz, porcelain and monumental slabs worldwide.
         </p>
       </div>
     </div>
@@ -575,22 +635,25 @@
     if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
     if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        if (sideDrawer && sideDrawer.classList.contains('open')) {
+        if (document.getElementById('authModal') && document.getElementById('authModal').classList.contains('open')) {
+          closeAuthModal();
+        } else if (sideDrawer && sideDrawer.classList.contains('open')) {
           closeDrawer();
         }
       }
     });
 
     function filterGallery(cat, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
-      document.querySelectorAll('.gallery-card').forEach(c => {
-        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
-          c.style.display = 'flex';
+
+      document.querySelectorAll('.gallery-card').forEach((card) => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
         } else {
-          c.style.display = 'none';
+          card.style.display = 'none';
         }
       });
     }
